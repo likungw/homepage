@@ -1,5 +1,12 @@
 export const talks = [
   {
+    conference: "ISPOC",
+    title: "Large Language Model In Creative Work",
+    location: "Online",
+    date: "Jul 25, 2024",
+    invited: true
+  },
+  {
     conference: "Annual AI in Management (AIM) Conference",
     title: "Large Language Model In Creative Work",
     location: "Los Angeles, California",
