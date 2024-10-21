@@ -125,6 +125,10 @@ const ventures = [
 
 const awards = [
   {
+    title: "INFORMS ISS Nunamaker-Chen Dissertation Award 2nd Runner-up",
+    time: "2024",
+  },
+  {
     title: "Best Dissertation Award @ WITS",
     time: "2023",
   },
