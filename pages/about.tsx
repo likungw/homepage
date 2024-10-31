@@ -166,7 +166,7 @@ const awards = [
 
 const seoTitle = `About | ${FullName}`;
 export const seoDesc =
-  "Ph.D. candidate in Information Systems. For a more humane & productive future.";
+  "Assistant Professor in Information Systems. For a more humane & productive future.";
 
 export default function About({ projects, activities }: { projects: Project[]; activities: ActivityType[] }) {
   return (
