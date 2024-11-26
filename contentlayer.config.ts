@@ -74,7 +74,8 @@ export const Publication = defineDocumentType(() => ({
     forthcoming: { type: "boolean", required: false },
     tags: { type: "json", required: false },
     image: { type: "string", required: false },
-    awards: { type: "json", required: false }
+    awards: { type: "json", required: false },
+    media_coverage: { type: "json", required: false }
   },
   computedFields: publicationComputedFields,
 }));

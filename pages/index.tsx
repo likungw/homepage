@@ -12,6 +12,9 @@ import { FullName } from "./about";
 import { TalkList } from "./talks";
 import Award from "../components/Award";
 import { talks } from "../data/talks";
+import { IconExternalLink } from "../components/Icons";
+
+
 
 const futureTalks = talks.filter((talk) => new Date(talk.date) > new Date());
 
@@ -126,7 +129,14 @@ export default function Home({ posts, projects, publications }: HomeProps) {
                     <div className="flex flex-col gap-1">
                       <h3>{publication.title}</h3>
                       <p className="text-secondary">{publication.description}</p>
-                      <p className="text-primary"><i>{publication.journal}</i>{ publication.forthcoming && ", Forthcoming"}</p>
+                      {publication.url && (
+                        <Link href={publication.url} underline>
+                          <i>{publication.journal}</i>
+                        </Link>
+                      )}
+                      {!publication.url && (
+                        <p className="text-primary"><i>{publication.journal}</i>{ publication.forthcoming && ", Forthcoming"}</p>
+                      )}
                       {publication.awards && 
                         publication.awards.map((award: string) => (
                           <p key={award} className="text-secondary">
@@ -138,16 +148,17 @@ export default function Home({ posts, projects, publications }: HomeProps) {
                         <Link href={`/publication/${publication.slug}`} underline>
                           Abstract
                         </Link>
+                        {publication.media_coverage && publication.media_coverage.map((media: { name: string, url: string }) => (
+                          <>
+                            <Link href={media.url} underline className="ml-2">
+                              <span className="inline-flex items-center underline">
+                                {media.name}
+                                <IconExternalLink className="w-4 h-4 ml-1" />
+                              </span>
+                            </Link>
+                          </>
+                        ))}
                       </span>
-                      {!publication.forthcoming && (
-                        <span>
-                          <Link href={`/publication/${publication.url}`} underline>
-                            Link to {publication.journal}
-                          </Link>↗
-                        </span>
-                      )}
-
-                      
                       
                     </div>
                     {/* <Link href={`/project/${project.slug}`}>
@@ -195,7 +206,9 @@ export const getStaticProps: GetStaticProps = async () => {
     .sort(
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    );
+    ).map((publication) => {
+      return pick(publication, ["slug", "title", "description", "publishedAt", "journal", "awards", "media_coverage"])
+    });
 
   return {
     props: { posts, projects, publications },
