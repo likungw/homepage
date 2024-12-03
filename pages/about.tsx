@@ -119,7 +119,7 @@ const ventures = [
     time: "2015 - 17",
     description: "Campus magazine for CUHK(SZ)",
     imageSrc: stayLogo,
-    link: "https://qianjian.space",
+    link: "https://archive.qianjian.space/stay/",
   }
 ];
 

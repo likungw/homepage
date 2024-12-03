@@ -23,6 +23,7 @@ interface Talk {
   link?: string;
   award?: string;
   invited?: boolean;
+  discussant?: boolean;
 }
 
 export function TalkList(talks: Talk[]) {
@@ -30,19 +31,19 @@ export function TalkList(talks: Talk[]) {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .map((talk) => (
       <li key={talk.title + talk.conference + talk.date}>
-        <Section heading={talk.date + (talk.invited ? "*" : "")}>
+        <Section heading={talk.date}>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-1">
               <h3>
+                {talk.discussant && <p className="text-secondary">Discussant for</p>}
                 {talk.title}
               </h3>
-              
               {talk.award &&
                 <p className="text-secondary">
                   <Award award={talk.award} />
                 </p>
               }
-              <p className="text-secondary">{talk.conference}</p>
+              <p className="text-secondary">{talk.conference}{talk.invited && "*"}</p>
               <p className="text-secondary">{talk.location}</p>
               {talk.link && <Link href={`${talk.link}`} underline>
                 Read More
@@ -86,12 +87,12 @@ export default function Talks() {
       />
       <div className="flex flex-col gap-10 md:gap-10">
         <div className="">
-          <h1>Talks</h1>
+          <h1>Talks & Discussions</h1>
           <p
             className="text-secondary"
             style={{ "--index": 1 } as React.CSSProperties}
           >
-            Invited talks are marked with *<br/>
+            Invited and discussant talks are marked with *<br/>
           </p>
         </div>
         <div
