@@ -1,6 +1,6 @@
 export const talks = [
   {
-    conference: "Workshop on Information Systems and Technology (WITS)",
+    conference: "Workshop on Information Technologies and Systems (WITS)",
     title: "The Implications of Review Display Policies for Platforms' Incentives to Tackle Fake Reviews: A Game-Theoretic Analysis (by Zhe Wang, Dengpan Liu, Subodha Kumar)",
     location: "Bangkok, Thailand",
     date: "Dec 20, 2024",
