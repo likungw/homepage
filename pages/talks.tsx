@@ -8,6 +8,7 @@ import { FullName, SiteURL } from "./about";
 import { formatDate } from "../lib/formatdate";
 import Award from "../components/Award";
 import { talks } from "../data/talks";
+import Tooltip from "../components/Tooltip";
 
 const seoTitle = `Talks | ${FullName}`;
 const seoDesc = `Invited talks and presentations.`;
@@ -43,7 +44,14 @@ export function TalkList(talks: Talk[]) {
                   <Award award={talk.award} />
                 </p>
               }
-              <p className="text-secondary">{talk.conference}{talk.invited && "*"}</p>
+              <p className="text-secondary">
+                {talk.conference}
+                {talk.invited && (
+                  <Tooltip text="Invited Talk">
+                    <span><sup>*</sup></span>
+                  </Tooltip>
+                )}
+              </p>
               <p className="text-secondary">{talk.location}</p>
               {talk.link && <Link href={`${talk.link}`} underline>
                 Read More
@@ -61,6 +69,10 @@ const INVITED_TALKS = "Invited Talks";
 export default function Talks() {
   const [selectedConference, setSelectedConference] = useState(ALL_TALKS);
   const conferences = [ALL_TALKS, INVITED_TALKS, ...new Set(talks.flatMap((talk) => talk.invited ? [] : talk.conference))];
+
+  const totalTalks = talks.length;
+  const invitedTalksCount = talks.filter(talk => talk.invited).length;
+  const awardsCount = talks.filter(talk => talk.award).length;
 
   const filteredFutureTalks = selectedConference && (selectedConference != ALL_TALKS)
     ? futureTalks.filter(talk => talk.conference === selectedConference || (selectedConference === INVITED_TALKS && talk.invited))
@@ -92,7 +104,9 @@ export default function Talks() {
             className="text-secondary"
             style={{ "--index": 1 } as React.CSSProperties}
           >
-            Invited and discussant talks are marked with *<br/>
+            {totalTalks} Talks • {invitedTalksCount} Invited • {awardsCount} Awards
+            <br />
+            Invited and discussant talks are marked with *
           </p>
         </div>
         <div
