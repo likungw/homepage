@@ -6,7 +6,7 @@ import localFont from "@next/font/local";
 import imageMe from "public/gallery/me.jpg";
 import imageConf from "public/gallery/scecr.jpg";
 import imageSnowboarding from "public/gallery/snowboarding.jpg";
-import imageCam from "public/gallery/cam.jpg";
+import imageDissertation from "public/gallery/dissertation_defence.jpg";
 import { ReactNode } from "react";
 import Activity, { ActivityType, SnowboardActivity } from "./Activity";
 import Link from "./Link";
@@ -148,13 +148,30 @@ export default function Gallery({
       <section className="flex gap-4 h-[268px] relative">
         <Photo
           src={imageMe}
-          meta="2022-10-02"
-          alt="Me, by Xianwen Cao"
+          meta={
+            <span className="flex flex-col gap-3">
+              <span className="block">
+                2024-12-31 <br />PHOTO BY GIGI CHEN
+              </span>
+            </span>
+          }
+          alt="Me, by Gigi Chen"
           width={314}
           height={229}
           rotate={-6}
           left={-130}
           index={1}
+        />
+        <Photo
+          src={imageDissertation}
+          meta="2024-04-23"
+          alt={"Me with my camera and my long hair"}
+          width={230}
+          height={253}
+          rotate={2}
+          left={280}
+          index={2}
+          flipDirection="left"
         />
         <Photo
           src={imageConf}
@@ -163,21 +180,11 @@ export default function Gallery({
           width={180}
           height={240}
           rotate={6.3}
-          left={140}
-          index={2}
-          flipDirection="left"
-        />
-        <Photo
-          src={imageCam}
-          meta="2020-10-22"
-          alt={"Me with my camera and my long hair"}
-          width={230}
-          height={253}
-          rotate={7.6}
-          left={313}
+          left={110}
           index={3}
           flipDirection="left"
         />
+
         <Photo
           src={imageSnowboarding}
           meta={
