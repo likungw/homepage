@@ -127,16 +127,19 @@ export default function Home({ posts, projects, publications }: HomeProps) {
                 <Section heading={publication.publishedAt}>
                   <div className="flex flex-col gap-5">
                     <div className="flex flex-col gap-1">
-                      <h3>{publication.title}</h3>
+                      <h3><Link href={`/publication/${publication.slug}`} underline>
+                          {publication.title}
+                        </Link></h3>
                       <p className="text-secondary">{publication.description}</p>
-                      {publication.url && (
+                      {publication.url ? (
                         <Link href={publication.url} underline>
-                          <i>{publication.journal}</i>
+                          <span className="inline-flex items-center underline"><i>{publication.journal}</i> <IconExternalLink className="w-4 h-4 ml-1" /></span>
                         </Link>
-                      )}
-                      {!publication.url && (
+                      ) :
+                      (
                         <p className="text-primary"><i>{publication.journal}</i>{ publication.forthcoming && ", Forthcoming"}</p>
-                      )}
+                      )
+                      }
                       {publication.awards && 
                         publication.awards.map((award: string) => (
                           <p key={award} className="text-secondary">
@@ -145,9 +148,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
                         ))
                       }
                       <span>
-                        <Link href={`/publication/${publication.slug}`} underline>
-                          Abstract
-                        </Link>
+                        {publication.media_coverage && "Media coverage: "}
                         {publication.media_coverage && publication.media_coverage.map((media: { name: string, url: string }) => (
                           <>
                             <Link href={media.url} underline className="ml-2">
@@ -207,7 +208,7 @@ export const getStaticProps: GetStaticProps = async () => {
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     ).map((publication) => {
-      return pick(publication, ["slug", "title", "description", "publishedAt", "journal", "awards", "media_coverage"])
+      return pick(publication, ["slug", "title", "description", "publishedAt", "journal", "awards", "media_coverage", "url"])
     });
 
   return {
