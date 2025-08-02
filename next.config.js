@@ -18,8 +18,8 @@ const nextConfig = {
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
-      require("./scripts/generate-sitemap");
-      require("./scripts/generate-rss");
+      //require("./scripts/generate-sitemap");
+      //require("./scripts/generate-rss");
     }
 
     // const fileLoaderRule = config.module.rules.find((rule) =>
