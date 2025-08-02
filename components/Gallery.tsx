@@ -143,7 +143,7 @@ export default function Gallery({
     (activity) => activity.sport_type === "Snowboard"
   );
   return (
-    <section className="flex justify-center gap-6 flex-wrap mt-6 mb-12 relative">
+    <section className="flex gap-6 overflow-x-auto no-scrollbar px-4 py-4">
       <Photo
         src={imageMe}
         meta={
