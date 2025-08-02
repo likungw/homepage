@@ -25,7 +25,6 @@ type PhotoProps = {
   width: number;
   height: number;
   rotate: number;
-  left: number | string;
   index: number;
   flipDirection?: "left" | "right";
   children?: ReactNode;
@@ -38,7 +37,6 @@ export function Photo({
   width,
   height,
   rotate,
-  left,
   index,
   flipDirection,
   meta,
@@ -51,22 +49,21 @@ export function Photo({
   const shared = "absolute h-full w-full rounded-2xl overflow-hidden";
   return (
     <motion.div
-      className={`absolute mx-auto cursor-grab hover:before:block hover:before:w-[calc(100%+55px)] hover:before:h-[300px] hover:before:absolute hover:before:-top-8 hover:before:-left-7`}
-      style={{ rotate: `${rotate}deg`, left, width, height, perspective: 1000 }}
+      className="relative cursor-grab hover:before:block hover:before:w-[calc(100%+55px)] hover:before:h-[300px] hover:before:absolute hover:before:-top-8 hover:before:-left-7"
+      style={{ rotate: `${rotate}deg`, width, height, perspective: 1000 }}
       initial={{
         width,
         height,
         rotate: (rotate || 0) - 20,
         y: 200 + index * 20,
-        x: index === 1 ? -60 : index === 2 ? -30 : index === 3 ? 30 : 60,
+        x: 0,
         opacity: 0,
       }}
       transition={{
         default: {
           type: "spring",
           bounce: 0.2,
-          duration:
-            index === 1 ? 0.8 : index === 2 ? 0.85 : index === 3 ? 0.9 : 1,
+          duration: 0.8 + index * 0.05,
           delay: index * 0.15,
         },
         opacity: {
@@ -141,80 +138,78 @@ export default function Gallery({
 }: {
   activities: ActivityType[];
   lastActivity?: ActivityType;
-  }) {
-  const snowboardingActivities = activities.filter((activity) => activity.sport_type === "Snowboard");
+}) {
+  const snowboardingActivities = activities.filter(
+    (activity) => activity.sport_type === "Snowboard"
+  );
   return (
-    <>
-      <section className="flex gap-4 h-[268px] relative">
-        <Photo
-          src={imageMe}
-          meta={
+    <section className="flex justify-center gap-6 flex-wrap mt-6 mb-12 relative">
+      <Photo
+        src={imageMe}
+        meta={
+          <span className="flex flex-col gap-3">
+            <span className="block">
+              2024-12-31 <br />
+              PHOTO BY GIGI CHEN
+            </span>
+          </span>
+        }
+        alt="Me, by Gigi Chen"
+        width={314}
+        height={229}
+        rotate={-6}
+        index={1}
+      />
+      <Photo
+        src={imageDissertation}
+        meta="2024-04-23"
+        alt={"Me with my camera and my long hair"}
+        width={230}
+        height={253}
+        rotate={2}
+        index={2}
+        flipDirection="left"
+      />
+      <Photo
+        src={imageConf}
+        meta="2022-06-21"
+        alt="At SCECR 2022"
+        width={180}
+        height={240}
+        rotate={6.3}
+        index={3}
+        flipDirection="left"
+      />
+      <Photo
+        src={imageSnowboarding}
+        meta={
+          snowboardingActivities.length ? (
             <span className="flex flex-col gap-3">
               <span className="block">
-                2024-12-31 <br />PHOTO BY GIGI CHEN
+                {snowboardingActivities[0].name.toString().split("-").at(-1)}
               </span>
+              <Link
+                href={`https://www.strava.com/activities/${activities[0].id}`}
+              >
+                See latest day on Strava ↗
+              </Link>
             </span>
-          }
-          alt="Me, by Gigi Chen"
-          width={314}
-          height={229}
-          rotate={-6}
-          left={-130}
-          index={1}
-        />
-        <Photo
-          src={imageDissertation}
-          meta="2024-04-23"
-          alt={"Me with my camera and my long hair"}
-          width={230}
-          height={253}
-          rotate={2}
-          left={280}
-          index={2}
-          flipDirection="left"
-        />
-        <Photo
-          src={imageConf}
-          meta="2022-06-21"
-          alt="At SCECR 2022"
-          width={180}
-          height={240}
-          rotate={6.3}
-          left={110}
-          index={3}
-          flipDirection="left"
-        />
-
-        <Photo
-          src={imageSnowboarding}
-          meta={
-              snowboardingActivities.length ? (
-                <span className="flex flex-col gap-3">
-                  <span className="block">
-                    {
-                      snowboardingActivities[0].name.toString().split('-').at(-1)
-                    }
-                  </span>
-                  <Link
-                    href={`https://www.strava.com/activities/${activities[0].id}`}
-                  >
-                    See latest day on Strava ↗
-                  </Link>
-                </span>
-              ) : "Snowboarding"
-            }
-            alt='Snowboarding'
-            filename={`snowboarding.jpg`}
-            width={270}
-            height={225}
-            rotate={-5.4}
-            left={500}
-            index={4}
-            flipDirection="left"
-          >
-          {snowboardingActivities.length ? <SnowboardActivity activities={snowboardingActivities} /> : null}
-        </Photo>
-      </section>
-    </>
+          ) : (
+            "Snowboarding"
+          )
+        }
+        alt="Snowboarding"
+        filename={`snowboarding.jpg`}
+        width={270}
+        height={225}
+        rotate={-5.4}
+        index={4}
+        flipDirection="left"
+      >
+        {snowboardingActivities.length ? (
+          <SnowboardActivity activities={snowboardingActivities} />
+        ) : null}
+      </Photo>
+    </section>
   );
 }
