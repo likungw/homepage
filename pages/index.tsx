@@ -40,7 +40,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
             I study design and use of technologies to fully harness their benefits.
             <br />
             <br />
-            <Link href="https://" >CV</Link>
+            <Link href="" >CV</Link>
           </p>
         </div>
         <div className="right-0 -mt-20 overflow-hidden hidden md:block">
