@@ -6,13 +6,13 @@ import Link from "components/Link";
 import Section from "components/Section";
 import PostList from "components/postlist";
 
-import { Photo } from "components/Gallery";
 import headshot from "../public/headshot.jpg";
 import { FullName } from "./about";
 import { TalkList } from "./talks";
 import Award from "../components/Award";
 import { talks } from "../data/talks";
 import { IconExternalLink } from "../components/Icons";
+import { Photo } from "components/Photo";
 
 
 
@@ -61,7 +61,6 @@ export default function Home({ posts, projects, publications }: HomeProps) {
       width={180}
       height={240}
       rotate={6.3}
-      left="calc(50% + 10rem)"
       index={1}
       flipDirection="left"
     />
