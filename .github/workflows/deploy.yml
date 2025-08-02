@@ -1,0 +1,42 @@
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # 监听 master 分支的 push 事件
+  workflow_dispatch:  # 也允许手动触发
+
+permissions:
+  contents: write  # 允许写 gh-pages 分支
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: 拉取代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: 安装 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Step 3: 安装依赖
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: 构建并导出静态文件
+      - name: Build and export static site
+        run: |
+          npm run build
+          npm run export
+
+      # Step 5: 部署到 GitHub Pages（gh-pages 分支）
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
