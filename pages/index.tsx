@@ -27,7 +27,7 @@ type HomeProps = {
 export default function Home({ posts, projects, publications }: HomeProps) {
   return (
     <>
-      <div className="flex flex-col gap-20 md:gap-16">
+      <div className="flex flex-col gap-20 md:gap-16 max-w-7xl mx-auto px-6">
         <div>
           <h1 className="">{`Kun Li`}</h1>
           <p

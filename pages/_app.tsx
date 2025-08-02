@@ -31,7 +31,7 @@ export default function MyApp({
   const getLayout =
     Component.getLayout ??
     ((page) => (
-      <main className="px-4 md:px-6 pt-20 pb-24 md:pb-44 max-w-[700px] mx-auto ring-offset-primary">
+      <main className="px-5 md:px-8 pt-20 pb-24 md:pb-44 max-w-4xl mx-auto ring-offset-primary">
         {page}
       </main>
     ));
