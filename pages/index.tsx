@@ -7,7 +7,7 @@ import Section from "components/Section";
 import PostList from "components/postlist";
 
 import { Photo } from "components/Gallery";
-import headshot from "../public/headshot.jpeg";
+import headshot from "../public/headshot.jpg";
 import { FullName } from "./about";
 import { TalkList } from "./talks";
 import Award from "../components/Award";
