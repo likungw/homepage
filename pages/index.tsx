@@ -27,47 +27,47 @@ type HomeProps = {
 export default function Home({ posts, projects, publications }: HomeProps) {
   return (
     <>
-      <div className="flex flex-col gap-20 md:gap-16">
-        <div>
-          <h1 className="">{`Kun Li`}</h1>
+      <div className="flex flex-col md:flex-row gap-8 md:items-start">
+        {/* 文字部分 */}
+        <div className="flex-1">
+          <h1 className="">Kun Li</h1>
           <p
-            className="text-secondary max-w-md"
+            className="text-secondary"
             style={{ "--index": 1 } as React.CSSProperties}
           >
-            Senior Researcher @ Microsoft Research<br />
-            <br />
-            Dr. Kun Li is currently a Senior Researcher at Microsoft Research, focusing on high-performance computing (HPC) systems. He received his Ph.D. degree with the State Key Laboratory of Computer Architecture, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022. He was recognized with CCF Outstanding Doctoral Dissertation Award, ACM SIGHPC China Outstanding Doctoral Dissertation Award, CCF HPC Youth Talent Award, ACM SIGHPC China Rising Star Award, among others. His representative works have been continuously published at top-tier CCF-A conferences such as SC, PPoPP, ATC, ASPLOS, and ICS, receiving the Best Paper Award at PPoPP’24, Best Student Paper Award Finalist SC’25, and SC’25 Reproducibility Challenge Candidate. He is a keynote speaker at the CCF HPCChina 2024 conference, an Executive Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. 
+            Senior Researcher @ Microsoft Research
             <br />
             <br />
-            <Link href="" >CV</Link>
+            Dr. Kun Li is currently a Senior Researcher at Microsoft Research, focusing on high-performance computing (HPC) systems. He received his Ph.D. degree with the State Key Laboratory of Computer Architecture, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022. He was recognized with CCF Outstanding Doctoral Dissertation Award, ACM SIGHPC China Outstanding Doctoral Dissertation Award, CCF HPC Youth Talent Award, ACM SIGHPC China Rising Star Award, among others. His representative works have been continuously published at top-tier CCF-A conferences such as SC, PPoPP, ATC, ASPLOS, and ICS, receiving the Best Paper Award at PPoPP’24, Best Student Paper Award Finalist SC’25, and SC’25 Reproducibility Challenge Candidate. He is a keynote speaker at the CCF HPCChina 2024 conference, an Executive Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture.
+            <br />
+            <br />
+            <Link href="">CV</Link>
           </p>
         </div>
-        <div className="right-0 -mt-20 overflow-hidden hidden md:block">
-          <div className="-mt-[230px]">
-            <Photo
-              src={headshot}
-              meta={
-                <span className="flex flex-col gap-3">
-                  <span className="block">
-                    2024-03-01 <br />PHOTO AT Edinburgh
-                  </span>
-                  <Link
-                    href={`/about`}
-                  >
-                    {`More photos ↗`}
-                  </Link>
+
+        {/* 照片部分 */}
+        <div className="md:ml-8 md:shrink-0 mt-6 md:mt-0">
+          <Photo
+            src={headshot}
+            meta={
+              <span className="flex flex-col gap-3">
+                <span className="block">
+                  2024-03-01 <br /> PHOTO AT Edinburgh
                 </span>
-              }
-              alt="Headshot"
-              width={180}
-              height={240}
-              rotate={6.3}
-              left="calc(50% + 10rem)"
-              index={1}
-              flipDirection="left"
-            />
-          </div>
+                <Link href={`/about`}>{`More photos ↗`}</Link>
+              </span>
+            }
+            alt="Headshot"
+            width={180}
+            height={240}
+            rotate={6.3}
+            left="calc(50% + 10rem)"
+            index={1}
+            flipDirection="left"
+          />
         </div>
+      </div>
+
         {futureTalks.length > 0 && (
         <div
           className="flex flex-col gap-8 animate-in"
