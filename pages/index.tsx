@@ -39,7 +39,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
           <div className="flex-1">
             <h1>{`Kun Li`}</h1>
             <p
-              className="text-secondary max-w-md"
+              className="text-secondary max-w-full"
               style={{ "--index": 1 } as React.CSSProperties}
             >
               Senior Researcher @ Microsoft Research
