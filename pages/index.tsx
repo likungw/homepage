@@ -34,7 +34,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
     <>
       <div className="flex flex-col gap-16 max-w-4xl mx-auto px-4">
         {/* 个人简介 + 头像 */}
-        <div className="flex flex-col md:flex-row gap-8 md:items-start">
+        <div className="flex flex-col md:flex-row md:items-start gap-8 animate-in">
           {/* 左侧：简介 */}
           <div className="flex-1">
             <h1>{`Kun Li`}</h1>
@@ -67,7 +67,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
           </div>
 
           {/* 右侧：照片 */}
-          <div className="hidden md:block w-[200px] shrink-0">
+          <div className="md:w-[200px] shrink-0 hidden md:block">
             <Photo
               src={headshot}
               meta={
