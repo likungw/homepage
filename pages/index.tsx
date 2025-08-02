@@ -88,7 +88,6 @@ export default function Home({ posts, projects, publications }: HomeProps) {
             Read all posts
           </Link>
         </div>
-      </div>
     </>
   );
 }
