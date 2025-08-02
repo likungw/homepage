@@ -2,6 +2,11 @@ const { withContentlayer } = require("next-contentlayer"); // eslint-disable-lin
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export',
+
+  // ✅ 新增这两行：
+  basePath: '/homepage',
+  assetPrefix: '/homepage',
   images: {
     remotePatterns: [
       {
