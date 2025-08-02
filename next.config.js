@@ -2,11 +2,7 @@ const { withContentlayer } = require("next-contentlayer"); // eslint-disable-lin
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
 
-  // ✅ 新增这两行：
-  basePath: '/homepage',
-  assetPrefix: '/homepage',
   images: {
     remotePatterns: [
       {
@@ -18,8 +14,8 @@ const nextConfig = {
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
-      //require("./scripts/generate-sitemap");
-      //require("./scripts/generate-rss");
+      require("./scripts/generate-sitemap");
+      require("./scripts/generate-rss");
     }
 
     // const fileLoaderRule = config.module.rules.find((rule) =>
