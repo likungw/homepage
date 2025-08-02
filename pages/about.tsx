@@ -30,14 +30,16 @@ import MDXComponents from "../components/MDXComponents";
 import { getActivities, getActivity } from "../lib/strava";
 
 export const connectLinks = [
-  { label: "Email", href: "mailto:contact@zenan.ch" },
-  { label: "Twitter", href: "https://twitter.com/chzenan" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/chzenan/" },
-  { label: "GitHub", href: "https://github.com/alanzchen" }
+  { label: "Email", href: "mailto:likungw@gmail.com" },
+  { label: "WeChat", href: "public/ventures/wechat.jpg" },
+  { label: "Twitter", href: "https://x.com/KunLi90358191" },
+  { label: "Bilibili", href: "https://space.bilibili.com/484878899" },
+  { label: "Xiaohongshu", href: "public/ventures/xiaohongshu.jpg" },
+  { label: "Google Scholar", href: "https://scholar.google.com.hk/citations?user=2J-7nxUAAAAJ&hl=en" }
 ];
 
-export const FullName = "Zenan Chen";
-export const SiteURL = "https://zenan.ch";
+export const FullName = "Kun Li";
+export const SiteURL = "https://www.likun.tech";
 
 const education = [
   {
@@ -203,7 +205,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="About me" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                <em className="font-semibold">Hi!</em>&nbsp; My name is Zenan (泽南) Chen (陈), I usually go by Alan. I am an assistant professor at University of Texas at Dallas, Jindal School of Management. I received my Ph.D. in Business Administration (Information Systems) from University of Minnesota, Carlson School of Management.
+                Dr. Kun Li is currently a Senior Researcher at Microsoft Research, focusing on high-performance computing (HPC) systems. He received his Ph.D. degree with the State Key Laboratory of Computer Architecture, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022. He was recognized with CCF Outstanding Doctoral Dissertation Award, ACM SIGHPC China Outstanding Doctoral Dissertation Award, CCF HPC Youth Talent Award, ACM SIGHPC China Rising Star Award, among others. His representative works have been continuously published at top-tier CCF-A conferences such as SC, PPoPP, ATC, ASPLOS, and ICS, receiving the Best Paper Award at PPoPP’24, Best Student Paper Award Finalist SC’25, and SC’25 Reproducibility Challenge Candidate. He is a keynote speaker at the CCF HPCChina 2024 conference, an Executive Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. 
               </p>
             </div>
           </Section>
@@ -233,9 +235,6 @@ export default function About({ projects, activities }: { projects: Project[]; a
           </Section>
           <Section heading="Education" headingAlignment="right">
             <div className="flex flex-col w-full gap-8">
-              <p>
-                Dissertation: <i>Design Considerations of Information Systems Artifacts and Digital Platforms</i><br />
-              </p>
               <Workplaces items={education} />
             </div>
           </Section>
