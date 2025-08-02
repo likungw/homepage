@@ -80,8 +80,8 @@ export default function Home({ posts, projects, publications }: HomeProps) {
                 </span>
               }
               alt="Headshot"
-              width={180}
-              height={240}
+              width={210}
+              height={280}
               rotate={6.3}
               index={1}
               flipDirection="left"
