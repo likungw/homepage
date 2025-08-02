@@ -31,10 +31,10 @@ import { getActivities, getActivity } from "../lib/strava";
 
 export const connectLinks = [
   { label: "Email", href: "mailto:likungw@gmail.com" },
-  { label: "WeChat", href: "/ventures/wechat.jpg" },
+  { label: "WeChat", href: "https://www.likun.tech/ventures/wechat.jpg" },
   { label: "Twitter", href: "https://x.com/KunLi90358191" },
   { label: "Bilibili", href: "https://space.bilibili.com/484878899" },
-  { label: "Xiaohongshu", href: "/ventures/xiaohongshu.jpg" },
+  { label: "Xiaohongshu", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
   { label: "Google Scholar", href: "https://scholar.google.com.hk/citations?user=2J-7nxUAAAAJ&hl=en" }
 ];
 
