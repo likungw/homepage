@@ -29,19 +29,17 @@ export default function Home({ posts, projects, publications }: HomeProps) {
     <>
       <div className="flex flex-col gap-20 md:gap-16">
         <div>
-          <h1 className="">{`Zenan "Alan" Chen`}</h1>
+          <h1 className="">{`Kun Li`}</h1>
           <p
             className="text-secondary max-w-md"
             style={{ "--index": 1 } as React.CSSProperties}
           >
-            Assistant Professor @ UTD, JSOM<br />
-            Ph.D. @ UMN, CSOM<br />
+            Senior Researcher @ Microsoft Research<br />
             <br />
-            Our comprehension of techologies often falls behind their adoption.
-            I study design and use of technologies to fully harness their benefits.
+            Dr. Kun Li is currently a Senior Researcher at Microsoft Research, focusing on high-performance computing (HPC) systems. He received his Ph.D. degree with the State Key Laboratory of Computer Architecture, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022. He was recognized with CCF Outstanding Doctoral Dissertation Award, ACM SIGHPC China Outstanding Doctoral Dissertation Award, CCF HPC Youth Talent Award, ACM SIGHPC China Rising Star Award, among others. His representative works have been continuously published at top-tier CCF-A conferences such as SC, PPoPP, ATC, and ASPLOS, receiving accolades including the Best Paper Award at PPoPP'24, Best Student Paper Award Finalist SC'25, and SC’25 Reproducibility Challenge Candidate. He is a keynote speaker at the CCF HPCChina 2024 conference, an Executive Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. If you're interested, feel free to join him in exploring these exciting frontiers!
             <br />
             <br />
-            <Link href="https://go.zenan.ch/cv" >CV</Link>
+            <Link href="https://" >CV</Link>
           </p>
         </div>
         <div className="right-0 -mt-20 overflow-hidden hidden md:block">
