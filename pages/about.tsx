@@ -43,15 +43,30 @@ export const SiteURL = "https://www.likun.tech";
 
 const education = [
   {
-    title: "Ph.D. in Information Systems",
-    description: "University of Minnesota",
-    time: "2018 - 24",
+    title: "Ph.D. in Computer Architecture",
+    description: "Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS);  University of Chinese Academy of Sciences (UCAS)",
+    time: "2016.09 – 2022.06",
+    advisor: "Prof. Yunquan Zhang",
     imageSrc: umnLogo,
   },
   {
-    title: "B.A. in Economics",
-    description: "CUHK, Shenzhen",
-    time: "2014 - 18",
+    title: "Research Internship in System Group",
+    description: "Microsoft Research Asia (MSRA)",
+    time: "2021.09 - 2022.03",
+    advisor: "Prof. Ting Cao",
+    imageSrc: umnLogo,
+  },
+  {
+    title: "Research Internship in Parallel Theory Lab",
+    description: "Peking University",
+    time: "2017.07 – 2018.06",
+    advisor: "Prof. Yifeng Chen",
+    imageSrc: umnLogo,
+  },
+  {
+    title: "B.E. in  Computer Science and Technology (Elite Program)",
+    description: "Shandong University",
+    time: "2012.09 – 2016.06",
     imageSrc: cuhkLogo,
   },
 ];
@@ -233,7 +248,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
               ))}
             </ul>
           </Section>
-          <Section heading="Education" headingAlignment="right">
+          <Section heading="Experience" headingAlignment="right">
             <div className="flex flex-col w-full gap-8">
               <Workplaces items={education} />
             </div>
