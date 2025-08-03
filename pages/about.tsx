@@ -249,7 +249,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
             </ul>
           </Section>
           <Section heading="Experience" headingAlignment="right">
-            <div className="flex flex-col w-full gap-8">
+            <div className="flex flex-col w-full gap-4">
               <Workplaces items={education} />
             </div>
           </Section>
