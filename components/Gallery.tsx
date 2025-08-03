@@ -95,10 +95,15 @@ export function Photo({
           <Image
             src={src}
             alt={alt}
-            width={width}
-            height={height}
-            className="absolute inset-0 object-cover w-full h-full bg-gray-400 pointer-events-none rounded-2xl"
+            width={width * 2}   // 请求更高分辨率的图片，保证清晰度
+            height={height * 2}
+            quality={100}       // 提高生成图质量
+            className="absolute inset-0 object-cover bg-gray-400 pointer-events-none rounded-2xl"
             priority
+            style={{
+              width: "100%",    // 保证适配外层容器
+              height: "100%",
+            }}
           />
           {children}
         </div>
