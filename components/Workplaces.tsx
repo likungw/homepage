@@ -47,7 +47,7 @@ function Workplace({ title, description, imageSrc, time, link }: Workplace) {
 
 export default function Workplaces({ items, isAnimated }: { items: Workplace[], isAnimated?: boolean }) {
   return (
-    <ul className={`flex flex-col gap-8 ${isAnimated ? 'animated-list' : ''}`}>
+    <ul className={`flex flex-col gap-4 ${isAnimated ? 'animated-list' : ''}`}>
       {items.map(Workplace)}
     </ul>
   );
