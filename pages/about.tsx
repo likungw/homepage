@@ -44,14 +44,14 @@ export const SiteURL = "https://www.likun.tech";
 const education = [
   {
     title: "Ph.D. in Computer Architecture",
-    description: "Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS);  University of Chinese Academy of Sciences (UCAS)",
+    description: "Institute of Computing Technology, Chinese Academy of Sciences\n University of Chinese Academy of Sciences",
     time: "2016.09 – 2022.06",
     advisor: "Prof. Yunquan Zhang",
     imageSrc: umnLogo,
   },
   {
     title: "Research Internship in System Group",
-    description: "Microsoft Research Asia (MSRA)",
+    description: "Microsoft Research Asia",
     time: "2021.09 - 2022.03",
     advisor: "Prof. Ting Cao",
     imageSrc: umnLogo,
