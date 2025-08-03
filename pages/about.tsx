@@ -9,6 +9,10 @@ import { ActivityType } from "components/Activity";
 
 import cuhkLogo from "public/schools/CUHK.png";
 import umnLogo from "public/schools/UMN.png";
+import msftLogo from "public/schools/msft.png";
+import pkuLogo from "public/schools/pku.png";
+import sduLogo from "public/schools/sdu.png";
+import casLogo from "public/schools/cas.png";
 
 import githubLogo from "public/Github.png";
 import jupyterLogo from "public/projects/jupyter.png";
@@ -47,27 +51,27 @@ const education = [
     description: "Institute of Computing Technology, Chinese Academy of Sciences\n University of Chinese Academy of Sciences",
     time: "2016.09 – 2022.06",
     advisor: "Prof. Yunquan Zhang",
-    imageSrc: umnLogo,
+    imageSrc: casLogo,
   },
   {
     title: "Research Internship in System Group",
     description: "Microsoft Research Asia",
     time: "2021.09 - 2022.03",
     advisor: "Prof. Ting Cao",
-    imageSrc: umnLogo,
+    imageSrc: msftLogo,
   },
   {
     title: "Research Internship in Parallel Theory Lab",
     description: "Peking University",
     time: "2017.07 – 2018.06",
     advisor: "Prof. Yifeng Chen",
-    imageSrc: umnLogo,
+    imageSrc: pkuLogo,
   },
   {
     title: "B.E. in  Computer Science and Technology (Elite Program)",
     description: "Shandong University",
     time: "2012.09 – 2016.06",
-    imageSrc: cuhkLogo,
+    imageSrc: sduLogo,
   },
 ];
 
