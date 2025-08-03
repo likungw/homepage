@@ -47,6 +47,13 @@ export const SiteURL = "https://www.likun.tech";
 
 const education = [
   {
+    title: "Senior Researcher",
+    description: "Microsoft Research",
+    time: "2022.07 - Present",
+    advisor: "Prof. Ting Cao",
+    imageSrc: msftLogo,
+  },
+  {
     title: "Ph.D. in Computer Architecture",
     description: "Institute of Computing Technology, Chinese Academy of Sciences\n University of Chinese Academy of Sciences",
     time: "2016.09 – 2022.06",
@@ -54,14 +61,14 @@ const education = [
     imageSrc: casLogo,
   },
   {
-    title: "Research Internship in System Group",
-    description: "Microsoft Research Asia",
+    title: "Research Intern, System Group",
+    description: "Microsoft Research",
     time: "2021.09 - 2022.03",
     advisor: "Prof. Ting Cao",
     imageSrc: msftLogo,
   },
   {
-    title: "Research Internship in Parallel Theory Lab",
+    title: "Research Intern, Parallel Theory Lab",
     description: "Peking University",
     time: "2017.07 – 2018.06",
     advisor: "Prof. Yifeng Chen",
