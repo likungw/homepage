@@ -1,5 +1,5 @@
+// components/PeopleGrid.tsx
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
 import { Person } from "../types/people";
 
 interface PeopleGridProps {
@@ -7,71 +7,50 @@ interface PeopleGridProps {
 }
 
 export default function PeopleGrid({ people }: PeopleGridProps) {
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [maxHeight, setMaxHeight] = useState<number | undefined>(undefined);
-
-  // 计算最大卡片高度
-  useEffect(() => {
-    const heights = cardRefs.current.map((el) => el?.offsetHeight || 0);
-    setMaxHeight(Math.max(...heights));
-  }, [people]);
-
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {people.map((person, index) => (
-        <div
-          key={person.name}
-          ref={(el) => (cardRefs.current[index] = el)}
-          style={{ height: maxHeight ? `${maxHeight}px` : "auto" }}
-          className="group relative flex flex-col items-center text-center 
-                     bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-md 
-                     border border-transparent transition-all duration-300"
-        >
-          {/* 外侧渐变高亮边框 */}
-          <div
-            className="absolute inset-0 rounded-2xl p-[2px] opacity-0 
-                       group-hover:opacity-100 transition-opacity duration-300"
-            style={{
-              background: "linear-gradient(135deg, #7a1fa2, #9c27b0, #ce93d8)"
-            }}
-          >
-            <div className="h-full w-full bg-white dark:bg-gray-900 rounded-2xl"></div>
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-stretch">
+      {people.map((person) => {
+        const CardContent = (
+          <div className="relative group flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-md transition-all duration-300 h-full">
+            {/* 悬停渐变边框（清华紫） */}
+            <div className="absolute -inset-0.5 rounded-2xl border-2 border-transparent pointer-events-none transition-all duration-300 group-hover:border-[3px] group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#660099] group-hover:via-[#9933CC] group-hover:to-[#CC66FF]"></div>
 
-          {/* 头像 */}
-          {person.link ? (
-            <a
-              href={person.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="z-10"
-            >
+            {/* 头像 */}
+            <div className="relative w-24 h-24 mb-4 flex-shrink-0 z-10">
               <Image
                 src={person.image}
                 alt={person.name}
+                className="w-full h-full object-cover rounded-full"
                 width={96}
                 height={96}
-                className="w-24 h-24 rounded-full object-cover mb-4 shadow-sm 
-                           transition-transform duration-300 group-hover:scale-105"
               />
-            </a>
-          ) : (
-            <Image
-              src={person.image}
-              alt={person.name}
-              width={96}
-              height={96}
-              className="w-24 h-24 rounded-full object-cover mb-4 shadow-sm"
-            />
-          )}
+            </div>
 
-          {/* 文本 */}
-          <div className="z-10">
-            <h3 className="text-lg font-semibold">{person.name}</h3>
-            <p className="text-secondary mt-1">{person.description}</p>
+            {/* 名字 */}
+            <h3 className="text-lg font-semibold z-10">{person.name}</h3>
+
+            {/* 描述 */}
+            <p className="text-secondary mt-1 z-10">{person.description}</p>
           </div>
-        </div>
-      ))}
+        );
+
+        // 如果有链接，整个卡片可点击
+        return person.link ? (
+          <a
+            key={person.name}
+            href={person.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-full"
+          >
+            {CardContent}
+          </a>
+        ) : (
+          <div key={person.name} className="h-full">
+            {CardContent}
+          </div>
+        );
+      })}
     </div>
   );
 }
