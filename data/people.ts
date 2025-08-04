@@ -13,7 +13,6 @@ export const faculty: Person[] = [
   },
   {
     name: "Yongliang Shi",
-    role: "Faculty",
     description: "He gets robots self-informed.",
     image: "public/schools/cas.png",
   },
