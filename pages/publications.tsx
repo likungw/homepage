@@ -10,15 +10,7 @@ import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/24/outline";
 import { Publication } from "../types/publication";
 
 
-interface Publication {
-  title: string;
-  journal: string;
-  date: string;
-  link?: string;
-  repo?: string;
-  award?: string;
-  corresponding?: boolean;
-}
+
 
 const seoTitle = `Publications | ${FullName}`;
 const seoDesc = `Selected publications by ${FullName}.`;
