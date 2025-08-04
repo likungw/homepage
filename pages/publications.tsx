@@ -23,12 +23,10 @@ const years = [
 ];
 
 export function PublicationListGrouped(pubs: Publication[]) {
-  // 先整体按日期倒序
   const sorted = [...pubs].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
-  // 获取年份列表（去重、倒序）
   const years = Array.from(new Set(sorted.map(pub => new Date(pub.date).getFullYear().toString())))
     .sort((a, b) => Number(b) - Number(a));
 
@@ -38,46 +36,52 @@ export function PublicationListGrouped(pubs: Publication[]) {
       <li key={year}>
         <h2 className="text-xl font-bold mt-6 mb-2">{year}</h2>
         <ul className="flex flex-col gap-8">
-          {yearPubs.map(pub => (
-            <Section
-              key={pub.title + pub.journal + pub.date}
-              heading={pub.date}
-              className={pub.award ? "border-l-4 border-yellow-400 bg-yellow-50 p-4 rounded-lg" : ""}
-            >
-              <div className="flex flex-col gap-5">
-                <div className="flex flex-col gap-1">
-                  <h3>
-                    {pub.title}
-                    {pub.corresponding && <sup>*</sup>}
-                  </h3>
-                  <p className="text-secondary">{pub.authors}</p>
-                  {pub.award && (
-                    <p className="text-secondary font-semibold">
-                      🏆 <Award award={pub.award} />
-                    </p>
-                  )}
-                  <p className="text-secondary">{pub.journal}</p>
-                  <div className="flex flex-wrap gap-4">
-                    {pub.link && (
-                      <Link href={pub.link} underline>
-                        Paper
-                      </Link>
+          {yearPubs.map(pub => {
+            // 如果是通信作者，就在作者列表中 Kun Li 后加 *
+            let authorsText = pub.authors;
+            if (pub.corresponding) {
+              authorsText = authorsText.replace(/Kun Li(?!\*)/, "Kun Li*");
+            }
+
+            return (
+              <Section
+                key={pub.title + pub.journal + pub.date}
+                heading={pub.date}
+                className={pub.award ? "border-l-4 border-yellow-400 bg-yellow-50 p-4 rounded-lg" : ""}
+              >
+                <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-1">
+                    <h3>{pub.title}</h3>
+                    <p className="text-secondary">{authorsText}</p>
+                    {pub.award && (
+                      <p className="text-secondary font-semibold">
+                        🏆 <Award award={pub.award} />
+                      </p>
                     )}
-                    {pub.repo && (
-                      <Link href={pub.repo} underline>
-                        Code
-                      </Link>
-                    )}
+                    <p className="text-secondary">{pub.journal}</p>
+                    <div className="flex flex-wrap gap-4">
+                      {pub.link && (
+                        <Link href={pub.link} underline>
+                          Paper
+                        </Link>
+                      )}
+                      {pub.repo && (
+                        <Link href={pub.repo} underline>
+                          Code
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Section>
-          ))}
+              </Section>
+            );
+          })}
         </ul>
       </li>
     );
   });
 }
+
 
 
 
