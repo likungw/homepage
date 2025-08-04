@@ -9,12 +9,12 @@ export const faculty: Person[] = [
   {
     name: "Hao Zhao",
     description: "He makes robots understand 3D scenes.",
-    image: "public/schools/cas.png",
+    image: "/schools/cas.png",
   },
   {
     name: "Yongliang Shi",
     description: "He gets robots self-informed.",
-    image: "public/schools/cas.png",
+    image: "/schools/cas.png",
   },
   // ...
 ];
@@ -23,7 +23,7 @@ export const phdStudents: Person[] = [
   {
     name: "Xiaoxue Chen",
     description: "She de-renders scenes.",
-    image: "public/schools/cas.png",
+    image: "/schools/cas.png",
   },
   // ...
 ];
