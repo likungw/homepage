@@ -282,26 +282,36 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="Selected Awards" headingAlignment="right">
             <div className="flex flex-col w-full gap-8">
               <ul className={`flex flex-col gap-1`}>
-                {awards.map((award) => (
-                  <li className="" key="award">
-                    <div className="flex justify-between gap-2">
+                {awards.map((award, index) => (
+                  <li className="" key={index}>
+                    {/* 父容器：左右分布 + 垂直居中 */}
+                    <div className="flex justify-between items-center gap-2">{/* ✅ items-center */}
+                      
+                      {/* 左侧：奖项标题 + 描述 */}
                       <div className="flex flex-col gap-px">
-                         {award.link ? (
-                            <Link href={award.link} >
-                              {award.title}
-                            </Link>
-                          ) : (
-                            <p>{award.title}</p>
-                          )}
-                        {award.description && <p className="text-sm text-secondary">{award.description}</p>}
+                        {award.link ? (
+                          <Link href={award.link}>
+                            {award.title}
+                          </Link>
+                        ) : (
+                          <p>{award.title}</p>
+                        )}
+                        {award.description && (
+                          <p className="text-sm text-secondary">{award.description}</p>
+                        )}
                       </div>
-                      <p className="text-secondary w-16 text-right">{award.time}</p>
+
+                      {/* 右侧：时间列（固定宽度 + 右对齐，与 Workplaces 一致 w-32） */}
+                      <p className="text-secondary w-32 text-right">{/* ✅ 统一 w-32 */}
+                        {award.time}
+                      </p>
                     </div>
-                </li>
+                  </li>
                 ))}
               </ul>
             </div>
           </Section>
+
           {/* 
           <Section heading="Initiatives" headingAlignment="right">
             <div className="flex flex-col w-full gap-8">

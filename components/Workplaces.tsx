@@ -1,6 +1,5 @@
 import Link from "components/Link";
 import Image, { StaticImageData } from "next/image";
-import { Fragment } from "react";
 
 type Workplace = {
   title: string;
@@ -13,6 +12,7 @@ type Workplace = {
 function Workplace({ title, description, imageSrc, time, link }: Workplace) {
   const content = (
     <>
+      {/* 左侧：头像 + 文本 */}
       <div className="flex items-center gap-4">
         <Image
           src={imageSrc}
@@ -26,20 +26,27 @@ function Workplace({ title, description, imageSrc, time, link }: Workplace) {
           <p className="text-secondary">{description}</p>
         </div>
       </div>
-      {time && <p className="text-secondary">{time}</p>}
+
+      {/* 右侧：时间列（固定宽度 + 右对齐 + 垂直居中） */}
+      {time && (
+        <p className="text-secondary w-32 text-right">{/* ✅ 统一 w-32 */}
+          {time}
+        </p>
+      )}
     </>
   );
+
   return (
     <li className="" key={description}>
       {link ? (
         <Link
           href={link}
-          className="flex justify-between w-full no-underline"
+          className="flex justify-between items-center w-full no-underline" // ✅ items-center 保证右侧垂直居中
         >
           {content}
         </Link>
       ) : (
-        <div className="flex justify-between w-full">{content}</div>
+        <div className="flex justify-between items-center w-full">{content}</div> // ✅ 同样加 items-center
       )}
     </li>
   );
