@@ -302,6 +302,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
               </ul>
             </div>
           </Section>
+          {/* 
           <Section heading="Initiatives" headingAlignment="right">
             <div className="flex flex-col w-full gap-8">
               <p>Initiatives I have founded, co-founded, or advised. </p>
@@ -314,6 +315,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
               <Workplaces items={sideProjects} isAnimated />
             </div>
           </Section>
+          */}
         </div>
       </div>
     </>
