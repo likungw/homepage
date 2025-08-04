@@ -149,12 +149,12 @@ export default function Gallery({
         meta={
           <span className="flex flex-col gap-3">
             <span className="block">
-              2024-12-31 <br />
-              PHOTO BY GIGI CHEN
+              2024-03-01 <br />
+              PHOTO AT Edinburgh
             </span>
           </span>
         }
-        alt="Me, by Gigi Chen"
+        alt="PHOTO AT Edinburgh"
         width={314}
         height={229}
         rotate={-6}
@@ -162,8 +162,7 @@ export default function Gallery({
       />
       <Photo
         src={imageDissertation}
-        meta="2024-04-23"
-        alt={"Me with my camera and my long hair"}
+        meta="2023-04-30" 
         width={230}
         height={253}
         rotate={2}
@@ -172,8 +171,7 @@ export default function Gallery({
       />
       <Photo
         src={imageConf}
-        meta="2022-06-21"
-        alt="At SCECR 2022"
+        meta="2023-09-22" 
         width={180}
         height={240}
         rotate={6.3}
@@ -195,10 +193,10 @@ export default function Gallery({
               </Link>
             </span>
           ) : (
-            "Snowboarding"
+            "Universal Studios"
           )
         }
-        alt="Snowboarding"
+        alt="Universal Studios"
         filename={`snowboarding.jpg`}
         width={270}
         height={225}

@@ -189,7 +189,7 @@ const awards = [
   },
   {
     title: "Multiple scholarships from UCAS ",
-    description: "National Scholarship for Doctoral Students, UCAS-BHPB Scholarship, UCAS-Sugon Scholarship", 
+    description: "National Scholarship, UCAS-BHPB Scholarship, UCAS-Sugon Scholarship", 
     time: "Before 2022", 
   },
   {
