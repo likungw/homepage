@@ -3,23 +3,25 @@ import cn from "clsx";
 
 type SectionProps = {
   heading: string;
-  headingAlignment?: "right" | "left";
-  children: ReactNode;
+  headingAlignment?: "left" | "right";
+  children: React.ReactNode;
+  className?: string; // ✅ 新增
 };
 
 export default function Section({
   heading,
-  headingAlignment,
+  headingAlignment = "left",
   children,
+  className
 }: SectionProps) {
   return (
-    <section className="flex flex-col md:flex-row gap-1 md:gap-9">
+    <section
+      className={`flex flex-col gap-4 ${className || ""}`} // ✅ 合并默认样式和外部传入的样式
+    >
       <h2
-        className={cn(
-          "md:w-28 text-secondary shrink-0",
-          headingAlignment === "right" && "md:text-right"
-        )}
-        suppressHydrationWarning={true}
+        className={`text-xl font-bold ${
+          headingAlignment === "right" ? "text-right" : "text-left"
+        }`}
       >
         {heading}
       </h2>
