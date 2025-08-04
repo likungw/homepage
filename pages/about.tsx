@@ -153,9 +153,10 @@ const ventures = [
 
 const awards = [
   {
-    title: "INFORMS ISS Nunamaker-Chen Dissertation Award",
-    description: "2nd Runner-up",
+    title: "CCF Youth Talent Award in High Performance Computing",
+    description: "Top 5 Nationwide",
     time: "2024",
+    link: "https://mp.weixin.qq.com/s/T_lkOX7GvrnK-owixr5DZQ",
   },
   {
     title: "Best Dissertation Award @ WITS",
@@ -237,7 +238,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
               </p>
 
               <p>
-                He has been recognized with numerous honors, including the <strong>CCF Outstanding Doctoral Dissertation Award</strong>, <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,  <strong>CCF HPC Youth Talent Award</strong>, and <strong>ACM SIGHPC China Rising Star Award</strong>. His work has been published in top-tier CCF-A conferences such as <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>, <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the <strong>Best Paper Award at PPoPP’24</strong>, <strong>SC’25 Best Student Paper Award Finalist</strong>, and <strong>SC’25 Reproducibility Challenge Candidate</strong>. 
+                He has been recognized with numerous honors, including the <strong>CCF Outstanding Doctoral Dissertation Award</strong>, <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,  <strong>CCF Youth Talent Award in HPC</strong>, and <strong>ACM SIGHPC China Rising Star Award</strong>. His work has been published in top-tier CCF-A conferences such as <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>, <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the <strong>Best Paper Award at PPoPP’24</strong>, <strong>SC’25 Best Student Paper Award Finalist</strong>, and <strong>SC’25 Reproducibility Challenge Candidate</strong>. 
               </p>
 
               <p>
@@ -280,7 +281,13 @@ export default function About({ projects, activities }: { projects: Project[]; a
                   <li className="" key="award">
                     <div className="flex justify-between gap-2">
                       <div className="flex flex-col gap-px">
-                        <p>{award.title}</p>
+                         {award.link ? (
+                            <Link href={award.link} underline>
+                              {award.title}
+                            </Link>
+                          ) : (
+                            <p>{award.title}</p>
+                          )}
                         {award.description && <p className="text-sm text-secondary">{award.description}</p>}
                       </div>
                       <p className="text-secondary">{award.time}</p>
