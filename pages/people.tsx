@@ -25,14 +25,15 @@ export default function PeoplePage() {
       />
 
       <div className="flex flex-col gap-16 md:gap-20 animate-in">
+        {/* Faculty 区块 */}
         <Section heading="Faculty" headingAlignment="left">
-          <PeopleGrid title="Faculty" people={faculty} />
+          <PeopleGrid people={faculty} />
         </Section>
 
+        {/* Ph.D. Students 区块 */}
         <Section heading="Ph.D. Students" headingAlignment="left">
-          <PeopleGrid title="Ph.D. Students" people={phdStudents} />
+          <PeopleGrid people={phdStudents} />
         </Section>
-
       </div>
     </>
   );
