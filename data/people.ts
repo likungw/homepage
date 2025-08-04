@@ -1,19 +1,14 @@
 // data/people.ts
-export interface Person {
-  name: string;
-  description: string;
-  image: string; // 图片路径
-  link?: string; // 个人主页链接（可选）
-}
+import { Person } from "components/PeopleGrid";
 
 export const faculty: Person[] = [
   {
-    name: "Hao Zhao",
+    name: "Kun Li",
     description: "He makes robots understand 3D scenes.",
     image: "/schools/cas.png",
   },
   {
-    name: "Yongliang Shi",
+    name: "Kun Li",
     description: "He gets robots self-informed.",
     image: "/schools/cas.png",
   },
@@ -22,7 +17,7 @@ export const faculty: Person[] = [
 
 export const phdStudents: Person[] = [
   {
-    name: "Xiaoxue Chen",
+    name: "Kun Li",
     description: "She de-renders scenes.",
     image: "/schools/cas.png",
   },
