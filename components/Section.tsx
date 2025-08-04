@@ -4,8 +4,8 @@ import cn from "clsx";
 type SectionProps = {
   heading: string;
   headingAlignment?: "left" | "right";
-  children: ReactNode;
-  className?: string;
+  children: React.ReactNode;
+  className?: string; // ✅ 支持外部传入额外样式
 };
 
 export default function Section({
@@ -16,17 +16,25 @@ export default function Section({
 }: SectionProps) {
   return (
     <section
-      className={cn("flex flex-col gap-4", className)} // ✅ 使用 clsx 合并默认样式和外部传入的 className
+      className={cn(
+        "flex gap-8", // ✅ 保持左右两列布局
+        className
+      )}
     >
+      {/* 左列标题 */}
       <h2
         className={cn(
-          "text-xl font-bold",
+          "w-32 shrink-0 text-sm font-medium text-secondary", // ✅ 固定宽度 + 灰色字体
           headingAlignment === "right" ? "text-right" : "text-left"
         )}
       >
         {heading}
       </h2>
-      {children}
+
+      {/* 右列内容 */}
+      <div className="flex flex-col gap-4">
+        {children}
+      </div>
     </section>
   );
 }
