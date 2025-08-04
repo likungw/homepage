@@ -8,9 +8,10 @@ import { FullName } from "../pages/about";
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "People", href: "/people" }, // ✅ 新增 People 页面入口
   { label: "Publications", href: "/publications" },
   { label: "Talks", href: "/talks" },
-  { label: "Blog", href: "/blog" },
+  //{ label: "Blog", href: "/blog" },
 ];
 
 export default function Header() {
