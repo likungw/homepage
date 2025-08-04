@@ -154,62 +154,47 @@ const ventures = [
 const awards = [
   {
     title: "CCF Youth Talent Award in High Performance Computing",
-    description: "Top 5 Nationwide",
+    description: "Top 5 nationwide",
     time: "2024",
     link: "https://mp.weixin.qq.com/s/T_lkOX7GvrnK-owixr5DZQ",
   },
   {
     title: "ACM SIGHPC China Rising Star Award",
-    description:"Top 5 Nationwide",
+    description:"Top 5 nationwide",
     time: "2024",
     link: "https://mp.weixin.qq.com/s/v8am92KG7jePh5uHxYzCmg",
   },
  {
     title: "CCF Outstanding Doctoral Dissertation Award",
-    description:"Top 10 Nationwide",
+    description:"Top 10 nationwide",
     time: "2022",
     link: "https://www.ccf.org.cn/Membership/Individual_member/Honor/yxbsxwlwjljh/",
   },
   {
     title: "ACM SIGHPC China Outstanding Doctoral Dissertation Award",
-    description:"Top 3 Nationwide",
+    description:"Top 3 nationwide",
     time: "2022",
     link: "https://www.acmturc.com/2022_bak/cn/doctoral_thesis_award.html",
   },
   {
     title: "President’s Award of the Chinese Academy of Sciences ",
-    description:"Highest Honor for CAS Graduate Students",
+    description:"Highest honor for CAS graduate students",
     time: "2022",
     link: "http://www.iedu.cas.cn/contentcrawler/detail/993c0a5549154bd6b141f7a2b6b53ea9",
   },
   {
     title: "President’s Award of Institute of Computing Technology ",
-    description:"Highest Honor for ICT Graduate Students",
+    description:"Highest honor for ICT graduate students",
     time: "2022", 
   },
   {
-    title: "National Scholarship for Doctoral Students ",
-    time: "2021", 
+    title: "Multiple scholarships from UCAS ",
+    description: "National Scholarship for Doctoral Students, UCAS-BHPB Scholarship, UCAS-Sugon Scholarship", 
+    time: "Before 2022", 
   },
   {
-    title: "UCAS-BHPB Scholarship",
-    time: "2021", 
-  },
-  {
-    title: "UCAS-Sugon Scholarship",
-    time: "2021", 
-  },
-  {
-    title: "UCAS First-Class Doctoral Scholarship",
-    time: "2020", 
-  },
-  {
-    title: "UCAS International Conference Scholarship",
-    time: "2019", 
-  },
-  {
-    title: "UCAS Outstanding Undergraduate Scholarship",
-    time: "2017", 
+    title: "National Parallel Application Challenge Bronze Award ",
+    time: "2016", 
   },
 ];
 
