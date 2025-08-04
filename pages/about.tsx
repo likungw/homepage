@@ -295,7 +295,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
                           )}
                         {award.description && <p className="text-sm text-secondary">{award.description}</p>}
                       </div>
-                      <p className="text-secondary">{award.time}</p>
+                      <p className="text-secondary w-16 text-right">{award.time}</p>
                     </div>
                 </li>
                 ))}
