@@ -1,5 +1,5 @@
 // data/people.ts
-import { Person } from "components/PeopleGrid";
+import { Person } from "../types/people";
 
 export const faculty: Person[] = [
   {

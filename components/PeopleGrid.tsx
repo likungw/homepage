@@ -1,11 +1,5 @@
 import Image from "next/image";
-
-interface Person {
-  name: string;
-  description: string;
-  image: string;
-  link?: string;
-}
+import { Person } from "../types/people";
 
 interface PeopleGridProps {
   title: string;
