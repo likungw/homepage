@@ -10,14 +10,9 @@ export default function PeopleGrid({ people }: PeopleGridProps) {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-stretch">
       {people.map((person) => {
         const CardContent = (
-          <div className="relative group flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-md transition-all duration-300 h-full">
-            {/* 渐变外框 */}
-            <div className="absolute -inset-0.5 rounded-2xl border-2 border-transparent pointer-events-none transition-all duration-300 
-                group-hover:border-[3px] group-hover:border-transparent 
-                group-hover:bg-gradient-to-r group-hover:from-[#660099] group-hover:via-[#9933CC] group-hover:to-[#CC66FF]"></div>
-
+          <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-md transition-all duration-300 h-full">
             {/* 头像 */}
-            <div className="relative w-24 h-24 mb-4 flex-shrink-0 z-10">
+            <div className="relative w-24 h-24 mb-4 flex-shrink-0">
               <Image
                 src={person.image}
                 alt={person.name}
@@ -28,10 +23,10 @@ export default function PeopleGrid({ people }: PeopleGridProps) {
             </div>
 
             {/* 名字 */}
-            <h3 className="text-lg font-semibold z-10">{person.name}</h3>
+            <h3 className="text-lg font-semibold">{person.name}</h3>
 
             {/* 描述 */}
-            <p className="text-secondary mt-1 z-10">{person.description}</p>
+            <p className="text-secondary mt-1">{person.description}</p>
           </div>
         );
 
@@ -41,12 +36,21 @@ export default function PeopleGrid({ people }: PeopleGridProps) {
             href={person.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="h-full"
+            className="group block h-full rounded-2xl transition-all duration-300 hover:shadow-lg 
+                       hover:ring-4 hover:ring-transparent hover:ring-offset-2 hover:ring-offset-white
+                       hover:bg-gradient-to-r hover:from-[#660099] hover:via-[#9933CC] hover:to-[#CC66FF]"
+            style={{ padding: "2px" }} // 外周高亮
           >
             {CardContent}
           </a>
         ) : (
-          <div key={person.name} className="h-full">
+          <div
+            key={person.name}
+            className="block h-full rounded-2xl transition-all duration-300 
+                       hover:shadow-lg hover:ring-4 hover:ring-transparent hover:ring-offset-2 hover:ring-offset-white
+                       hover:bg-gradient-to-r hover:from-[#660099] hover:via-[#9933CC] hover:to-[#CC66FF]"
+            style={{ padding: "2px" }} // 外周高亮
+          >
             {CardContent}
           </div>
         );
