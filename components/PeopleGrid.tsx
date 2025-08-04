@@ -1,4 +1,3 @@
-// components/PeopleGrid.tsx
 import Image from "next/image";
 import { Person } from "../types/people";
 
@@ -12,8 +11,10 @@ export default function PeopleGrid({ people }: PeopleGridProps) {
       {people.map((person) => {
         const CardContent = (
           <div className="relative group flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-md transition-all duration-300 h-full">
-            {/* 悬停渐变边框（清华紫） */}
-            <div className="absolute -inset-0.5 rounded-2xl border-2 border-transparent pointer-events-none transition-all duration-300 group-hover:border-[3px] group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#660099] group-hover:via-[#9933CC] group-hover:to-[#CC66FF]"></div>
+            {/* 渐变外框 */}
+            <div className="absolute -inset-0.5 rounded-2xl border-2 border-transparent pointer-events-none transition-all duration-300 
+                group-hover:border-[3px] group-hover:border-transparent 
+                group-hover:bg-gradient-to-r group-hover:from-[#660099] group-hover:via-[#9933CC] group-hover:to-[#CC66FF]"></div>
 
             {/* 头像 */}
             <div className="relative w-24 h-24 mb-4 flex-shrink-0 z-10">
@@ -34,7 +35,6 @@ export default function PeopleGrid({ people }: PeopleGridProps) {
           </div>
         );
 
-        // 如果有链接，整个卡片可点击
         return person.link ? (
           <a
             key={person.name}
