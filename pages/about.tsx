@@ -47,7 +47,7 @@ export const SiteURL = "https://www.likun.tech";
 
 const education = [
   {
-    title: "Senior Researcher",
+    title: "Senior Researcher / Researcher",
     description: "Microsoft Research",
     time: "2022.07 - Present",
     advisor: "Prof. Ting Cao",
@@ -256,9 +256,6 @@ export default function About({ projects, activities }: { projects: Project[]; a
                 <li><strong>Matrix-centric scientific computing</strong> – Transforming scientific algorithms and applications into unified matrix-based representations to break traditional trade-offs in performance, accuracy, and scalability.</li>
                 <li><strong>Embodied scientific intelligence</strong> – Advancing reinforcement learning and AI4Science to create autonomous agents capable of multi-scale scientific reasoning and discovery.</li>
               </ul>
-              <p>
-                I integrate <strong>system architecture design</strong>, <strong>compiler and kernel optimization</strong>, and <strong>large-scale experimental evaluation</strong> to transform emerging computing architectures into practical breakthroughs in scalable AI and HPC.
-              </p>
 
             </div>
           </Section>
