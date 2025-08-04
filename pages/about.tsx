@@ -238,16 +238,17 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="Research" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                Driven by the mistmatch between our understanding of technologies and the rate at which they are adopted, my research vision is centered on understanding and guiding the design and usage of emerging technologies and platforms. More specifically, I am interested in the following areas:
+                My research focuses on <strong>highly scalable computing systems</strong> at the intersection of <strong>high-performance computing (HPC)</strong> and <strong>artificial intelligence (AI)</strong>. I pursue this vision through three primary directions:
               </p>
               <ul className="list-decimal ml-10">
-                <li>the impact of technological tools on individual work outcomes,</li>
-                <li>the societal effects of emerging AI technologies, and</li>
-                <li>the design considerations of digital platforms.</li>
+                <li><strong>Scalable foundation models</strong> – Optimizing large-scale model training and inference for both efficiency and scalability on state-of-the-art HPC systems.</li>
+                <li><strong>Matrix-centric scientific computing</strong> – Reformulating scientific algorithms and applications into unified matrix-based representations to break traditional trade-offs in performance, accuracy, and scalability.</li>
+                <li><strong>Embodied scientific intelligence</strong> – Applying reinforcement learning and AI-for-Science methodologies to enable autonomous, multi-scale scientific discovery.</li>
               </ul>
               <p>
-                I use a blend of methods, including field experiments, casual inference, machine learning, and analytical modeling.
+                I integrate <strong>system architecture design</strong>, <strong>compiler and kernel optimization</strong>, and <strong>large-scale experimental evaluation</strong> to transform emerging computing architectures into practical breakthroughs in scalable AI and HPC.
               </p>
+
             </div>
           </Section>
           <Section heading="Connect" headingAlignment="right">
