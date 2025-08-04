@@ -266,7 +266,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
             </div>
           </Section>
           <Section heading="Connect" headingAlignment="right">
-            <ul className="flex gap-6 animated-list">
+            <ul className="flex flex-wrap gap-4 sm:gap-6 animated-list">
               {connectLinks.map((link) => (
                 <li className="transition-opacity" key={link.label}>
                   <Link href={link.href}>{link.label}</Link>
