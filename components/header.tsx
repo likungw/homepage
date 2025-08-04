@@ -11,7 +11,7 @@ const links = [
   { label: "People", href: "/people" }, // ✅ 新增 People 页面入口
   { label: "Publications", href: "/publications" },
   { label: "Talks", href: "/talks" },
-  //{ label: "Blog", href: "/blog" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Header() {
