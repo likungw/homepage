@@ -101,13 +101,14 @@ export default function Talks() {
         <div className="">
           <h1>
             Selected Publications (For a full list, see{" "}
-            <Link
+            <a
               href="https://scholar.google.com.hk/citations?user=2J-7nxUAAAAJ&hl=en"
               target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:text-blue-600 transition-colors duration-200"
             >
               Google Scholar
-            </Link>
+            </a>
             )
           </h1>
           <p
