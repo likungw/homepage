@@ -7,6 +7,8 @@ import Award from "../components/Award";
 import { publications } from "../data/publications";
 import { Listbox, Transition } from "@headlessui/react";
 import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/24/outline";
+import { Publication } from "../types/publication";
+
 
 interface Publication {
   title: string;

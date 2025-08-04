@@ -1,3 +1,4 @@
+import { Publication } from "../types/publication";
 export const publications: Publication[] = [
   {
     title: "MatXtract: Sparsity-Aware Matrix Transformation via Cascaded Compute Density Extraction for TCU-Accelerated SpMV",
