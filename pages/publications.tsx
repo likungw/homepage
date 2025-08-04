@@ -50,6 +50,7 @@ export function PublicationListGrouped(pubs: Publication[]) {
                     {pub.title}
                     {pub.corresponding && <sup>*</sup>}
                   </h3>
+                  <p className="text-secondary">{pub.authors}</p>
                   {pub.award && (
                     <p className="text-secondary font-semibold">
                       🏆 <Award award={pub.award} />

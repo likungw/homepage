@@ -1,5 +1,6 @@
 export interface Publication {
   title: string;         // 论文标题
+  authors: string;
   journal: string;       // 期刊或会议名
   date: string;          // 发表日期
   link?: string;         // 论文链接
