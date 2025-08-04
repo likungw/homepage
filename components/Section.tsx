@@ -17,16 +17,18 @@ export default function Section({
   return (
     <section
       className={cn(
-        "grid grid-cols-[120px_1fr] gap-4", // ✅ 左列固定宽度，右列自适应
+        "grid grid-cols-1 md:grid-cols-[120px_1fr] gap-4", // 小屏单列，md 以上两列
         className
       )}
     >
+
       <h2
         className={cn(
-          "text-base font-normal text-secondary self-start", // ✅ 字体灰色、和正文大小一致
-          headingAlignment === "right" ? "text-right" : "text-left"
+          "text-base font-normal text-secondary self-start",
+          headingAlignment === "right" ? "md:text-right text-left" : "text-left"
         )}
       >
+
         {heading}
       </h2>
       <div className="flex flex-col gap-4">
