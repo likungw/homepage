@@ -3,6 +3,7 @@ export interface Person {
   name: string;
   description: string;
   image: string; // 图片路径
+  link?: string; // 个人主页链接（可选）
 }
 
 export const faculty: Person[] = [

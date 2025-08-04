@@ -1,50 +1,92 @@
 import Image from "next/image";
+import Section from "components/Section";
 import { faculty, phdStudents } from "../data/people";
+import Link from "next/link";
 
 export default function PeoplePage() {
   return (
-    <div className="flex flex-col gap-12">
-      <h1 className="text-center text-3xl font-bold">People</h1>
-
-      {/* Faculty */}
-      <div>
-        <h2 className="text-lg font-medium border-b pb-1 mb-4">Faculty</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+    <div className="flex flex-col gap-16 md:gap-24">
+      {/* Faculty Section */}
+      <Section heading="Faculty" headingAlignment="left">
+        <ul className="flex flex-col gap-6 animated-list">
           {faculty.map((person) => (
-            <div key={person.name} className="flex flex-col items-center text-center">
-              <Image
-                src={person.image}
-                alt={person.name}
-                width={96}
-                height={96}
-                className="rounded-full object-cover"
-              />
-              <h3 className="mt-2 font-semibold">{person.name}</h3>
-              <p className="text-secondary text-sm">{person.description}</p>
-            </div>
+            <li
+              key={person.name}
+              className="flex items-center gap-4 p-4 rounded-lg transition-all hover:bg-secondaryA"
+            >
+              {person.link ? (
+                <Link
+                  href={person.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    width={64}
+                    height={64}
+                    className="rounded-full object-cover border-2 border-transparent transition-all group-hover:border-blue-500"
+                  />
+                </Link>
+              ) : (
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  width={64}
+                  height={64}
+                  className="rounded-full object-cover border-2 border-transparent"
+                />
+              )}
+              <div>
+                <p className="font-semibold">{person.name}</p>
+                <p className="text-secondary text-sm">{person.description}</p>
+              </div>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </Section>
 
-      {/* Ph.D. Students */}
-      <div>
-        <h2 className="text-lg font-medium border-b pb-1 mb-4">Ph.D. Student</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+      {/* Ph.D. Students Section */}
+      <Section heading="Ph.D. Students" headingAlignment="left">
+        <ul className="flex flex-col gap-6 animated-list">
           {phdStudents.map((person) => (
-            <div key={person.name} className="flex flex-col items-center text-center">
-              <Image
-                src={person.image}
-                alt={person.name}
-                width={96}
-                height={96}
-                className="rounded-full object-cover"
-              />
-              <h3 className="mt-2 font-semibold">{person.name}</h3>
-              <p className="text-secondary text-sm">{person.description}</p>
-            </div>
+            <li
+              key={person.name}
+              className="flex items-center gap-4 p-4 rounded-lg transition-all hover:bg-secondaryA"
+            >
+              {person.link ? (
+                <Link
+                  href={person.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    width={64}
+                    height={64}
+                    className="rounded-full object-cover border-2 border-transparent transition-all group-hover:border-blue-500"
+                  />
+                </Link>
+              ) : (
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  width={64}
+                  height={64}
+                  className="rounded-full object-cover border-2 border-transparent"
+                />
+              )}
+              <div>
+                <p className="font-semibold">{person.name}</p>
+                <p className="text-secondary text-sm">{person.description}</p>
+              </div>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </Section>
     </div>
   );
 }
