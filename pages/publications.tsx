@@ -1,86 +1,115 @@
+import { useState } from "react";
 import Link from "components/Link";
 import Section from "components/Section";
-import React, { useState } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import { ChevronUpDownIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { NextSeo } from "next-seo";
 import { FullName, SiteURL } from "./about";
-import { formatDate } from "../lib/formatdate";
 import Award from "../components/Award";
-import { talks } from "../data/talks";
-import Tooltip from "../components/Tooltip";
+import { publications } from "../data/publications";
+import { Listbox, Transition } from "@headlessui/react";
+import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/24/outline";
 
-const seoTitle = `Talks | ${FullName}`;
-const seoDesc = `Invited talks and presentations.`;
-
-const pastTalks = talks.filter((talk) => new Date(talk.date) < new Date());
-const futureTalks = talks.filter((talk) => new Date(talk.date) > new Date());
-
-interface Talk {
+interface Publication {
   title: string;
-  conference: string;
+  journal: string;
   date: string;
-  location: string;
   link?: string;
+  repo?: string;
   award?: string;
-  invited?: boolean;
-  discussant?: boolean;
+  corresponding?: boolean;
 }
 
-export function TalkList(talks: Talk[]) {
-  return talks
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .map((talk) => (
-      <li key={talk.title + talk.conference + talk.date}>
-        <Section heading={talk.date}>
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <h3>
-                {talk.discussant && <p className="text-secondary">Discussant for</p>}
-                {talk.title}
-              </h3>
-              {talk.award &&
-                <p className="text-secondary">
-                  <Award award={talk.award} />
-                </p>
-              }
-              <p className="text-secondary">
-                {talk.conference}
-                {talk.invited && (
-                  <Tooltip text="Invited Talk">
-                    <span><sup>*</sup></span>
-                  </Tooltip>
+const seoTitle = `Publications | ${FullName}`;
+const seoDesc = `Selected publications by ${FullName}.`;
+
+const ALL_YEARS = "All Years";
+const years = [
+  ALL_YEARS,
+  ...Array.from(new Set(publications.map((p) => new Date(p.date).getFullYear().toString())))
+    .sort((a, b) => Number(b) - Number(a)) // 按年份倒序排序
+];
+
+
+export function PublicationListGrouped(pubs: Publication[]) {
+  const sorted = [...pubs].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  const grouped: Record<string, Publication[]> = {};
+  sorted.forEach((pub) => {
+    const year = new Date(pub.date).getFullYear().toString();
+    if (!grouped[year]) grouped[year] = [];
+    grouped[year].push(pub);
+  });
+
+  return Object.entries(grouped).map(([year, yearPubs]) => (
+    <li key={year}>
+      <h2 className="text-xl font-bold mt-6 mb-2">{year}</h2>
+      <ul className="flex flex-col gap-8">
+        {yearPubs.map((pub) => (
+          <Section
+            key={pub.title + pub.journal + pub.date}
+            heading={pub.date}
+            className={
+              pub.award
+                ? "border-l-4 border-yellow-400 bg-yellow-50 p-4 rounded-lg"
+                : ""
+            }
+          >
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-1">
+                <h3>
+                  {pub.title}
+                  {pub.corresponding && <sup>*</sup>}
+                </h3>
+                {pub.award && (
+                  <p className="text-secondary font-semibold">
+                    🏆 <Award award={pub.award} />
+                  </p>
                 )}
-              </p>
-              <p className="text-secondary">{talk.location}</p>
-              {talk.link && <Link href={`${talk.link}`} underline>
-                Read More
-              </Link>}
+                <p className="text-secondary">{pub.journal}</p>
+                <div className="flex flex-wrap gap-4">
+                  {pub.link && (
+                    <Link href={pub.link} underline>
+                      Paper
+                    </Link>
+                  )}
+                  {pub.repo && (
+                    <Link href={pub.repo} underline>
+                      Code
+                    </Link>
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
-        </Section>
-      </li>
-    ))
+          </Section>
+        ))}
+      </ul>
+    </li>
+  ));
 }
 
-const ALL_TALKS = "All Talks";
-const INVITED_TALKS = "Invited Talks";
+export default function PublicationsPage() {
+  const [showAwardsOnly, setShowAwardsOnly] = useState(false);
+  const [selectedYear, setSelectedYear] = useState(ALL_YEARS);
 
-export default function Talks() {
-  const [selectedConference, setSelectedConference] = useState(ALL_TALKS);
-  const conferences = [ALL_TALKS, INVITED_TALKS, ...new Set(talks.flatMap((talk) => talk.invited ? [] : talk.conference))];
+  const totalPublications = publications.length;
+  const correspondingCount = publications.filter((p) => p.corresponding).length;
+  const awardsCount = publications.filter((p) => p.award).length;
 
-  const totalTalks = talks.length;
-  const invitedTalksCount = talks.filter(talk => talk.invited).length;
-  const awardsCount = talks.filter(talk => talk.award).length;
+  const publicationsByYear: Record<string, number> = {};
+  publications.forEach((pub) => {
+    const year = new Date(pub.date).getFullYear().toString();
+    publicationsByYear[year] = (publicationsByYear[year] || 0) + 1;
+  });
 
-  const filteredFutureTalks = selectedConference && (selectedConference != ALL_TALKS)
-    ? futureTalks.filter(talk => talk.conference === selectedConference || (selectedConference === INVITED_TALKS && talk.invited))
-    : futureTalks;
-
-  const filteredPastTalks = selectedConference && (selectedConference != ALL_TALKS)
-    ? pastTalks.filter(talk => talk.conference === selectedConference || (selectedConference === INVITED_TALKS && talk.invited))
-    : pastTalks;
+  // 双重筛选
+  const displayedPublications = publications.filter((p) => {
+    const matchAward = showAwardsOnly ? !!p.award : true;
+    const matchYear = selectedYear === ALL_YEARS
+      ? true
+      : new Date(p.date).getFullYear().toString() === selectedYear;
+    return matchAward && matchYear;
+  });
 
   return (
     <>
@@ -89,16 +118,18 @@ export default function Talks() {
         description={seoDesc}
         openGraph={{
           title: seoTitle,
-          url: `${SiteURL}/talks`,
+          url: `${SiteURL}/publications`,
           description: seoDesc,
-          site_name: FullName
+          site_name: FullName,
         }}
         twitter={{
           cardType: "summary_large_image",
         }}
       />
+
       <div className="flex flex-col gap-10 md:gap-10">
-        <div className="">
+        {/* 顶部标题 & 统计 */}
+        <div>
           <h1>
             Selected Publications (For a full list, see{" "}
             <a
@@ -111,99 +142,99 @@ export default function Talks() {
             </a>
             )
           </h1>
-          <p
-            className="text-secondary"
-            style={{ "--index": 1 } as React.CSSProperties}
-          >
-            {totalTalks} Talks • {invitedTalksCount} Invited • {awardsCount} Awards
+          <p className="text-secondary">
+            {totalPublications} Publications • {correspondingCount} Corresponding Author • {awardsCount} Awards
             <br />
-            Invited and discussant talks are marked with *
+            {years
+              .filter((y) => y !== ALL_YEARS) // 去掉 "All Years"
+              .map((year) => `${year}: ${publicationsByYear[year] || 0}`)
+              .join(" • ")}
+            <br />
+            * denotes corresponding author.
           </p>
-        </div>
-        <div
-          style={{ zIndex: 5 } as React.CSSProperties}
-          className=""
-        >
-          <Listbox
-            value={selectedConference}
-            onChange={setSelectedConference}
-          >
-            <div className="relative">
-              <Listbox.Button className="p-2 w-full overflow-auto max-h-60 w-42 rounded-xl backdrop-blur-lg ring-1 ring-gray-400 ring-opacity-20 text-sm focus:outline-none hover:bg-secondaryA transition-all">
-                <span className="block truncate">
-                  {selectedConference}
-                </span>
-                <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  <ChevronUpDownIcon
-                    className="w-5 h-5 text-gray-400"
-                    aria-hidden="true"
-                  />
-                </span>
-              </Listbox.Button>
-              <Transition
-                enter="transition duration-100 ease-out"
-                enterFrom="transform scale-95 opacity-0"
-                enterTo="transform scale-100 opacity-100"
-                leave="transition duration-75 ease-out"
-                leaveFrom="transform scale-100 opacity-100"
-                leaveTo="transform scale-95 opacity-0"
-              >
-                <Listbox.Options className="absolute mt-2 w-full p-2 overflow-auto text-base origin-top-right shadow-lg max-h-60 w-42 rounded-xl bg-blur backdrop-blur-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm scroll-smooth no-scrollbar">
-                  {conferences.map(conference => (
-                    <Listbox.Option
-                      key={conference}
-                      value={conference}
-                      className={({ active }) =>
-                        `relative cursor-default select-none py-2 pl-10 pr-4 rounded-md ${active ? "bg-secondaryA" : "text-primary"
-                        }`
-                      }
-                    >
-                      {({ selected }) => (
-                        <>
-                          <span
-                            className={`${selected ? 'font-medium' : 'font-normal'
-                              } block truncate`}
-                          >
-                            {conference}
-                          </span>
-                          {selected && (
-                            <span
-                              className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary"
-                            >
-                              <CheckIcon className="w-5 h-5" aria-hidden="true" />
-                            </span>
+
+          {/* 筛选按钮 */}
+          <div className="mt-4 flex gap-4 flex-wrap">
+            <button
+              onClick={() => setShowAwardsOnly(false)}
+              className={`px-4 py-2 rounded-lg border ${
+                !showAwardsOnly
+                  ? "bg-blue-500 text-white border-blue-500"
+                  : "bg-white text-blue-500 border-blue-500"
+              }`}
+            >
+              All Publications
+            </button>
+            <button
+              onClick={() => setShowAwardsOnly(true)}
+              className={`px-4 py-2 rounded-lg border ${
+                showAwardsOnly
+                  ? "bg-yellow-500 text-white border-yellow-500"
+                  : "bg-white text-yellow-500 border-yellow-500"
+              }`}
+            >
+              Awarded Publications
+            </button>
+
+            {/* 年份筛选下拉框 */}
+            <div className="w-48">
+              <Listbox value={selectedYear} onChange={setSelectedYear}>
+                <div className="relative">
+                  <Listbox.Button className="p-2 w-full rounded-lg border border-gray-300 bg-white text-left">
+                    <span className="block truncate">{selectedYear}</span>
+                    <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                      <ChevronUpDownIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
+                    </span>
+                  </Listbox.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm z-10">
+                      {years.map((year) => (
+                        <Listbox.Option
+                          key={year}
+                          value={year}
+                          className={({ active }) =>
+                            `relative cursor-pointer select-none py-2 pl-10 pr-4 ${
+                              active ? "bg-blue-100 text-blue-900" : "text-gray-900"
+                            }`
+                          }
+                        >
+                          {({ selected }) => (
+                            <>
+                              <span
+                                className={`${
+                                  selected ? "font-medium" : "font-normal"
+                                } block truncate`}
+                              >
+                                {year}
+                              </span>
+                              {selected && (
+                                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-600">
+                                  <CheckIcon className="w-5 h-5" aria-hidden="true" />
+                                </span>
+                              )}
+                            </>
                           )}
-                        </>
-                      )}
-                    </Listbox.Option>
-                  ))}
-                </Listbox.Options>
-              </Transition>
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </Transition>
+                </div>
+              </Listbox>
             </div>
-          </Listbox>
+          </div>
         </div>
-        {filteredFutureTalks.length > 0 && (
-          <div
-            className="flex flex-col gap-4"
-            style={{ "--index": 2 } as React.CSSProperties}
-          >
-            <h2>Upcoming</h2>
-            <ul className="flex flex-col gap-8">
-              {TalkList(filteredFutureTalks)}
-            </ul>
-          </div>
-        )}
-        {filteredPastTalks.length > 0 && (
-          <div
-            className="flex flex-col gap-4"
-            style={{ "--index": 2 } as React.CSSProperties}
-          >
-            <h2>Past</h2>
-            <ul className="flex flex-col gap-8">
-              {TalkList(filteredPastTalks)}
-            </ul>
-          </div>
-        )}
+
+        {/* 按年份分组渲染论文 */}
+        <ul className="flex flex-col gap-8">
+          {PublicationListGrouped(displayedPublications)}
+        </ul>
       </div>
     </>
   );
