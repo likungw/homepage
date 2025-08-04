@@ -24,12 +24,13 @@ export default function Section({
       {/* 左列标题 */}
       <h2
         className={cn(
-          "w-32 shrink-0 text-sm font-medium text-secondary", // ✅ 固定宽度 + 灰色字体
+          "text-base font-normal text-secondary", // ✅ 字体大小改为正文大小 + 字重正常 + 灰色
           headingAlignment === "right" ? "text-right" : "text-left"
         )}
       >
         {heading}
       </h2>
+
 
       {/* 右列内容 */}
       <div className="flex flex-col gap-4">
