@@ -8,6 +8,7 @@ import { FullName } from "../pages/about";
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Publications", href: "/publications" },
   { label: "Talks", href: "/talks" },
   { label: "Blog", href: "/blog" },
 ];

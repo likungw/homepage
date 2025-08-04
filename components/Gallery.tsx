@@ -162,6 +162,7 @@ export default function Gallery({
       />
       <Photo
         src={imageDissertation}
+        alt="Dissertation defense photo" 
         meta="2023-04-30" 
         width={230}
         height={253}
@@ -171,6 +172,7 @@ export default function Gallery({
       />
       <Photo
         src={imageConf}
+        alt="Dissertation defense photo" 
         meta="2023-09-22" 
         width={180}
         height={240}
