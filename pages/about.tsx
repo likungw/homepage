@@ -231,19 +231,41 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="About me" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                Dr. Kun Li is currently a Senior Researcher at Microsoft Research, focusing on high-performance computing (HPC) systems. He received his Ph.D. degree with the State Key Laboratory of Computer Architecture, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022. He was recognized with CCF Outstanding Doctoral Dissertation Award, ACM SIGHPC China Outstanding Doctoral Dissertation Award, CCF HPC Youth Talent Award, ACM SIGHPC China Rising Star Award, among others. His representative works have been continuously published at top-tier CCF-A conferences such as SC, PPoPP, ATC, ASPLOS, and ICS, receiving the Best Paper Award at PPoPP’24, Best Student Paper Award Finalist SC’25, and SC’25 Reproducibility Challenge Candidate. He is a keynote speaker at the CCF HPCChina 2024 conference, an Executive Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. 
+                Dr. Kun Li is currently a <strong>Senior Researcher</strong> at <strong>Microsoft Research</strong>, specializing in <strong>high-performance computing (HPC) systems</strong>. 
+                He received his Ph.D. degree in Computer Architecture from the <strong>State Key Laboratory of Computer Architecture</strong>, 
+                Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022.
               </p>
+
+              <p>
+                He has been recognized with numerous honors, including the 
+                <strong>CCF Outstanding Doctoral Dissertation Award</strong>, 
+                <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>, 
+                <strong>CCF HPC Youth Talent Award</strong>, and 
+                <strong>ACM SIGHPC China Rising Star Award</strong>.
+                His work has been published in top-tier CCF-A conferences such as 
+                <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>, <strong>ASPLOS</strong>, and <strong>ICS</strong>, 
+                earning the <strong>Best Paper Award at PPoPP’24</strong>, 
+                <strong>SC’25 Best Student Paper Award Finalist</strong>, 
+                and selection as an <strong>SC’25 Reproducibility Challenge Candidate</strong>.
+              </p>
+
+              <p>
+                He serves as a <strong>keynote speaker</strong> at <strong>CCF HPC China 2024</strong> 
+                and as an <strong>Executive Committee Member</strong> of the 
+                <strong>CCF Technical Committee on High-Performance Computing and Computer Architecture</strong>.
+              </p>
+
             </div>
           </Section>
           <Section heading="Research" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                My research focuses on <strong>highly scalable computing systems</strong> at the intersection of <strong>high-performance computing (HPC)</strong> and <strong>artificial intelligence (AI)</strong>. I pursue this vision through three primary directions:
+                My research focuses on <strong>highly scalable computing systems</strong> at the intersection of <strong>high-performance computing (HPC)</strong> and <strong>artificial intelligence (AI)</strong>. I aim to advance this vision through three core research directions: 
               </p>
               <ul className="list-decimal ml-10">
-                <li><strong>Scalable foundation models</strong> – Optimizing large-scale model training and inference for both efficiency and scalability on state-of-the-art HPC systems.</li>
-                <li><strong>Matrix-centric scientific computing</strong> – Reformulating scientific algorithms and applications into unified matrix-based representations to break traditional trade-offs in performance, accuracy, and scalability.</li>
-                <li><strong>Embodied scientific intelligence</strong> – Applying reinforcement learning and AI-for-Science methodologies to enable autonomous, multi-scale scientific discovery.</li>
+                <li><strong>Scalable foundation models</strong> – Enhancing the efficiency and scalability of large-scale model training and inference on cutting-edge HPC infrastructures.</li>
+                <li><strong>Matrix-centric scientific computing</strong> – Transforming scientific algorithms and applications into unified matrix-based representations to break traditional trade-offs in performance, accuracy, and scalability.</li>
+                <li><strong>Embodied scientific intelligence</strong> – Advancing reinforcement learning and AI4Science to create autonomous agents capable of multi-scale scientific reasoning and discovery.</li>
               </ul>
               <p>
                 I integrate <strong>system architecture design</strong>, <strong>compiler and kernel optimization</strong>, and <strong>large-scale experimental evaluation</strong> to transform emerging computing architectures into practical breakthroughs in scalable AI and HPC.
