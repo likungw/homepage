@@ -159,37 +159,57 @@ const awards = [
     link: "https://mp.weixin.qq.com/s/T_lkOX7GvrnK-owixr5DZQ",
   },
   {
-    title: "Best Dissertation Award @ WITS",
-    time: "2023",
+    title: "ACM SIGHPC China Rising Star Award",
+    description:"Top 5 Nationwide",
+    time: "2024",
+    link: "https://mp.weixin.qq.com/s/v8am92KG7jePh5uHxYzCmg",
   },
-  {
-    title: "Best Completed Research Paper Runner-up @ WeB",
-    time: "2023",
-  },
-  {
-    title: "Best Student Paper Runner-up @ CIST",
-    time: "2023",
-  },
-  {
-    title: "Best Paper Award @ ICIS, General Track",
+ {
+    title: "CCF Outstanding Doctoral Dissertation Award",
+    description:"Top 10 Nationwide",
     time: "2022",
+    link: "https://www.ccf.org.cn/Membership/Individual_member/Honor/yxbsxwlwjljh/",
   },
   {
-    title: "Best Student Paper Award @ WITS",
+    title: "ACM SIGHPC China Outstanding Doctoral Dissertation Award",
+    description:"Top 3 Nationwide",
     time: "2022",
+    link: "https://www.acmturc.com/2022_bak/cn/doctoral_thesis_award.html",
   },
   {
-    title: "Carlson School of Management Dissertation Fellowship",
+    title: "President’s Award of the Chinese Academy of Sciences ",
+    description:"Highest Honor for CAS Graduate Students",
     time: "2022",
+    link: "http://www.iedu.cas.cn/contentcrawler/detail/993c0a5549154bd6b141f7a2b6b53ea9",
   },
   {
-    title: "First Place @ China Bridge Case Competition ($6,000)",
-    description: "As Faculty Mentor, I coached a team of 4 undergraduate students.",
-    time: "2021",
+    title: "President’s Award of Institute of Computing Technology ",
+    description:"Highest Honor for ICT Graduate Students",
+    time: "2022", 
   },
   {
-    title: "Dean’s Small Research Grant",
-    time: "2020",
+    title: "National Scholarship for Doctoral Students ",
+    time: "2021", 
+  },
+  {
+    title: "UCAS-BHPB Scholarship",
+    time: "2021", 
+  },
+  {
+    title: "UCAS-Sugon Scholarship",
+    time: "2021", 
+  },
+  {
+    title: "UCAS First-Class Doctoral Scholarship",
+    time: "2020", 
+  },
+  {
+    title: "UCAS International Conference Scholarship",
+    time: "2019", 
+  },
+  {
+    title: "UCAS Outstanding Undergraduate Scholarship",
+    time: "2017", 
   },
 ];
 
@@ -282,7 +302,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
                     <div className="flex justify-between gap-2">
                       <div className="flex flex-col gap-px">
                          {award.link ? (
-                            <Link href={award.link} underline>
+                            <Link href={award.link} >
                               {award.title}
                             </Link>
                           ) : (
