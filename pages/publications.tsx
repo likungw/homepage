@@ -99,7 +99,17 @@ export default function Talks() {
       />
       <div className="flex flex-col gap-10 md:gap-10">
         <div className="">
-          <h1>Talks & Discussions</h1>
+          <h1>
+            Selected Publications (For a full list, see{" "}
+            <Link
+              href="https://scholar.google.com.hk/citations?user=2J-7nxUAAAAJ&hl=en"
+              target="_blank"
+              className="underline hover:text-blue-600 transition-colors duration-200"
+            >
+              Google Scholar
+            </Link>
+            )
+          </h1>
           <p
             className="text-secondary"
             style={{ "--index": 1 } as React.CSSProperties}
