@@ -48,18 +48,19 @@ export default function PeopleGrid({ people }: { people: Person[] }) {
 
         // 有链接才包裹 Link
         return person.link ? (
-          <Link
+        <a
             key={person.name}
             href={person.link}
             target="_blank"
             rel="noopener noreferrer"
             className="block"
-          >
+        >
             {CardContent}
-          </Link>
+        </a>
         ) : (
-          <div key={person.name}>{CardContent}</div>
+        <div key={person.name}>{CardContent}</div>
         );
+
       })}
     </div>
   );
