@@ -43,11 +43,7 @@ export function PublicationListGrouped(pubs: Publication[]) {
           <Section
             key={pub.title + pub.journal + pub.date}
             heading={pub.date}
-            className={
-              pub.award
-                ? "border-l-4 border-yellow-400 bg-yellow-50 p-4 rounded-lg"
-                : ""
-            }
+            className={pub.award ? "border-l-4 border-yellow-400 bg-yellow-50 p-4 rounded-lg" : ""}
           >
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-1">
@@ -81,6 +77,7 @@ export function PublicationListGrouped(pubs: Publication[]) {
     </li>
   ));
 }
+
 
 export default function PublicationsPage() {
   const [showAwardsOnly, setShowAwardsOnly] = useState(false);
