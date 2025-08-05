@@ -8,7 +8,7 @@ import { publications } from "../data/publications";
 import { Listbox, Transition } from "@headlessui/react";
 import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/24/outline";
 import { Publication } from "../types/publication";
-
+import PublicationLink from "@/components/PublicationLink";
 
 
 
@@ -59,48 +59,14 @@ export function PublicationListGrouped(pubs: Publication[]) {
                       </p>
                     )}
                     <p className="text-secondary">{pub.journal}</p>
-                    <div className="flex flex-wrap gap-4 text-sm text-blue-600 mt-1">
-                      {pub.link && (
-                        <a
-                          href={pub.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline hover:text-blue-800 transition-colors"
-                        >
-                          📄 Paper
-                        </a>
-                      )}
-                      {pub.repo && (
-                        <a
-                          href={pub.repo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline hover:text-blue-800 transition-colors"
-                        >
-                          💻 Code
-                        </a>
-                      )}
-                      {pub.project && (
-                        <a
-                          href={pub.project}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline hover:text-blue-800 transition-colors"
-                        >
-                          🌐 Project
-                        </a>
-                      )}
-                      {pub.slides && (
-                        <a
-                          href={pub.slides}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline hover:text-blue-800 transition-colors"
-                        >
-                          📽️ Slides
-                        </a>
-                      )}
+                    {/* 链接区域 */}
+                    <div className="flex flex-wrap gap-4 text-sm">
+                      {pub.link && <PublicationLink href={pub.link} icon="📄" label="Paper" />}
+                      {pub.repo && <PublicationLink href={pub.repo} icon="💻" label="Repo" />}
+                      {pub.project && <PublicationLink href={pub.project} icon="📁" label="Project" />}
+                      {pub.slides && <PublicationLink href={pub.slides} icon="🎤" label="Slides" />}
                     </div>
+
                   </div>
                 </div>
               </Section>
