@@ -19,7 +19,10 @@ export default function TalkList(talks: Talk[]) {
   return talks
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .map((talk) => (
-      <li key={talk.title + talk.conference + talk.date}>
+      <li
+        key={talk.title + talk.conference + talk.date}
+        className={talk.keynote ? "border-2 border-yellow-400 bg-yellow-50 rounded-xl p-4" : ""}
+      >
         <Section heading={formatDate(talk.date)}>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-1">
