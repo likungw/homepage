@@ -3,8 +3,8 @@ import Link from "./Link";
 import { formatDate } from "../lib/formatdate";
 
 export interface Talk {
-  title: string;
-  conference: string;
+  title?: string;
+  conference?: string;
   date: string;
   location: string;
   link?: string;
