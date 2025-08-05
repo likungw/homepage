@@ -113,16 +113,17 @@ export default function Talks() {
         {filteredFuture.length > 0 && (
           <div className="flex flex-col gap-4">
             <h2>Upcoming</h2>
-            <ul className="flex flex-col gap-4">{TalkList(filteredFuture)}</ul>
+            <TalkList talks={filteredFuture} />
           </div>
         )}
 
         {filteredPast.length > 0 && (
           <div className="flex flex-col gap-4">
             <h2>Past</h2>
-            <ul className="flex flex-col gap-4">{TalkList(filteredPast)}</ul>
+            <TalkList talks={filteredPast} />
           </div>
         )}
+
       </div>
     </>
   );
