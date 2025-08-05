@@ -11,7 +11,7 @@ export interface Talk {
   invited?: string;
   keynote?: boolean;
   discussant?: boolean;
-}
+} 
 
 export default function TalkList(talks: Talk[]) {
   return (
