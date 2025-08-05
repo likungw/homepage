@@ -36,7 +36,7 @@ export function PublicationListGrouped(pubs: Publication[]) {
     return (
       <li key={year}>
         <h2 className="text-xl font-bold mt-6 mb-2">{year}</h2>
-        <ul className="flex flex-col gap-8">
+        <ul className="flex flex-col gap-4">
           {yearPubs.map(pub => {
             return <PublicationCard key={pub.title + pub.journal + pub.date} pub={pub} />;
           })}
