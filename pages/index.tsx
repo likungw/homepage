@@ -16,7 +16,7 @@ import PostList from "components/postlist";
 import { Photo } from "components/Gallery";
 import headshot from "../public/headshot.jpg";
 import { FullName } from "./about";
-import { TalkList } from "./talks";
+import TalkList from "../components/TalkList";
 import Award from "../components/Award";
 import { talks } from "../data/talks";
 import { IconExternalLink } from "../components/Icons";
