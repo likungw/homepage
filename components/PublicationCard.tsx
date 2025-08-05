@@ -25,10 +25,12 @@ export default function PublicationCard({ pub }: Props) {
         <div className="flex flex-col gap-1">
           <h3>{pub.title}</h3>
           <p className="text-secondary">{authorsText}</p>
-          {pub.award && (
+          {pub.award ? (
             <p className="text-secondary font-semibold">
-              🏆 <Award award={pub.award} />
+               {pub.journal}🏆 ({pub.award})
             </p>
+          ) : (
+            <p className="text-secondary">{pub.journal}</p>
           )}
           <p className="text-secondary">{pub.journal}</p>
           <div className="flex flex-wrap gap-4 text-sm">
