@@ -8,79 +8,27 @@ import { FullName, SiteURL } from "./about";
 import { formatDate } from "../lib/formatdate";
 import { talks } from "../data/talks";
 import Tooltip from "../components/Tooltip";
+import TalkList, { Talk } from "../components/TalkList"; // ✅ 新增这一行
 
 const seoTitle = `Talks | ${FullName}`;
 const seoDesc = `Invited talks and presentations.`;
 
-interface Talk {
-  title: string;
-  conference: string;
-  date: string;
-  location: string;
-  link?: string;
-  invited?: string;
-  keynote?: boolean;
-  discussant?: boolean;
-}
-
-// 分类
 const ALL_TALKS = "All Talks";
 const INVITED_TALKS = "Invited Talks";
 const KEYNOTE_TALKS = "Keynotes";
+
 const pastTalks = talks.filter((talk) => new Date(talk.date) < new Date());
 const futureTalks = talks.filter((talk) => new Date(talk.date) > new Date());
 
-// 下拉框选项：按年份倒序排列
 const yearList = Array.from(new Set(talks.map(t => new Date(t.date).getFullYear().toString()))).sort((a, b) => Number(b) - Number(a));
 const filterOptions = [ALL_TALKS, INVITED_TALKS, KEYNOTE_TALKS, ...yearList];
 
-// 筛选器
 function isMatch(talk: Talk, selected: string): boolean {
   if (selected === ALL_TALKS) return true;
   if (selected === INVITED_TALKS) return !!talk.invited;
   if (selected === KEYNOTE_TALKS) return !!talk.keynote;
   if (!isNaN(Number(selected))) return new Date(talk.date).getFullYear().toString() === selected;
   return talk.conference === selected;
-}
-
-// Talk 渲染列表
-function TalkList(talks: Talk[]) {
-  return talks
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .map((talk) => (
-      <li key={talk.title + talk.conference + talk.date}>
-        <Section heading={formatDate(talk.date)}>
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <h3>
-                {talk.discussant && <span className="text-secondary">Discussant for </span>}
-                {talk.keynote && <span className="font-semibold text-highlight">Keynote: </span>}
-                {talk.title}
-              </h3>
-
-              <p className="text-secondary">
-                {talk.conference}
-                {(talk.invited || talk.discussant || talk.keynote) && (
-                  <Tooltip text="Invited / Discussant / Keynote">
-                    <span><sup>*</sup></span>
-                  </Tooltip>
-                )}
-              </p>
-
-              <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                {talk.invited && <span>Invited by {talk.invited}</span>}
-                {talk.location && <span>{talk.location}</span>}
-                {talk.link && (
-                  <Link href={talk.link} underline>
-                    Read More
-                  </Link>
-                )}
-              </div>
-            </div>
-          </div>
-        </Section>
-      </li>
-    ));
 }
 
 export default function Talks() {
@@ -118,7 +66,6 @@ export default function Talks() {
           </p>
         </div>
 
-        {/* 下拉框 */}
         <div style={{ zIndex: 5 } as React.CSSProperties}>
           <Listbox value={selectedFilter} onChange={setSelectedFilter}>
             <div className="relative">
@@ -165,7 +112,6 @@ export default function Talks() {
           </Listbox>
         </div>
 
-        {/* 即将进行的 Talks */}
         {filteredFuture.length > 0 && (
           <div className="flex flex-col gap-4">
             <h2>Upcoming</h2>
@@ -173,7 +119,6 @@ export default function Talks() {
           </div>
         )}
 
-        {/* 过去的 Talks */}
         {filteredPast.length > 0 && (
           <div className="flex flex-col gap-4">
             <h2>Past</h2>
