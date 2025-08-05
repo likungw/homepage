@@ -59,15 +59,25 @@ export function PublicationListGrouped(pubs: Publication[]) {
                       </p>
                     )}
                     <p className="text-secondary">{pub.journal}</p>
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-4 text-sm text-blue-600">
                       {pub.link && (
-                        <Link href={pub.link} underline>
-                          Paper
+                        <Link href={pub.link} underline target="_blank" rel="noopener noreferrer">
+                          📄 Paper
                         </Link>
                       )}
                       {pub.repo && (
-                        <Link href={pub.repo} underline>
-                          Code
+                        <Link href={pub.repo} underline target="_blank" rel="noopener noreferrer"> 
+                          💻 Code
+                        </Link>
+                      )}
+                      {pub.project && (
+                        <Link href={pub.project} underline target="_blank" rel="noopener noreferrer">
+                          🌐 Project
+                        </Link>
+                      )}
+                      {pub.slides && (
+                        <Link href={pub.slides} underline target="_blank" rel="noopener noreferrer">
+                          📽️ Slides
                         </Link>
                       )}
                     </div>

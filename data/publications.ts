@@ -6,7 +6,7 @@ export const publications: Publication[] = [
     authors: "Qi Li, Kun Li*, Haozhi Han, Liang Yuan, Junshi Chen, Yunquan Zhang, Yifeng Chen, Hong An, Ting Cao, Mao Yang",
     journal: "SC 2025 (Best Student Paper Award Finalist)",
     date: "2025",
-    link: "",
+    link: "https://arxiv.org/abs/2506.22969",
     corresponding: true,
     award: "Best Student Paper Award Finalist"
   },

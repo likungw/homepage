@@ -5,6 +5,8 @@ export interface Publication {
   date: string;          // 发表日期
   link?: string;         // 论文链接
   repo?: string;         // 代码仓库链接
+  slides?: string;   // 可选
+  project?: string;   // 可选
   award?: string;        // 奖项（如果有）
   corresponding?: boolean; // 是否为通信作者
 }
