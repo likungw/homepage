@@ -11,16 +11,16 @@ export interface Talk {
   invited?: string;
   keynote?: boolean;
   discussant?: boolean;
-} 
+}
 
-export default function TalkList(talks: Talk[]) {
+export default function TalkList({ talks }: { talks: Talk[] }) {
   return (
-    <ul className="space-y-4"> {/* 控制条目间距 */}
+    <ul className="space-y-4">
       {talks
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
         .map((talk) => (
           <li
-            key={talk.title + talk.conference + talk.date}
+            key={`${talk.title ?? ""}${talk.conference ?? ""}${talk.date}`}
             className={`rounded-xl p-4 border ${
               talk.keynote ? "border-yellow-400 bg-yellow-50" : "border-muted"
             }`}
