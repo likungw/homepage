@@ -193,7 +193,7 @@ export default function PublicationsPage() {
         </div>
 
         {/* 按年份分组渲染论文 */}
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4"> 
           {PublicationListGrouped(displayedPublications)}
         </ul>
       </div>
