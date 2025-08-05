@@ -4,7 +4,7 @@ export const publications: Publication[] = [
   {
     title: "SparStencil: Retargeting Sparse Tensor Cores to Scientific Stencil Computations via Structured Sparsity Transformation",
     authors: "Qi Li, Kun Li*, Haozhi Han, Liang Yuan, Junshi Chen, Yunquan Zhang, Yifeng Chen, Hong An, Ting Cao, Mao Yang",
-    journal: "SC 2025 (Best Student Paper Award Finalist)",
+    journal: "SC 2025",
     date: "2025",
     link: "https://arxiv.org/abs/2506.22969",
     corresponding: true,
@@ -59,7 +59,7 @@ export const publications: Publication[] = [
   {
     title: "LoRAStencil: Low-Rank Adaptation of Stencil Computation on Tensor Cores",
     authors: "Yiwei Zhang, Kun Li*, Liang Yuan, Jiawen Cheng, Yunquan Zhang, Ting Cao, Mao Yang",
-    journal: "SC 2024 (Reproducibility Challenge Finalist)",
+    journal: "SC 2024",
     date: "2024",
     link: "",
     corresponding: true,
@@ -83,7 +83,7 @@ export const publications: Publication[] = [
   {
     title: "ConvStencil: Transform Stencil Computation to Matrix Multiplication on Tensor Cores",
     authors: "Yuetao Chen, Kun Li*, Yuhao Wang, Donglin Bai, Lei Wang, Lingxiao Ma, Liang Yuan, Yunquan Zhang, Ting Cao, Mao Yang",
-    journal: "PPoPP 2024 (Best Paper Award)",
+    journal: "PPoPP 2024",
     date: "2024",
     link: "",
     corresponding: true,
