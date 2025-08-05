@@ -9,6 +9,7 @@ import { Listbox, Transition } from "@headlessui/react";
 import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/24/outline";
 import { Publication } from "../types/publication";
 import PublicationLink from "../components/PublicationLink";
+import PublicationCard from "../components/PublicationCard";
 
 
 
@@ -37,40 +38,7 @@ export function PublicationListGrouped(pubs: Publication[]) {
         <h2 className="text-xl font-bold mt-6 mb-2">{year}</h2>
         <ul className="flex flex-col gap-8">
           {yearPubs.map(pub => {
-            // 如果是通信作者，就在作者列表中 Kun Li 后加 *
-            let authorsText = pub.authors;
-            if (pub.corresponding) {
-              authorsText = authorsText.replace(/Kun Li(?!\*)/, "Kun Li*");
-            }
-
-            return (
-              <Section
-                key={pub.title + pub.journal + pub.date}
-                heading={pub.date}
-                className={pub.award ? "border-l-4 border-yellow-400 bg-yellow-50 p-4 rounded-lg" : ""}
-              >
-                <div className="flex flex-col gap-5">
-                  <div className="flex flex-col gap-1">
-                    <h3>{pub.title}</h3>
-                    <p className="text-secondary">{authorsText}</p>
-                    {pub.award && (
-                      <p className="text-secondary font-semibold">
-                        🏆 <Award award={pub.award} />
-                      </p>
-                    )}
-                    <p className="text-secondary">{pub.journal}</p>
-                    {/* 链接区域 */}
-                    <div className="flex flex-wrap gap-4 text-sm">
-                      {pub.link && <PublicationLink href={pub.link} icon="📄" label="Paper" />}
-                      {pub.repo && <PublicationLink href={pub.repo} icon="💻" label="Repo" />}
-                      {pub.project && <PublicationLink href={pub.project} icon="📁" label="Project" />}
-                      {pub.slides && <PublicationLink href={pub.slides} icon="🎤" label="Slides" />}
-                    </div>
-
-                  </div>
-                </div>
-              </Section>
-            );
+            return <PublicationCard key={pub.title + pub.journal + pub.date} pub={pub} />;
           })}
         </ul>
       </li>
