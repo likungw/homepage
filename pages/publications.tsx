@@ -59,26 +59,46 @@ export function PublicationListGrouped(pubs: Publication[]) {
                       </p>
                     )}
                     <p className="text-secondary">{pub.journal}</p>
-                    <div className="flex flex-wrap gap-4 text-sm text-blue-600">
+                    <div className="flex flex-wrap gap-4 text-sm text-blue-600 mt-1">
                       {pub.link && (
-                        <Link href={pub.link} underline target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={pub.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline hover:text-blue-800 transition-colors"
+                        >
                           📄 Paper
-                        </Link>
+                        </a>
                       )}
                       {pub.repo && (
-                        <Link href={pub.repo} underline target="_blank" rel="noopener noreferrer"> 
+                        <a
+                          href={pub.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline hover:text-blue-800 transition-colors"
+                        >
                           💻 Code
-                        </Link>
+                        </a>
                       )}
                       {pub.project && (
-                        <Link href={pub.project} underline target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={pub.project}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline hover:text-blue-800 transition-colors"
+                        >
                           🌐 Project
-                        </Link>
+                        </a>
                       )}
                       {pub.slides && (
-                        <Link href={pub.slides} underline target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={pub.slides}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline hover:text-blue-800 transition-colors"
+                        >
                           📽️ Slides
-                        </Link>
+                        </a>
                       )}
                     </div>
                   </div>
