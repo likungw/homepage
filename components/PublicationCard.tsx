@@ -27,7 +27,13 @@ export default function PublicationCard({ pub }: Props) {
           <p className="text-secondary">{authorsText}</p>
           {pub.award && (
             <p className="text-secondary font-semibold">
-              🏆 <Award award={pub.award} />
+              {pub.journal}
+              {pub.award && (
+                <>
+                  {" "}
+                  🏆 <span className="font-semibold text-secondary">❬{pub.award}❭</span>
+                </>
+              )}
             </p>
           )}
           <p className="text-secondary">{pub.journal}</p>
