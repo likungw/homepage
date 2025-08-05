@@ -6,15 +6,11 @@ import { ChevronUpDownIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { NextSeo } from "next-seo";
 import { FullName, SiteURL } from "./about";
 import { formatDate } from "../lib/formatdate";
-import Award from "../components/Award";
 import { talks } from "../data/talks";
 import Tooltip from "../components/Tooltip";
 
 const seoTitle = `Talks | ${FullName}`;
 const seoDesc = `Invited talks and presentations.`;
-
-const pastTalks = talks.filter((talk) => new Date(talk.date) < new Date());
-const futureTalks = talks.filter((talk) => new Date(talk.date) > new Date());
 
 interface Talk {
   title: string;
@@ -22,40 +18,55 @@ interface Talk {
   date: string;
   location: string;
   link?: string;
-  award?: string;
   invited?: string;
+  keynote?: boolean;
   discussant?: boolean;
 }
 
-export function TalkList(talks: Talk[]) {
+// 分类
+const ALL_TALKS = "All Talks";
+const INVITED_TALKS = "Invited Talks";
+const KEYNOTE_TALKS = "Keynotes";
+const pastTalks = talks.filter((talk) => new Date(talk.date) < new Date());
+const futureTalks = talks.filter((talk) => new Date(talk.date) > new Date());
+
+// 下拉框选项：按年份倒序排列
+const yearList = Array.from(new Set(talks.map(t => new Date(t.date).getFullYear().toString()))).sort((a, b) => Number(b) - Number(a));
+const filterOptions = [ALL_TALKS, INVITED_TALKS, KEYNOTE_TALKS, ...yearList];
+
+// 筛选器
+function isMatch(talk: Talk, selected: string): boolean {
+  if (selected === ALL_TALKS) return true;
+  if (selected === INVITED_TALKS) return !!talk.invited;
+  if (selected === KEYNOTE_TALKS) return !!talk.keynote;
+  if (!isNaN(Number(selected))) return new Date(talk.date).getFullYear().toString() === selected;
+  return talk.conference === selected;
+}
+
+// Talk 渲染列表
+function TalkList(talks: Talk[]) {
   return talks
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .map((talk) => (
       <li key={talk.title + talk.conference + talk.date}>
-        <Section heading={talk.date}>
+        <Section heading={formatDate(talk.date)}>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-1">
               <h3>
-                {talk.discussant && <p className="text-secondary">Discussant for</p>}
+                {talk.discussant && <span className="text-secondary">Discussant for </span>}
+                {talk.keynote && <span className="font-semibold text-highlight">Keynote: </span>}
                 {talk.title}
               </h3>
 
-              {talk.award && (
-                <p className="text-secondary">
-                  <Award award={talk.award} />
-                </p>
-              )}
-
               <p className="text-secondary">
                 {talk.conference}
-                {talk.invited && (
-                  <Tooltip text="Invited Talk">
+                {(talk.invited || talk.discussant || talk.keynote) && (
+                  <Tooltip text="Invited / Discussant / Keynote">
                     <span><sup>*</sup></span>
                   </Tooltip>
                 )}
               </p>
 
-              {/* ✅ Combined line for invited + location + link */}
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                 {talk.invited && <span>Invited by {talk.invited}</span>}
                 {talk.location && <span>{talk.location}</span>}
@@ -72,25 +83,15 @@ export function TalkList(talks: Talk[]) {
     ));
 }
 
-
-const ALL_TALKS = "All Talks";
-const INVITED_TALKS = "Invited Talks";
-
 export default function Talks() {
-  const [selectedConference, setSelectedConference] = useState(ALL_TALKS);
-  const conferences = [ALL_TALKS, INVITED_TALKS, ...new Set(talks.flatMap((talk) => talk.invited ? [] : talk.conference))];
+  const [selectedFilter, setSelectedFilter] = useState(ALL_TALKS);
 
   const totalTalks = talks.length;
-  const invitedTalksCount = talks.filter(talk => talk.invited).length;
-  const awardsCount = talks.filter(talk => talk.award).length;
+  const invitedCount = talks.filter(t => t.invited).length;
+  const keynoteCount = talks.filter(t => t.keynote).length;
 
-  const filteredFutureTalks = selectedConference && (selectedConference != ALL_TALKS)
-    ? futureTalks.filter(talk => talk.conference === selectedConference || (selectedConference === INVITED_TALKS && talk.invited))
-    : futureTalks;
-
-  const filteredPastTalks = selectedConference && (selectedConference != ALL_TALKS)
-    ? pastTalks.filter(talk => talk.conference === selectedConference || (selectedConference === INVITED_TALKS && talk.invited))
-    : pastTalks;
+  const filteredFuture = futureTalks.filter(talk => isMatch(talk, selectedFilter));
+  const filteredPast = pastTalks.filter(talk => isMatch(talk, selectedFilter));
 
   return (
     <>
@@ -108,35 +109,23 @@ export default function Talks() {
         }}
       />
       <div className="flex flex-col gap-10 md:gap-10">
-        <div className="">
+        <div>
           <h1>Talks & Discussions</h1>
-          <p
-            className="text-secondary"
-            style={{ "--index": 1 } as React.CSSProperties}
-          >
-            {totalTalks} Talks • {invitedTalksCount} Invited • {awardsCount} Awards
+          <p className="text-secondary">
+            {totalTalks} Talks • {invitedCount} Invited • {keynoteCount} Keynotes
             <br />
-            Invited and discussant talks are marked with *
+            Invited, keynote, and discussant talks are marked with *
           </p>
         </div>
-        <div
-          style={{ zIndex: 5 } as React.CSSProperties}
-          className=""
-        >
-          <Listbox
-            value={selectedConference}
-            onChange={setSelectedConference}
-          >
+
+        {/* 下拉框 */}
+        <div style={{ zIndex: 5 } as React.CSSProperties}>
+          <Listbox value={selectedFilter} onChange={setSelectedFilter}>
             <div className="relative">
-              <Listbox.Button className="p-2 w-full overflow-auto max-h-60 w-42 rounded-xl backdrop-blur-lg ring-1 ring-gray-400 ring-opacity-20 text-sm focus:outline-none hover:bg-secondaryA transition-all">
-                <span className="block truncate">
-                  {selectedConference}
-                </span>
+              <Listbox.Button className="p-2 w-full max-h-60 rounded-xl backdrop-blur-lg ring-1 ring-gray-400 ring-opacity-20 text-sm focus:outline-none hover:bg-secondaryA transition-all">
+                <span className="block truncate">{selectedFilter}</span>
                 <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  <ChevronUpDownIcon
-                    className="w-5 h-5 text-gray-400"
-                    aria-hidden="true"
-                  />
+                  <ChevronUpDownIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
                 </span>
               </Listbox.Button>
               <Transition
@@ -147,28 +136,22 @@ export default function Talks() {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Listbox.Options className="absolute mt-2 w-full p-2 overflow-auto text-base origin-top-right shadow-lg max-h-60 w-42 rounded-xl bg-blur backdrop-blur-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm scroll-smooth no-scrollbar">
-                  {conferences.map(conference => (
+                <Listbox.Options className="absolute mt-2 w-full p-2 overflow-auto text-base origin-top-right shadow-lg max-h-60 rounded-xl bg-blur backdrop-blur-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm scroll-smooth no-scrollbar">
+                  {filterOptions.map(option => (
                     <Listbox.Option
-                      key={conference}
-                      value={conference}
+                      key={option}
+                      value={option}
                       className={({ active }) =>
-                        `relative cursor-default select-none py-2 pl-10 pr-4 rounded-md ${active ? "bg-secondaryA" : "text-primary"
-                        }`
+                        `relative cursor-default select-none py-2 pl-10 pr-4 rounded-md ${active ? "bg-secondaryA" : "text-primary"}`
                       }
                     >
                       {({ selected }) => (
                         <>
-                          <span
-                            className={`${selected ? 'font-medium' : 'font-normal'
-                              } block truncate`}
-                          >
-                            {conference}
+                          <span className={`${selected ? 'font-medium' : 'font-normal'} block truncate`}>
+                            {option}
                           </span>
                           {selected && (
-                            <span
-                              className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary"
-                            >
+                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary">
                               <CheckIcon className="w-5 h-5" aria-hidden="true" />
                             </span>
                           )}
@@ -181,26 +164,20 @@ export default function Talks() {
             </div>
           </Listbox>
         </div>
-        {filteredFutureTalks.length > 0 && (
-          <div
-            className="flex flex-col gap-4"
-            style={{ "--index": 2 } as React.CSSProperties}
-          >
+
+        {/* 即将进行的 Talks */}
+        {filteredFuture.length > 0 && (
+          <div className="flex flex-col gap-4">
             <h2>Upcoming</h2>
-            <ul className="flex flex-col gap-8">
-              {TalkList(filteredFutureTalks)}
-            </ul>
+            <ul className="flex flex-col gap-8">{TalkList(filteredFuture)}</ul>
           </div>
         )}
-        {filteredPastTalks.length > 0 && (
-          <div
-            className="flex flex-col gap-4"
-            style={{ "--index": 2 } as React.CSSProperties}
-          >
+
+        {/* 过去的 Talks */}
+        {filteredPast.length > 0 && (
+          <div className="flex flex-col gap-4">
             <h2>Past</h2>
-            <ul className="flex flex-col gap-8">
-              {TalkList(filteredPastTalks)}
-            </ul>
+            <ul className="flex flex-col gap-8">{TalkList(filteredPast)}</ul>
           </div>
         )}
       </div>
