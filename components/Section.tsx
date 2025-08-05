@@ -17,7 +17,7 @@ export default function Section({
   return (
     <section
       className={cn(
-        "grid grid-cols-1 md:grid-cols-[120px_1fr] gap-4", // 小屏单列，md 以上两列
+        "grid grid-cols-1 md:grid-cols-[120px_1fr] gap-4 p-4 rounded-md border border-gray-200", // 小屏单列，md 以上两列
         className
       )}
     >
