@@ -32,11 +32,6 @@ export default function TalkList(talks: Talk[]) {
               </h3>
               <p className="text-secondary">
                 {talk.conference}
-                {(talk.invited || talk.discussant || talk.keynote) && (
-                  <Tooltip text="Invited / Discussant / Keynote">
-                    <span><sup>*</sup></span>
-                  </Tooltip>
-                )}
               </p>
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                 {talk.invited && <span>Invited by {talk.invited}</span>}

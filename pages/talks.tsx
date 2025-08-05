@@ -61,8 +61,6 @@ export default function Talks() {
           <h1>Talks & Discussions</h1>
           <p className="text-secondary">
             {totalTalks} Talks • {invitedCount} Invited • {keynoteCount} Keynotes
-            <br />
-            Invited, keynote, and discussant talks are marked with *
           </p>
         </div>
 
