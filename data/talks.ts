@@ -4,7 +4,7 @@ export const talks = [
     title: "Towards E-Level Scalable Scientific Intelligence Systems",
     location: "Zhejiang University",
     date: "Dec 20, 2024",
-    invited: kkk,
+    invited: "kkk",
     discussant: true
   },
   {
@@ -21,7 +21,7 @@ export const talks = [
     location: "Hong Kong, China",
     date: "Nov 2, 2023",
     link: "https://www.hkubs.hku.hk/event/how-large-language-model-in-creative-work-the-role-of-collaboration-modality-and-user-expertise/",
-    invited: kkk
+    invited: "kkk"
   },
   {
     conference: "CUHK Business School",
@@ -29,7 +29,7 @@ export const talks = [
     location: "Hong Kong, China",
     date: "Oct 30, 2023",
     link: "https://www.bschool.cuhk.edu.hk/events/large-language-model-in-creative-work-the-role-of-collaboration-modality-and-user-expertise/",
-    invited: kkk
+    invited: "kkk"
   },
   {
     conference: "Workshop on Information Systems and Economics (WISE)",
