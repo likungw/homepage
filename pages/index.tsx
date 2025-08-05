@@ -96,7 +96,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
             style={{ "--index": 2 } as React.CSSProperties}
           >
             <h2>Upcoming Talks</h2>
-            <ul className="flex flex-col gap-8">{TalkList(futureTalks)}</ul>
+            <TalkList talks={futureTalks} />
           </div>
         )}
 
