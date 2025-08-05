@@ -8,7 +8,7 @@ import { publications } from "../data/publications";
 import { Listbox, Transition } from "@headlessui/react";
 import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/24/outline";
 import { Publication } from "../types/publication";
-import PublicationLink from "@/components/PublicationLink";
+import PublicationLink from "../components/PublicationLink";
 
 
 
