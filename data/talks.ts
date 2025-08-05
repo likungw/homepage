@@ -90,14 +90,20 @@ export const talks = [
     conference: "The Young Scholars Forum",
     location: "ICT, CAS",
     date: "Apr 26, 2023",  
-    invited: "Prof. Liang Yuan",
-    link: "https://mp.weixin.qq.com/s/Zy24yLjyIsuGfD_MYn0C1A"
+    invited: "Prof. Liang Yuan"
   },
   { 
     conference: "The Young Scholars Forum",
     location: "Shandong University",
-    date: "Apr 26, 2023",  
+    date: "Mar 23,, 2023",  
     invited: "Prof. Liang Yuan",
-    link: "https://mp.weixin.qq.com/s/Zy24yLjyIsuGfD_MYn0C1A"
+    link: "http://www.tsxt.sdu.edu.cn/info/1010/5991.htm"
+  },
+  { 
+    conference: "CCF HPC China 2022",
+    location: "online",
+    date: "Dec 15, 2022",  
+    invited: "Prof. Jidong Zhai",
+    link: "https://mp.weixin.qq.com/s/naA8OFoUayQV1akx7vQePg"
   },
 ];
