@@ -1,66 +1,11 @@
 export const talks = [
   {
     conference: "Workshop on Information Technologies and Systems (WITS)",
-    title: "The Implications of Review Display Policies for Platforms' Incentives to Tackle Fake Reviews: A Game-Theoretic Analysis (by Zhe Wang, Dengpan Liu, Subodha Kumar)",
-    location: "Bangkok, Thailand",
+    title: "Towards E-Level Scalable Scientific Intelligence Systems",
+    location: "Zhejiang University",
     date: "Dec 20, 2024",
     invited: true,
     discussant: true
-  },
-  {
-    conference: "ISPOC",
-    title: "Large Language Model In Creative Work",
-    location: "Online",
-    date: "Jul 25, 2024",
-    invited: true
-  },
-  {
-    conference: "Annual AI in Management (AIM) Conference",
-    title: "Large Language Model In Creative Work",
-    location: "Los Angeles, California",
-    date: "Mar 15, 2024"
-  },
-  {
-    conference: "Workshop on Information Technologies and Systems (WITS)",
-    title: "Design Considerations of Information Systems Artifacts and Digital Platforms",
-    location: "Online",
-    award: "Best Dissertation Award",
-    date: "Dec 13, 2023"
-  },
-  {
-    conference: "University of California, Davis",
-    title: "Large Language Model In Creative Work",
-    location: "Davis, California",
-    date: "Dec 8, 2023",
-    invited: true
-  },
-  {
-    conference: "University of Rochester",
-    title: "Large Language Model In Creative Work",
-    location: "Rochester, New York",
-    date: "Dec 11, 2023",
-    invited: true
-  },
-  {
-    conference: "Johns Hopkins University",
-    title: "Large Language Model In Creative Work",
-    location: "Baltimore, Maryland",
-    date: "Dec 5, 2023",
-    invited: true
-  },
-  {
-    conference: "Northeastern University",
-    title: "Large Language Model In Creative Work",
-    location: "Boston, Massachusetts",
-    date: "Nov 21, 2023",
-    invited: true
-  },
-  {
-    conference: "University of Texas at Dallas",
-    title: "Large Language Model In Creative Work",
-    location: "Dallas, Texas",
-    date: "Nov 29, 2023",
-    invited: true
   },
   {
     conference: "Workshop on e-Business (WeB)",

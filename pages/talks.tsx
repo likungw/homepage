@@ -23,7 +23,7 @@ interface Talk {
   location: string;
   link?: string;
   award?: string;
-  invited?: boolean;
+  invited?: string;
   discussant?: boolean;
 }
 
@@ -39,11 +39,13 @@ export function TalkList(talks: Talk[]) {
                 {talk.discussant && <p className="text-secondary">Discussant for</p>}
                 {talk.title}
               </h3>
-              {talk.award &&
+
+              {talk.award && (
                 <p className="text-secondary">
                   <Award award={talk.award} />
                 </p>
-              }
+              )}
+
               <p className="text-secondary">
                 {talk.conference}
                 {talk.invited && (
@@ -52,16 +54,24 @@ export function TalkList(talks: Talk[]) {
                   </Tooltip>
                 )}
               </p>
-              <p className="text-secondary">{talk.location}</p>
-              {talk.link && <Link href={`${talk.link}`} underline>
-                Read More
-              </Link>}
+
+              {/* ✅ Combined line for invited + location + link */}
+              <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                {talk.invited && <span>Invited by {talk.invited}</span>}
+                {talk.location && <span>{talk.location}</span>}
+                {talk.link && (
+                  <Link href={talk.link} underline>
+                    Read More
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </Section>
       </li>
-    ))
+    ));
 }
+
 
 const ALL_TALKS = "All Talks";
 const INVITED_TALKS = "Invited Talks";
