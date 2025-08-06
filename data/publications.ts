@@ -23,7 +23,7 @@ export const publications: Publication[] = [
     authors: "Tuowei Wang, Kun Li*, Donglin Bai, Fusong Ju, Leo Xia, Ju Ren, Yaoxue Zhang, Ting Cao, Mao Yang",
     journal: "To be appeared",
     date: "2025",
-    link: "",
+    link: "https://arxiv.org/abs/2412.13203",
     corresponding: true
   },
   {
@@ -31,21 +31,21 @@ export const publications: Publication[] = [
     authors: "Tuowei Wang, Xingyu Chen, Kun Li, Ting Cao, Ju Ren, Yaoxue Zhang",
     journal: "ATC 2025",
     date: "2025",
-    link: ""
+    link: "https://www.usenix.org/system/files/atc25-wang-tuowei.pdf"
   },
   {
     title: "Neuralink: Fast LLM Inference on Smartphones with Neuron Co-Activation Linking",
     authors: "Tuowei Wang, Ruwen Fan, Minxing Huang, Zixu Hao, Kun Li, Ting Cao, Youyou Lu, Yaoxue Zhang, Ju Ren",
     journal: "ASPLOS 2025",
     date: "2025",
-    link: ""
+    link: "https://arxiv.org/abs/2410.19274"
   },
   {
     title: "FlashFFTStencil: Bridging Fast Fourier Transforms to Memory-Efficient Stencil Computations on Tensor Core Units",
     authors: "Haozhi Han, Kun Li*, Wei Cui, Donglin Bai, Yiwei Zhang, Liang Yuan, Yifeng Chen, Yunquan Zhang, Ting Cao, Mao Yang",
     journal: "PPoPP 2025",
     date: "2025",
-    link: "",
+    link: "../pdf/ppopp25_FlashFFTStencil.pdf",
     corresponding: true
   },
   {
@@ -53,7 +53,7 @@ export const publications: Publication[] = [
     authors: "Yiwei Zhang, Kun Li*, Liang Yuan, Haozhi Han, Yunquan Zhang, Ting Cao, Mao Yang",
     journal: "PPoPP 2025",
     date: "2025",
-    link: "",
+    link: "../pdf/ppopp25_Jigsaw.pdf",
     corresponding: true
   },
   {
@@ -61,7 +61,7 @@ export const publications: Publication[] = [
     authors: "Yiwei Zhang, Kun Li*, Liang Yuan, Jiawen Cheng, Yunquan Zhang, Ting Cao, Mao Yang",
     journal: "SC 2024",
     date: "2024",
-    link: "",
+    link: "../pdf/sc24_lorastencil.pdf",
     corresponding: true,
     award: "Reproducibility Challenge Finalist"
   },
@@ -70,7 +70,7 @@ export const publications: Publication[] = [
     authors: "Tuowei Wang, Kun Li*, Zixu Hao, Donglin Bai, Ju Ren, Yaoxue Zhang, Ting Cao, Mao Yang",
     journal: "SC 2024",
     date: "2024",
-    link: "",
+    link: "../pdf/sc24_longexposure.pdf",
     corresponding: true
   },
   {
@@ -85,7 +85,7 @@ export const publications: Publication[] = [
     authors: "Yuetao Chen, Kun Li*, Yuhao Wang, Donglin Bai, Lei Wang, Lingxiao Ma, Liang Yuan, Yunquan Zhang, Ting Cao, Mao Yang",
     journal: "PPoPP 2024",
     date: "2024",
-    link: "",
+    link: "../pdf/ppopp24_ConvStencil.pdf",
     corresponding: true,
     award: "Best Paper Award"
   },
@@ -122,42 +122,42 @@ export const publications: Publication[] = [
     authors: "Kun Li, Liang Yuan, Yunquan Zhang, Yue Yue, Hang Cao",
     journal: "IPDPS 2022",
     date: "2022",
-    link: ""
+    link: "https://arxiv.org/pdf/2103.08825"
   },
   {
     title: "An Accurate and Efficient Large-scale Regression Method through Best Friend Clustering",
     authors: "Kun Li, Liang Yuan, Yunquan Zhang, Gongwei Chen",
     journal: "TPDS 2022",
     date: "2022",
-    link: ""
+    link: "../pdf/An_Accurate_and_Efficient_Large-Scale_Regression_Method_Through_Best_Friend_Clustering.pdf"
   },
   {
     title: "Reducing Redundancy in Data Organization and Arithmetic Calculation for Stencil Computations",
     authors: "Kun Li, Liang Yuan, Yunquan Zhang, Yue Yue",
     journal: "SC 2021",
     date: "2021",
-    link: ""
+    link: "https://dl.acm.org/doi/pdf/10.1145/3458817.3476154"
   },
   {
     title: "Temporal Vectorization for Stencils",
     authors: "Liang Yuan, Hang Cao, Yunquan Zhang, Kun Li, Pengqi Lu, Yue Yue",
     journal: "SC 2021",
     date: "2021",
-    link: ""
+    link: "https://dl.acm.org/doi/pdf/10.1145/3458817.3476149"
   },
   {
     title: "OpenKMC: a KMC design for hundred-billion-atom simulation using millions of cores on Sunway Taihulight",
     authors: "Kun Li, Honghui Shang, Yunquan Zhang, Shigang Li, Baodong Wu, Dong Wang, Libo Zhang, Fang Li, Dexun Chen, Zhiqiang Wei",
     journal: "SC 2019",
     date: "2019",
-    link: ""
+    link: "https://dl.acm.org/doi/pdf/10.1145/3295500.3356165"
   },
   {
     title: "swMD: Performance Optimizations for Molecular Dynamics Simulation on Sunway Taihulight",
     authors: "Kun Li, Shigang Li, Bei Wang, Yifeng Chen, Yunquan Zhang",
     journal: "ISPA 2019",
     date: "2019",
-    link: ""
+    link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9047429"
   },
   {
     title: "FastNBL: fast neighbor lists establishment for molecular dynamics simulation based on bitwise operations",
