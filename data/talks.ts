@@ -16,7 +16,7 @@ export const talks: Talk[] = [
     link: "https://ccf.org.cn/hpcchina2025/schedule_d_2016",
     location: "Ordos, Inner Mongolia",
     date: "Aug 15, 2025",
-    invited: "Prof. Weifeng Liu, Prof. Guangming Tan",
+    invited: "Prof. Weifeng Liu@CUP, Prof. Guangming Tan@ICT,CAS",
     keynote: false
   },
   {
@@ -24,7 +24,7 @@ export const talks: Talk[] = [
     title: "The 9th Forum on Performance Modeling for High-Performance Computing (HPC)",
     link: "https://ccf.org.cn/hpcchina2025/schedule_d_2015",
     location: "Ordos, Inner Mongolia",
-    invited: "Prof. Jingwei Sun",
+    invited: "Prof. Jingwei Sun@USTC",
     date: "Aug 16, 2025",
     keynote: false
   },
@@ -34,14 +34,14 @@ export const talks: Talk[] = [
     link: "https://ccf.org.cn/hpcchina2025/schedule_d_2007",
     location: "Ordos, Inner Mongolia",
     date: "Aug 16, 2025",
-    invited: "Prof. Chun Huang",
+    invited: "Prof. Chun Huang@NUDT",
     keynote: false
   },
   {
     title: "Towards E-Level Scalable Scientific Intelligence Systems",
-    location: "Zhejiang University",
+    location: "Hangzhou, Zhejiang",
     date: "May 28, 2025",
-    invited: "Prof. Jiajun Bu",
+    invited: "Prof. Jiajun Bu@ZJU",
     link: "https://mp.weixin.qq.com/s/WdyWaX0u0Wd4HceLb1FBYQ",
     keynote: false
   },
@@ -51,22 +51,23 @@ export const talks: Talk[] = [
     link: "https://mp.weixin.qq.com/s/dby1KIRhbP-Yxm2NZNYsIQ",
     location: "Wuhu, Anhui",
     date: "May 25, 2025",
+    invited: "CCF TCHPC",
     keynote: false
   },
   {
     title: "Evolution of HPC Paradigm through Unified Matrix Computation: Computing the Future in the AI Era",
-    location: "University of Science and Technology of China (East Campus)",
+    location: "Hefei, Anhui",
     date: "Dec 23, 2024",
     link: "https://www.hkubs.hku.hk/event/how-large-language-model-in-creative-work-the-role-of-collaboration-modality-and-user-expertise/",
-    invited: "Prof. Honghui Shang",
+    invited: "Prof. Honghui Shang@USTC",
     keynote: false
   },
   {
     title: "Evolution of HPC Paradigm through Unified Matrix Computation: Computing the Future in the AI Era",
-    location: "University of Science and Technology of China (Gaoxin Campus)",
+    location: "Hefei, Anhui",
     date: "Dec 22, 2024",
     link: "https://cs.ustc.edu.cn/2024/1214/c14893a665361/page.htm",
-    invited: "Prof. Hong An",
+    invited: "Prof. Hong An@USTC",
     keynote: false
   },
   {
@@ -75,42 +76,42 @@ export const talks: Talk[] = [
     location: "Wuhan, Hubei",
     date: "Sep 25, 2024",
     link: "https://ccf.org.cn/hpcchina2024/speaker_2004",
-    invited: "Prof. Haibing Guan",
+    invited: "Prof. Haibing Guan@SJTU",
     keynote: true
   },
   {
     title: "A New High-Performance Computing Paradigm on Tensor Core Units",
-    location: "Lenovo Research",
+    location: "Beijing",
     date: "Sep 20, 2024",
-    invited: "Yan Li",
+    invited: "Yan Li@Lenovo Research",
     keynote: false
   },
   {
     title: "Evolving the HPC Paradigm with Unified Matrix Computation on AI Accelerators",
-    location: "CNIC, CAS",
+    location: "Beijing",
     date: "Aug 30, 2024",
-    invited: "Prof. Jue Wang",
+    invited: "Prof. Jue Wang@CNIC,CAS",
     keynote: false
   },
   {
     title: "Evolving the HPC Paradigm with Unified Matrix Computation on AI Accelerators",
-    location: "ICT, CAS",
+    location: "Beijing",
     date: "Aug 29, 2024",
-    invited: "Prof. En Shao",
+    invited: "Prof. En Shao@ICT,CAS",
     keynote: false
   },
   {
     title: "ConvStencil: Transform Stencil Computation to Matrix Multiplication on Tensor Cores",
-    location: "University of Rochester",
+    location: "online",
     date: "Nov 19, 2023",
-    invited: "Prof. Chen Ding",
+    invited: "Prof. Chen Ding@University of Rochester",
     keynote: false
   },
   {
     conference: "Star Roundtable",
     location: "University of Chinese Academy of Sciences",
     date: "Nov 18, 2023",
-    invited: "GuoMeng Studio",
+    invited: "GuoMeng Studio@UCAS",
     link: "https://mp.weixin.qq.com/s/u9cqTQ3iB-ESkQFMuO2U5A",
     keynote: false
   },
