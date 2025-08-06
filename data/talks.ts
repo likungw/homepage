@@ -133,22 +133,22 @@ export const talks: Talk[] = [
     conference: "CCF YEF 2023",
     location: "Wenzhou, Zhejiang",
     date: "May 18, 2023",
-    invited: "Prof. Jianfei Chen",
+    invited: "Prof. Jianfei Chen@THU",
     link: "https://mp.weixin.qq.com/s/Zy24yLjyIsuGfD_MYn0C1A",
     keynote: false
   },
   {
     conference: "The Young Scholars Forum",
-    location: "ICT, CAS",
+    location: "Beijing",
     date: "Apr 26, 2023",
-    invited: "Prof. Liang Yuan",
+    invited: "Prof. Liang Yuan@ICT,CAS",
     keynote: false
   },
   {
     conference: "The Young Scholars Forum",
-    location: "Shandong University",
+    location: "Qingdao, Shandong",
     date: "Mar 23, 2023",
-    invited: "Prof. Haisen Zhao",
+    invited: "Prof. Haisen Zhao@SDU",
     link: "http://www.tsxt.sdu.edu.cn/info/1010/5991.htm",
     keynote: false
   },
@@ -156,7 +156,7 @@ export const talks: Talk[] = [
     conference: "CCF HPC China 2022",
     location: "online",
     date: "Dec 15, 2022",
-    invited: "Prof. Jidong Zhai",
+    invited: "Prof. Jidong Zhai@THU",
     link: "https://mp.weixin.qq.com/s/naA8OFoUayQV1akx7vQePg",
     keynote: false
   }
