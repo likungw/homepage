@@ -34,5 +34,10 @@ export const phdStudents: Person[] = [
     name: "Ruge Zhang",
     description: "UCAS",
     image: "/schools/cas.png",
+  },
+  {
+    name: "Xiang Zhao",
+    description: "OUC",
+    image: "/schools/ouc.png",
   }
 ];
