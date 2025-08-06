@@ -14,5 +14,20 @@ export const phdStudents: Person[] = [
     name: "Qi Li",
     description: "USTC",
     image: "/schools/cas.png",
+  },
+  {
+    name: "Haozhi Han",
+    description: "PKU",
+    image: "/schools/pku.png",
+  },
+  {
+    name: "Luhan Wang",
+    description: "PKU",
+    image: "/schools/pku.png",
+  },
+  {
+    name: "Ruge Zhang",
+    description: "UCAS",
+    image: "/schools/cas.png",
   }
 ];
