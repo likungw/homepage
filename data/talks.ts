@@ -111,7 +111,7 @@ export const talks: Talk[] = [
     conference: "The Young Scholars Forum",
     location: "Shandong University",
     date: "Mar 23, 2023",
-    invited: "Prof. Liang Yuan",
+    invited: "Prof. Haisen Zhao",
     link: "http://www.tsxt.sdu.edu.cn/info/1010/5991.htm",
     keynote: false
   },
