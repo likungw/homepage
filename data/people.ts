@@ -4,7 +4,7 @@ import { Person } from "../types/people";
 export const faculty: Person[] = [
   {
     name: "Kun Li",
-    description: "He makes robots understand 3D scenes.",
+    description: "Sr. Researcher@MSRA",
     image: "headshot.jpg",
   },
   {
