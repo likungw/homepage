@@ -6,13 +6,7 @@ export const faculty: Person[] = [
     name: "Kun Li",
     description: "Sr. Researcher@MSRA",
     image: "headshot.jpg",
-  },
-  {
-    name: "Kun Li",
-    description: "He gets robots self-informed.",
-    image: "/schools/cas.png",
-  },
-  // ...
+  }
 ];
 
 export const phdStudents: Person[] = [
@@ -20,6 +14,5 @@ export const phdStudents: Person[] = [
     name: "Kun Li",
     description: "She de-renders scenes.",
     image: "/schools/cas.png",
-  },
-  // ...
+  }
 ];
