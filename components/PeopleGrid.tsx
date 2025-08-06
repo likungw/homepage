@@ -23,10 +23,10 @@ export default function PeopleGrid({ people }: PeopleGridProps) {
             </div>
 
             {/* 名字 */}
-            <h3 className="text-lg font-semibold">{person.name}</h3>
+            <h3 className="text-base font-medium">{person.name}</h3>
 
             {/* 描述 */}
-            <p className="text-secondary mt-1">{person.description}</p>
+            <p className="text-sm text-secondary mt-1">{person.description}</p>
           </div>
         );
 
