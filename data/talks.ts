@@ -2,6 +2,38 @@ import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
   {
+    conference: "China Society of Image and Graphics (CSIG) Young Scientists Conference",
+    title: "Forum on Efficient Training and Inference of Large Models",
+    link: "http://youth.csig.org.cn/CSIG2025/views/dhlt.html",
+    location: "Qingdao, Shandong",
+    date: "Sep 19, 2025",
+    keynote: false
+  },
+  {
+    conference: "CCF HPC China 2025",
+    title: "The 7th Forum on Architectures, Algorithms, and Applications of High-Performance Sparse Matrix Computation",
+    link: "https://ccf.org.cn/hpcchina2025/schedule_d_2016",
+    location: "Ordos, Inner Mongolia",
+    date: "Aug 15, 2025",
+    keynote: false
+  },
+  {
+    conference: "CCF HPC China 2025",
+    title: "The 9th Forum on Performance Modeling for High-Performance Computing (HPC)",
+    link: "https://ccf.org.cn/hpcchina2025/schedule_d_2015",
+    location: "Ordos, Inner Mongolia",
+    date: "Aug 16, 2025",
+    keynote: false
+  },
+  {
+    conference: "CCF HPC China 2025",
+    title: "The 3rd Forum on Foundational Libraries for Domestic Chips",
+    link: "https://ccf.org.cn/hpcchina2025/schedule_d_2007",
+    location: "Ordos, Inner Mongolia",
+    date: "Aug 16, 2025",
+    keynote: false
+  },
+  {
     title: "Towards E-Level Scalable Scientific Intelligence Systems",
     location: "Zhejiang University",
     date: "May 28, 2025",
