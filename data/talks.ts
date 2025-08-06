@@ -24,7 +24,7 @@ export const talks: Talk[] = [
     title: "The 9th Forum on Performance Modeling for High-Performance Computing (HPC)",
     link: "https://ccf.org.cn/hpcchina2025/schedule_d_2015",
     location: "Ordos, Inner Mongolia",
-    invited: "Prof. Chun Huang",
+    invited: "Prof. Jingwei Sun",
     date: "Aug 16, 2025",
     keynote: false
   },
@@ -34,6 +34,7 @@ export const talks: Talk[] = [
     link: "https://ccf.org.cn/hpcchina2025/schedule_d_2007",
     location: "Ordos, Inner Mongolia",
     date: "Aug 16, 2025",
+    invited: "Prof. Chun Huang",
     keynote: false
   },
   {
