@@ -78,7 +78,7 @@ export const publications: Publication[] = [
     authors: "Luhan Wang, Haipeng Jia, Lei Xu, Cunyang Wei, Kun Li, Xianmeng Jiang, Yunquan Zhang",
     journal: "IPDPS 2024",
     date: "2024",
-    link: ""
+    link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10579118"
   },
   {
     title: "ConvStencil: Transform Stencil Computation to Matrix Multiplication on Tensor Cores",
