@@ -5,7 +5,7 @@ export const faculty: Person[] = [
   {
     name: "Kun Li",
     description: "He makes robots understand 3D scenes.",
-    image: "/schools/cas.png",
+    image: "headshot.jpg",
   },
   {
     name: "Kun Li",
