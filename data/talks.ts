@@ -7,7 +7,7 @@ export const talks: Talk[] = [
     link: "http://youth.csig.org.cn/CSIG2025/views/dhlt.html",
     location: "Qingdao, Shandong",
     date: "Sep 19, 2025",
-    invited: "Prof. Zhiyong Yang",
+    invited: "Prof. Zhiyong Yang@UCAS",
     keynote: false
   },
   {
