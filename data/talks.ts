@@ -2,6 +2,13 @@ import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
   { 
+    title: "Opportunities and Challenges in the Development of Internet Application Technologies", 
+    location: "Beijing",
+    date: "Jul 16, 2025",
+    invited: "CCF TCHPC",
+    keynote: false
+  },
+  { 
     title: "High-Performance Computing Empowering New Advances in Industry-Academia-Research Collaboration", 
     location: "Alibaba Group",
     date: "Aug 17, 2025",
