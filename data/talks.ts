@@ -1,6 +1,13 @@
 import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
+  { 
+    title: "High-Performance Computing Empowering New Advances in Industry-Academia-Research Collaboration", 
+    location: "Alibaba Group",
+    date: "Aug 17, 2025",
+    invited: "CCF TCHPC",
+    keynote: false
+  },
   {
     conference: "China Society of Image and Graphics (CSIG) Young Scientists Conference",
     title: "Forum on Efficient Training and Inference of Large Models",
