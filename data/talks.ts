@@ -11,7 +11,7 @@ export const talks: Talk[] = [
   { 
     title: "High-Performance Computing Empowering New Advances in Industry-Academia-Research Collaboration", 
     location: "Alibaba Group",
-    date: "Aug 17, 2025",
+    date: "Aug 7, 2025",
     invited: "CCF TCHPC",
     keynote: false
   },
