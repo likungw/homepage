@@ -7,6 +7,7 @@ export const talks: Talk[] = [
     link: "http://youth.csig.org.cn/CSIG2025/views/dhlt.html",
     location: "Qingdao, Shandong",
     date: "Sep 19, 2025",
+    invited: "Prof. Zhiyong Yang",
     keynote: false
   },
   {
@@ -15,6 +16,7 @@ export const talks: Talk[] = [
     link: "https://ccf.org.cn/hpcchina2025/schedule_d_2016",
     location: "Ordos, Inner Mongolia",
     date: "Aug 15, 2025",
+    invited: "Prof. Weifeng Liu, Prof. Guangming Tan",
     keynote: false
   },
   {
@@ -22,6 +24,7 @@ export const talks: Talk[] = [
     title: "The 9th Forum on Performance Modeling for High-Performance Computing (HPC)",
     link: "https://ccf.org.cn/hpcchina2025/schedule_d_2015",
     location: "Ordos, Inner Mongolia",
+    invited: "Prof. Chun Huang",
     date: "Aug 16, 2025",
     keynote: false
   },
