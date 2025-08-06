@@ -4,15 +4,15 @@ import { Person } from "../types/people";
 export const faculty: Person[] = [
   {
     name: "Kun Li",
-    description: "Sr. Researcher@MSRA",
+    description: "MSRA",
     image: "headshot.jpg",
   }
 ];
 
 export const phdStudents: Person[] = [
   {
-    name: "Kun Li",
-    description: "She de-renders scenes.",
+    name: "Qi Li",
+    description: "USTC",
     image: "/schools/cas.png",
   }
 ];
