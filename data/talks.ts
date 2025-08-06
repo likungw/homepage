@@ -16,7 +16,7 @@ export const talks: Talk[] = [
     link: "https://ccf.org.cn/hpcchina2025/schedule_d_2016",
     location: "Ordos, Inner Mongolia",
     date: "Aug 15, 2025",
-    invited: "Prof. Weifeng Liu@CUP, Prof. Guangming Tan@ICT,CAS",
+    invited: "Prof. Weifeng Liu@CUP and Prof. Guangming Tan@ICT,CAS",
     keynote: false
   },
   {
