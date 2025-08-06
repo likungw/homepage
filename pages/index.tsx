@@ -45,21 +45,19 @@ export default function Home({ posts, projects, publications }: HomeProps) {
               Senior Researcher @ Microsoft Research
               <br />
               <br />
-              Dr. Kun Li is currently a Senior Researcher at Microsoft Research,
-              focusing on high-performance computing (HPC) systems. He received
-              his Ph.D. degree with the State Key Laboratory of Computer
-              Architecture, Institute of Computing Technology, Chinese Academy
-              of Sciences (ICT, CAS) in 2022. He was recognized with CCF
-              Outstanding Doctoral Dissertation Award, ACM SIGHPC China
-              Outstanding Doctoral Dissertation Award, CCF HPC Youth Talent
-              Award, ACM SIGHPC China Rising Star Award, among others. His
-              representative works have been continuously published at top-tier
-              CCF-A conferences such as SC, PPoPP, ATC, ASPLOS, and ICS,
-              receiving the Best Paper Award at PPoPP’24, Best Student Paper
-              Award Finalist SC’25, and SC’25 Reproducibility Challenge
-              Candidate. He is a keynote speaker at the CCF HPCChina 2024
-              conference, an Executive Member of the CCF Technical Committee on
-              High-Performance Computing and Computer Architecture.
+              <p>
+                Dr. Kun Li is currently a Senior Researcher at Microsoft Research, specializing in <strong>high-performance computing (HPC) systems</strong>. 
+                He received his Ph.D. degree in Computer Architecture from the State Key Laboratory of Computer Architecture, 
+                Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022.
+              </p>
+
+              <p>
+                He has been recognized with numerous honors, including the <strong>CCF Outstanding Doctoral Dissertation Award</strong>, <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,  <strong>CCF Youth Talent Award in HPC</strong>, and <strong>ACM SIGHPC China Rising Star Award</strong>. His work has been published in top-tier CCF-A conferences such as <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>, <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the <strong>Best Paper Award at PPoPP’24</strong>, <strong>SC’25 Best Student Paper Award Finalist</strong>, and <strong>SC’25 Reproducibility Challenge Candidate</strong>. 
+              </p>
+
+              <p>
+                He serves as a keynote speaker at CCF HPC China 2024, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture, and as a Program Committee Member for PPoPP 2026.
+              </p>
               <br />
               <br />
               <Link href="">CV</Link>
