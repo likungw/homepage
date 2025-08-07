@@ -37,7 +37,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
         <div className="flex flex-col md:flex-row md:items-start gap-8 animate-in">
           {/* 左侧：简介 */}
           <div className="flex-1">
-            <h1>{`Kun Li`}</h1>
+            <h1>{`Kun Li （李琨）`}</h1>
             <p
               className="text-secondary max-w-full"
               style={{ "--index": 1 } as React.CSSProperties}
