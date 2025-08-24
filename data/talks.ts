@@ -2,6 +2,14 @@ import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
   { 
+    title: "Scalable AI Systems and Infrastructure Optimization", 
+    conference: "2025 Korea Day @ MSRA",
+    location: "Beijing",
+    date: "2025-09-16",
+    invited: "SR. PRINCIPAL RESEARCH MANAGER Yongqiang Xiong@MSRA",
+    keynote: false
+  },
+  { 
     title: "Opportunities and Challenges in the Development of Internet Application Technologies", 
     location: "Beijing",
     date: "2025-07-16",

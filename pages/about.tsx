@@ -154,25 +154,25 @@ const ventures = [
 const awards = [
   {
     title: "CCF Youth Talent Award in High Performance Computing",
-    description: "Top 5 nationwide",
+    description: "Recognizing outstanding HPC contributions in China aged 40 or younger, as youngest recipient at 31.",
     time: "2024",
     link: "https://mp.weixin.qq.com/s/T_lkOX7GvrnK-owixr5DZQ",
   },
   {
     title: "ACM SIGHPC China Rising Star Award",
-    description:"Top 5 nationwide",
+    description:"≤3 nationwide in HPC fields each year",
     time: "2024",
     link: "https://mp.weixin.qq.com/s/v8am92KG7jePh5uHxYzCmg",
   },
  {
     title: "CCF Outstanding Doctoral Dissertation Award",
-    description:"Top 10 nationwide",
+    description:"Prestigious CS PhD award (≤10 nationwide each year)",
     time: "2022",
     link: "https://www.ccf.org.cn/Membership/Individual_member/Honor/yxbsxwlwjljh/",
   },
   {
     title: "ACM SIGHPC China Outstanding Doctoral Dissertation Award",
-    description:"Top 3 nationwide",
+    description:"≤3 nationwide in HPC fields each year",
     time: "2022",
     link: "https://www.acmturc.com/2022_bak/cn/doctoral_thesis_award.html",
   },
