@@ -2,6 +2,14 @@ import { Publication } from "../types/publication";
 
 export const publications: Publication[] = [
   {
+    title: "SwarmThinkers: Learning Physically Consistent Atomic KMC Transitions at Scale",
+    authors: "Qi Li, Kun Li*, Haozhi Han, Honghui Shang, Xinfu He, Yunquan Zhang, Hong An, Ting Cao, Mao Yang",
+    journal: "arXiv",
+    date: "2025",
+    link: "https://arxiv.org/abs/2505.20094",
+    corresponding: true
+  },
+  {
     title: "SparStencil: Retargeting Sparse Tensor Cores to Scientific Stencil Computations via Structured Sparsity Transformation",
     authors: "Qi Li, Kun Li*, Haozhi Han, Liang Yuan, Junshi Chen, Yunquan Zhang, Yifeng Chen, Hong An, Ting Cao, Mao Yang",
     journal: "SC 2025",
