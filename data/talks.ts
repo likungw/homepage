@@ -2,6 +2,24 @@ import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
   { 
+    title: "Symposium on High-Performance Computing and Mathematical Software", 
+    conference: "Twenty-Third Annual Conference of China Society for Industrial and Applied Mathematics (CSIAM) 2025",
+    link: "https://meeting.csiam.org.cn/#/2025/",
+    location: "Changsha, Hunan",
+    date: "2025-10-23",
+    invited: "CCF TCHPC",
+    keynote: false
+  },
+  { 
+    title: "Post-Exascale AI4Science: Connecting AI and HPC Scaling on Accelerators", 
+    conference: "2025 APSARA Conference @ Alibaba",
+    link: "https://mp.weixin.qq.com/s/0hVHLnP7P0g6xl4fMd2ynw",
+    location: "Hangzhou, Zhejiang",
+    date: "2025-09-24",
+    invited: "ACM SIGHPC China",
+    keynote: false
+  },
+  { 
     title: "Scalable AI Systems and Infrastructure Optimization", 
     conference: "2025 Korea Day @ MSRA",
     location: "Beijing",
