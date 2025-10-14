@@ -11,6 +11,11 @@ export const faculty: Person[] = [
 
 export const phdStudents: Person[] = [
   {
+    name: "Kaiwen Chen",
+    description: "CUHK",
+    image: "/members/kaiwen.jpg",
+  },
+  {
     name: "Ethan Li",
     description: "THU",
     image: "/schools/thu.png",
