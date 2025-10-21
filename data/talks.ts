@@ -6,7 +6,7 @@ export const talks: Talk[] = [
     location: "Beijing",
     date: "2025-11-08",
     invited: "ACM SIGHPC China",
-    keynote: false
+    keynote: true
   },
   { 
     title: "Post-Exascale AI4Science: Connecting AI and HPC Scaling on Accelerators", 
