@@ -21,7 +21,7 @@ export const talks: Talk[] = [
     conference: "Twenty-Third Annual Conference of China Society for Industrial and Applied Mathematics (CSIAM) 2025",
     link: "https://meeting.csiam.org.cn/#/2025/",
     location: "Changsha, Hunan",
-    date: "2025-10-23",
+    date: "2025-10-25",
     invited: "CCF TCHPC",
     keynote: false
   },
