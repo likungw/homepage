@@ -1,6 +1,21 @@
 import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
+  {  
+    conference: "The 7th China Supercomputing Conference (ChinaSC 2025)",
+    location: "Beijing",
+    date: "2025-11-08",
+    invited: "ACM SIGHPC China",
+    keynote: false
+  },
+  { 
+    title: "Post-Exascale AI4Science: Connecting AI and HPC Scaling on Accelerators", 
+    conference: "Ubiquant", 
+    location: "Beijing",
+    date: "2025-10-22",
+    invited: "Jia Zhang@UBIQUANT",
+    keynote: false
+  },
   { 
     title: "Symposium on High-Performance Computing and Mathematical Software", 
     conference: "Twenty-Third Annual Conference of China Society for Industrial and Applied Mathematics (CSIAM) 2025",
