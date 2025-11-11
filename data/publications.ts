@@ -13,17 +13,17 @@ export const publications: Publication[] = [
     title: "SparStencil: Retargeting Sparse Tensor Cores to Scientific Stencil Computations via Structured Sparsity Transformation",
     authors: "Qi Li, Kun Li*, Haozhi Han, Liang Yuan, Junshi Chen, Yunquan Zhang, Yifeng Chen, Hong An, Ting Cao, Mao Yang",
     journal: "SC 2025",
-    date: "2025",
-    link: "https://arxiv.org/abs/2506.22969",
+    date: "2025", 
+    link: "../pdf/sc25_53.pdf",
     corresponding: true,
     award: "Best Student Paper Award Finalist"
   },
   {
-    title: "From Deep Learning to Deep Science: AI Accelerators Scaling Quantum Chemistry Beyond Limits",
+    title: "Matrix Is All You Need: Rearchitecting Quantum Chemistry to Scale on AI Accelerators. (Formerly titled: From Deep Learning to Deep Science: AI Accelerators Scaling Quantum Chemistry Beyond Limits.)",
     authors: "Haozhi Han, Kun Li*, Fusong Ju, Qi Li, Yifeng Chen, Yunquan Zhang, Ting Cao, Mao Yang",
     journal: "SC 2025",
     date: "2025",
-    link: "",
+    link: "../pdf/sc25_62.pdf",
     corresponding: true
   },
   {
