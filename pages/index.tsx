@@ -51,7 +51,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
               </p>
 
               <p>
-                He serves as a keynote speaker at CCF HPC China 2024, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture, and as a Program Committee Member for PPoPP 2026.
+                He serves as a keynote speaker at CCF HPC China 2024, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture, and as a Program Committee Member for PPoPP 2026, ISC 2026.
               </p>
               <br />
               <br />
