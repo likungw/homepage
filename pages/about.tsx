@@ -36,6 +36,7 @@ import { getActivities, getActivity } from "../lib/strava";
 export const connectLinks = [
   { label: "Email", href: "mailto:likungw@gmail.com" },
   { label: "WeChat", href: "https://www.likun.tech/ventures/wechat.jpg" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/thu-kunli" },
   { label: "Twitter", href: "https://x.com/KunLi90358191" },
   { label: "Bilibili", href: "https://space.bilibili.com/484878899" },
   { label: "Xiaohongshu", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
