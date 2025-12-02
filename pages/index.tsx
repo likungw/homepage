@@ -94,8 +94,10 @@ export default function Home({ posts, projects, publications }: HomeProps) {
           className="flex flex-col items-start gap-8 animate-in"
           style={{ "--index": 3 } as React.CSSProperties}
         >
+          {/*
           <h2>Recent blog posts</h2>
           <PostList posts={posts} />
+          */}
           <Link href="/blog" className="items-start underline text-secondary">
             Read all posts
           </Link>
