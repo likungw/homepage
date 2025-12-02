@@ -42,7 +42,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
               className="text-secondary max-w-full"
               style={{ "--index": 1 } as React.CSSProperties}
             >
-              Senior Researcher @ Microsoft Research
+              Senior Research Scientist @ Microsoft Research
               <br />
               <br />
               <p>

@@ -48,7 +48,7 @@ export const SiteURL = "https://www.likun.tech";
 
 const education = [
   {
-    title: "Senior Researcher / Researcher",
+    title: "Senior Research Scientist",
     description: "Microsoft Research",
     time: "2022.07 - Present",
     advisor: "Prof. Ting Cao",
@@ -76,7 +76,7 @@ const education = [
     imageSrc: pkuLogo,
   },
   {
-    title: "B.E. in  Computer Science and Technology (Elite Program)",
+    title: "B.E. in  Computer Science and Technology",
     description: "Shandong University",
     time: "2012.09 – 2016.06",
     imageSrc: sduLogo,
@@ -238,7 +238,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="About me" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                Dr. Kun Li is currently a Senior Researcher at Microsoft Research, specializing in <strong>high-performance computing (HPC) systems</strong>. 
+                Dr. Kun Li is currently a Senior Research Scientist at Microsoft Research, specializing in <strong>high-performance computing (HPC) systems</strong>. 
                 He received his Ph.D. degree in Computer Architecture from the State Key Laboratory of Computer Architecture, 
                 Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022.
               </p>
