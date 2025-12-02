@@ -39,7 +39,7 @@ export const connectLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/thu-kunli" },
   { label: "Twitter", href: "https://x.com/KunLi90358191" },
   { label: "Bilibili", href: "https://space.bilibili.com/484878899" },
-  { label: "Xiaohongshu", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
+  { label: "RedNote", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
   { label: "Google Scholar", href: "https://scholar.google.com.hk/citations?user=2J-7nxUAAAAJ&hl=en" }
 ];
 
