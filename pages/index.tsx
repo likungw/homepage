@@ -97,10 +97,10 @@ export default function Home({ posts, projects, publications }: HomeProps) {
           {/*
           <h2>Recent blog posts</h2>
           <PostList posts={posts} />
-          */}
           <Link href="/blog" className="items-start underline text-secondary">
             Read all posts
           </Link>
+          */}
         </div>
       </div>
     </>
