@@ -55,7 +55,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
               </p>
               <br />
               <br />
-              <Link href="">CV</Link>
+              <Link href="https://www.likun.tech/about">CV</Link>
             </p>
           </div>
 
