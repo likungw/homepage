@@ -29,68 +29,66 @@ type HomeProps = {
   publications: Publication[];
 };
 
-
 export default function Home({ posts, projects, publications }: HomeProps) {
   return (
     <div className="flex flex-col gap-16 max-w-4xl mx-auto px-4">
       {/* 个人简介 + 头像 */}
       <div className="flex flex-col md:flex-row md:items-start gap-8 animate-in">
-        
         {/* 左侧：简介 */}
-          <div className="flex-1">
-              <h1>Kun Li（李琨）</h1>
+        <div className="flex-1">
+          <h1>Kun Li（李琨）</h1>
 
-              {/* 职位行 */}
-              <div className="text-secondary mt-1">
-                Assistant Professor @ Tsinghua University
-              </div>
-
-              {/* Logo 行（新的一行） */}
-              <div className="mt-2 flex items-center gap-3">
-                <img
-                  src="/schools/airlogo.png"
-                  alt="Institute for AI Industry Research, Tsinghua University"
-                  className="h-10 w-auto"
-                />
-              </div>
-
-              {/* 正文简介 */}
-              <p className="text-secondary mt-6">
-                Dr. Kun Li is a Senior Research Scientist at Microsoft Research and incoming
-                Assistant Professor at the Institute for AI Industry Research (AIR),
-                Tsinghua University. He received his Ph.D. degree from the Institute of
-                Computing Technology, Chinese Academy of Sciences (ICT, CAS), and previously
-                conducted research internships at Microsoft Research and Peking University.
-                His research focuses on HPC × AI for Science.
-              </p>
-
-              <p className="text-secondary mt-4">
-                He has been recognized with numerous honors, including the{" "}
-                <strong>CCF Outstanding Doctoral Dissertation Award</strong>,{" "}
-                <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,{" "}
-                <strong>CCF Youth Talent Award in HPC</strong>, and{" "}
-                <strong>ACM SIGHPC China Rising Star Award</strong>.
-              </p>
-
-              <p className="text-secondary mt-4">
-                His work has been published in top-tier CCF-A conferences such as{" "}
-                <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>,{" "}
-                <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the{" "}
-                <strong>Best Paper Award at PPoPP’24</strong>,{" "}
-                <strong>SC’25 Best Student Paper Award Finalist</strong>, and{" "}
-                <strong>SC’25 Reproducibility Challenge Finalist</strong>.
-              </p>
-
-              <div className="mt-6">
-                <Link href="/about">CV</Link>
-              </div>
-            </div>
-
+          {/* 职位行 */}
+          <div className="text-secondary mt-1">
+            Assistant Professor @ Tsinghua University
           </div>
 
+          {/* Logo 行（新的一行，放大并左对齐） */}
+          <div className="mt-2">
+            <Image
+              src={airLogo}
+              alt="Institute for AI Industry Research (AIR), Tsinghua University"
+              priority
+              className="h-12 w-auto" // ✅ 控制大小：改 h-10/h-12/h-14...
+            />
+          </div>
 
+          {/* 正文简介 */}
+          <div className="text-secondary mt-6 space-y-4">
+            <p>
+              Dr. Kun Li is a Senior Research Scientist at Microsoft Research and
+              incoming Assistant Professor at the Institute for AI Industry
+              Research (AIR), Tsinghua University. He received his Ph.D. degree
+              from the Institute of Computing Technology, Chinese Academy of
+              Sciences (ICT, CAS), and previously conducted research internships
+              at Microsoft Research and Peking University. His research focuses
+              on HPC × AI for Science.
+            </p>
 
-        {/* 右侧：照片（保持不变） */}
+            <p>
+              He has been recognized with numerous honors, including the{" "}
+              <strong>CCF Outstanding Doctoral Dissertation Award</strong>,{" "}
+              <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,{" "}
+              <strong>CCF Youth Talent Award in HPC</strong>, and{" "}
+              <strong>ACM SIGHPC China Rising Star Award</strong>.
+            </p>
+
+            <p>
+              His work has been published in top-tier CCF-A conferences such as{" "}
+              <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>,{" "}
+              <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the{" "}
+              <strong>Best Paper Award at PPoPP’24</strong>,{" "}
+              <strong>SC’25 Best Student Paper Award Finalist</strong>, and{" "}
+              <strong>SC’25 Reproducibility Challenge Finalist</strong>.
+            </p>
+          </div>
+
+          <div className="mt-6">
+            <Link href="/about">CV</Link>
+          </div>
+        </div>
+
+        {/* 右侧：照片 */}
         <div className="md:w-[200px] shrink-0 hidden md:block">
           <Photo
             src={headshot}
@@ -138,7 +136,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const projects = allProjects
     .sort((a, b) => parseInt(b.time.slice(0, 4)) - parseInt(a.time.slice(0, 4)))
-    .map((post) => pick(post, ["slug", "title", "description", "time", "awards"]));
+    .map((post) =>
+      pick(post, ["slug", "title", "description", "time", "awards"])
+    );
 
   const publications = allPublications
     .sort(
