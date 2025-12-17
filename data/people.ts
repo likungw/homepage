@@ -16,16 +16,6 @@ export const phdStudents: Person[] = [
     image: "/members/jiaqi.jpg",
   },
   {
-    name: "Kaiwen Chen",
-    description: "CUHK",
-    image: "/members/kaiwen.jpg",
-  },
-  {
-    name: "Zixuan Wang",
-    description: "UCAS",
-    image: "/schools/cas.png",
-  },
-  {
     name: "Ethan Li",
     description: "THU",
     image: "/schools/thu.png",
@@ -50,9 +40,4 @@ export const phdStudents: Person[] = [
     description: "UCAS",
     image: "/schools/cas.png",
   },
-  {
-    name: "Xiang Zhao",
-    description: "OUC",
-    image: "/schools/ouc.png",
-  }
 ];
