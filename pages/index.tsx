@@ -62,25 +62,9 @@ export default function Home({ posts, projects, publications }: HomeProps) {
               from the Institute of Computing Technology, Chinese Academy of
               Sciences (ICT, CAS), and previously conducted research internships
               at Microsoft Research and Peking University. His research focuses
-              on HPC × AI for Science.
+              on HPC, AI for Science and Embodied AI.
             </p>
-
-            <p>
-              He has been recognized with numerous honors, including the{" "}
-              <strong>CCF Outstanding Doctoral Dissertation Award</strong>,{" "}
-              <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,{" "}
-              <strong>CCF Youth Talent Award in HPC</strong>, and{" "}
-              <strong>ACM SIGHPC China Rising Star Award</strong>.
-            </p>
-
-            <p>
-              His work has been published in top-tier CCF-A conferences such as{" "}
-              <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>,{" "}
-              <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the{" "}
-              <strong>Best Paper Award at PPoPP’24</strong>,{" "}
-              <strong>SC’25 Best Student Paper Award Finalist</strong>, and{" "}
-              <strong>SC’25 Reproducibility Challenge Finalist</strong>.
-            </p>
+ 
           </div>
 
           <div className="mt-6">
