@@ -20,6 +20,7 @@ import TalkList from "../components/TalkList";
 import Award from "../components/Award";
 import { talks } from "../data/talks";
 import { IconExternalLink } from "../components/Icons";
+import airLogo from "public/schools/airlogo.png";
 
 const futureTalks = talks.filter((talk) => new Date(talk.date) > new Date());
 
@@ -55,8 +56,20 @@ export default function Home({ posts, projects, publications }: HomeProps) {
             </p>
           </div>
 
-          {/* 右侧：照片 */}
-          <div className="md:w-[200px] shrink-0 hidden md:block">
+          {/* 右侧：Logo + 照片 */}
+          <div className="md:w-[200px] shrink-0 hidden md:flex md:flex-col md:items-center md:gap-3">
+            {/* 清华 Logo（与左侧“Assistant Professor ...”对齐的视觉带） */}
+            <div className="w-full flex justify-center">
+              <Image
+                src={airLogo}
+                alt="Tsinghua University"
+                width={160}
+                height={48}
+                className="object-contain"
+                priority
+              />
+            </div>
+
             <Photo
               src={headshot}
               meta={
@@ -76,7 +89,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
               flipDirection="left"
             />
           </div>
-        </div>
+
 
         {/* Upcoming Talks */}
         {futureTalks.length > 0 && (
