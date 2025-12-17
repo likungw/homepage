@@ -38,53 +38,56 @@ export default function Home({ posts, projects, publications }: HomeProps) {
         
         {/* 左侧：简介 */}
           <div className="flex-1">
-            {/* 顶部：姓名/职称（左） + logo（右） */}
-            <div className="flex items-start justify-between gap-6">
-              <div className="min-w-0">
-                <h1 className="truncate">{`Kun Li （李琨）`}</h1>
-                <div
-                  className="text-secondary max-w-full"
-                  style={{ "--index": 1 } as React.CSSProperties}
-                >
-                  Assistant Professor @ Tsinghua University
-                </div>
+              <h1>Kun Li（李琨）</h1>
+
+              {/* 职位行 */}
+              <div className="text-secondary mt-1">
+                Assistant Professor @ Tsinghua University
               </div>
 
-              {/* 右侧 logo：与“姓名+职称”两行高度对齐 */}
-              <div className="shrink-0">
-                <Image
-                  src={airLogo}
-                  alt="AIR, Tsinghua University"
-                  className="h-[30px] w-auto" // 你要更大就改成 h-[64px] / h-[72px]
-                  priority
+              {/* Logo 行（新的一行） */}
+              <div className="mt-2 flex items-center gap-3">
+                <img
+                  src="/schools/airlogo.png"
+                  alt="Institute for AI Industry Research, Tsinghua University"
+                  className="h-10 w-auto"
                 />
               </div>
-            </div>
 
-            <div className="mt-6 text-secondary max-w-full">
-              <div>
+              {/* 正文简介 */}
+              <p className="text-secondary mt-6">
                 Dr. Kun Li is a Senior Research Scientist at Microsoft Research and incoming
-                Assistant Professor at the Institute for AI Industry Research (AIR), Tsinghua
-                University. He received his Ph.D. degree from the Institute of Computing
-                Technology, Chinese Academy of Sciences (ICT, CAS), and previously conducted
-                research internships at Microsoft Research and Peking University. His research
-                focuses on HPC × AI for Science. He has been recognized with numerous honors,
-                including the <strong>CCF Outstanding Doctoral Dissertation Award</strong>,{" "}
+                Assistant Professor at the Institute for AI Industry Research (AIR),
+                Tsinghua University. He received his Ph.D. degree from the Institute of
+                Computing Technology, Chinese Academy of Sciences (ICT, CAS), and previously
+                conducted research internships at Microsoft Research and Peking University.
+                His research focuses on HPC × AI for Science.
+              </p>
+
+              <p className="text-secondary mt-4">
+                He has been recognized with numerous honors, including the{" "}
+                <strong>CCF Outstanding Doctoral Dissertation Award</strong>,{" "}
                 <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,{" "}
                 <strong>CCF Youth Talent Award in HPC</strong>, and{" "}
-                <strong>ACM SIGHPC China Rising Star Award</strong>. His work has been published
-                in top-tier CCF-A conferences such as <strong>SC</strong>, <strong>PPoPP</strong>,{" "}
-                <strong>ATC</strong>, <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning
-                the <strong>Best Paper Award at PPoPP’24</strong>,{" "}
+                <strong>ACM SIGHPC China Rising Star Award</strong>.
+              </p>
+
+              <p className="text-secondary mt-4">
+                His work has been published in top-tier CCF-A conferences such as{" "}
+                <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>,{" "}
+                <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the{" "}
+                <strong>Best Paper Award at PPoPP’24</strong>,{" "}
                 <strong>SC’25 Best Student Paper Award Finalist</strong>, and{" "}
                 <strong>SC’25 Reproducibility Challenge Finalist</strong>.
-              </div>
+              </p>
 
               <div className="mt-6">
-                <Link href="https://www.likun.tech/about">CV</Link>
+                <Link href="/about">CV</Link>
               </div>
             </div>
+
           </div>
+
 
 
         {/* 右侧：照片（保持不变） */}
