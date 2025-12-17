@@ -55,7 +55,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
                 <Image
                   src={airLogo}
                   alt="AIR, Tsinghua University"
-                  className="h-[46px] w-auto" // 你要更大就改成 h-[64px] / h-[72px]
+                  className="h-[40px] w-auto" // 你要更大就改成 h-[64px] / h-[72px]
                   priority
                 />
               </div>
