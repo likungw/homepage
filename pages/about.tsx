@@ -246,7 +246,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="About me" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                Dr. Kun Li is currently a Senior Research Scientist at Microsoft Research, specializing in <strong>high-performance computing (HPC) systems</strong>. 
+                Dr. Kun Li is a Senior Research Scientist at Microsoft Research and incoming Assistant Professor at the Institute for AI Industry Research (AIR), Tsinghua University. 
                 He received his Ph.D. degree in Computer Architecture from the State Key Laboratory of Computer Architecture, 
                 Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS).
               </p>
