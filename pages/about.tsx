@@ -39,7 +39,7 @@ export const connectLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/thu-kunli" },
   { label: "Twitter", href: "https://x.com/KunLi90358191" },
   { label: "Bilibili", href: "https://space.bilibili.com/484878899" },
-  { label: "Xiaohongshu", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
+  { label: "RedNote", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
   { label: "Google Scholar", href: "https://scholar.google.com.hk/citations?user=2J-7nxUAAAAJ&hl=en" }
 ];
 
@@ -48,7 +48,7 @@ export const SiteURL = "https://www.likun.tech";
 
 const education = [
   {
-    title: "Senior Researcher / Researcher",
+    title: "Senior Research Scientist",
     description: "Microsoft Research",
     time: "2022.07 - Present",
     advisor: "Prof. Ting Cao",
@@ -76,7 +76,7 @@ const education = [
     imageSrc: pkuLogo,
   },
   {
-    title: "B.E. in  Computer Science and Technology (Elite Program)",
+    title: "B.E. in  Computer Science and Technology",
     description: "Shandong University",
     time: "2012.09 – 2016.06",
     imageSrc: sduLogo,
@@ -238,17 +238,17 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="About me" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                Dr. Kun Li is currently a Senior Researcher at Microsoft Research, specializing in <strong>high-performance computing (HPC) systems</strong>. 
+                Dr. Kun Li is currently a Senior Research Scientist at Microsoft Research, specializing in <strong>high-performance computing (HPC) systems</strong>. 
                 He received his Ph.D. degree in Computer Architecture from the State Key Laboratory of Computer Architecture, 
-                Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022.
+                Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS).
               </p>
 
               <p>
-                He has been recognized with numerous honors, including the <strong>CCF Outstanding Doctoral Dissertation Award</strong>, <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,  <strong>CCF Youth Talent Award in HPC</strong>, and <strong>ACM SIGHPC China Rising Star Award</strong>. His work has been published in top-tier CCF-A conferences such as <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>, <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the <strong>Best Paper Award at PPoPP’24</strong>, <strong>SC’25 Best Student Paper Award Finalist</strong>, and <strong>SC’25 Reproducibility Challenge Candidate</strong>. 
+                He has been recognized with numerous honors, including the <strong>CCF Outstanding Doctoral Dissertation Award</strong>, <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,  <strong>CCF Youth Talent Award in HPC</strong>, and <strong>ACM SIGHPC China Rising Star Award</strong>. His work has been published in top-tier CCF-A conferences such as <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>, <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the <strong>Best Paper Award at PPoPP’24</strong>, <strong>SC’25 Best Student Paper Award Finalist</strong>, and <strong>SC’25 Reproducibility Challenge Finalist</strong>. 
               </p>
 
               <p>
-                He serves as a keynote speaker at CCF HPC China 2024, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture, and as a Program Committee Member for PPoPP 2026, ISC 2026.
+                He serves as a keynote speaker at CCF HPC China 2024, ACM ChinaSC 2025, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture, and as a Program Committee Member for PPoPP 2026, ISC 2026.
               </p>
 
             </div>
