@@ -13,6 +13,7 @@ import msftLogo from "public/schools/msft.png";
 import pkuLogo from "public/schools/pku.png";
 import sduLogo from "public/schools/sdu.png";
 import casLogo from "public/schools/cas.png";
+import thuLogo from "public/schools/thu.png";
 
 import githubLogo from "public/Github.png";
 import jupyterLogo from "public/projects/jupyter.png";
@@ -48,9 +49,16 @@ export const SiteURL = "https://www.likun.tech";
 
 const education = [
   {
+    title: "Assistant Professor",
+    description: "Tsinghua University",
+    time: "2025.12 - Present",
+    advisor: "Prof. Yunxin Liu & Prof. Ting Cao",
+    imageSrc: thuLogo,
+  },
+  {
     title: "Senior Research Scientist",
     description: "Microsoft Research",
-    time: "2022.07 - Present",
+    time: "2022.07 - 2025.12",
     advisor: "Prof. Ting Cao",
     imageSrc: msftLogo,
   },
