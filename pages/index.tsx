@@ -37,58 +37,56 @@ export default function Home({ posts, projects, publications }: HomeProps) {
       <div className="flex flex-col md:flex-row md:items-start gap-8 animate-in">
         
         {/* 左侧：简介 */}
-        <div className="flex-1">
-          <h1>Kun Li（李琨）</h1>
+          <div className="flex-1">
+            <h1>{`Kun Li （李琨）`}</h1>
 
-          {/* 职位行 + Logo */}
-          <div
-            className="flex items-center gap-3 text-secondary"
-            style={{ "--index": 1 } as React.CSSProperties}
-          >
-            <span>Assistant Professor @ Tsinghua University</span>
+            {/* 职称 + Logo 行 */}
+            <div className="flex items-center gap-3 text-secondary mt-2">
+              <Image
+                src={airLogo}
+                alt="AIR, Tsinghua University"
+                height={40}   // 👈 放大一点
+                className="object-contain"
+              />
+              <span className="text-base">
+                Assistant Professor @ Tsinghua University
+              </span>
+            </div>
 
-            <Image
-              src={airLogo}
-              alt="Institute for AI Industry Research, Tsinghua University"
-              height={32}      // ← 稍微放大
-              priority
-              className="opacity-90"
-            />
-          </div>
+            {/* 正文简介 */}
+            <div
+              className="text-secondary max-w-full mt-6"
+              style={{ "--index": 1 } as React.CSSProperties}
+            >
+              <p>
+                Dr. Kun Li is a Senior Research Scientist at Microsoft Research and incoming
+                Assistant Professor at the Institute for AI Industry Research (AIR),
+                Tsinghua University. He received his Ph.D. degree from the Institute of
+                Computing Technology, Chinese Academy of Sciences (ICT, CAS), and previously
+                conducted research internships at Microsoft Research and Peking University.
+                His research focuses on HPC × AI for Science.
+              </p>
 
-          {/* 正文简介 */}
-          <div className="text-secondary mt-6 leading-relaxed">
-            <p>
-              Dr. Kun Li is a Senior Research Scientist at Microsoft Research and
-              incoming Assistant Professor at the Institute for AI Industry Research
-              (AIR), Tsinghua University. He received his Ph.D. degree from the
-              Institute of Computing Technology, Chinese Academy of Sciences (ICT,
-              CAS), and previously conducted research internships at Microsoft
-              Research and Peking University.
-            </p>
+              <p className="mt-4">
+                He has been recognized with numerous honors, including the{" "}
+                <strong>CCF Outstanding Doctoral Dissertation Award</strong>,{" "}
+                <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,{" "}
+                <strong>CCF Youth Talent Award in HPC</strong>, and{" "}
+                <strong>ACM SIGHPC China Rising Star Award</strong>. His work has been
+                published in top-tier CCF-A conferences such as{" "}
+                <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>,{" "}
+                <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the{" "}
+                <strong>Best Paper Award at PPoPP’24</strong>,{" "}
+                <strong>SC’25 Best Student Paper Award Finalist</strong>, and{" "}
+                <strong>SC’25 Reproducibility Challenge Finalist</strong>.
+              </p>
 
-            <p className="mt-4">
-              His research focuses on HPC × AI for Science. He has been recognized
-              with numerous honors, including the <strong>CCF Outstanding Doctoral
-              Dissertation Award</strong>, <strong>ACM SIGHPC China Outstanding
-              Doctoral Dissertation Award</strong>, <strong>CCF Youth Talent Award in
-              HPC</strong>, and <strong>ACM SIGHPC China Rising Star Award</strong>.
-            </p>
-
-            <p className="mt-4">
-              His work has been published in top-tier CCF-A conferences such as{" "}
-              <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>,{" "}
-              <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the{" "}
-              <strong>Best Paper Award at PPoPP’24</strong>,{" "}
-              <strong>SC’25 Best Student Paper Award Finalist</strong>, and{" "}
-              <strong>SC’25 Reproducibility Challenge Finalist</strong>.
-            </p>
-
-            <div className="mt-6">
-              <Link href="/about">CV</Link>
+              <div className="mt-6">
+                <Link href="https://www.likun.tech/about">CV</Link>
+              </div>
             </div>
           </div>
-        </div>
+
 
         {/* 右侧：照片（保持不变） */}
         <div className="md:w-[200px] shrink-0 hidden md:block">
