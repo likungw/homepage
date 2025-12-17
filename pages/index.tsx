@@ -31,22 +31,29 @@ type HomeProps = {
 
 export default function Home({ posts, projects, publications }: HomeProps) {
   return (
-    <>
-      <div className="flex flex-col gap-16 max-w-4xl mx-auto px-4">
-        {/* 个人简介 + 头像 */}
-        <div className="flex flex-col md:flex-row md:items-start gap-8 animate-in">
-          {/* 左侧：简介 */}
-          <div className="flex-1">
-            <h1>{`Kun Li （李琨）`}</h1>
+    <div className="flex flex-col gap-16 max-w-4xl mx-auto px-4">
+      {/* 个人简介 + 头像 */}
+      <div className="flex flex-col md:flex-row md:items-start gap-8 animate-in">
+        
+        {/* 左侧：简介 */}
+        <div className="flex-1">
+          <h1>Kun Li（李琨）</h1>
 
-            {/* 用 div 包起来，避免 <p> 嵌套 <p> 触发 Parsing error */}
-            <div
-              className="text-secondary max-w-full"
-              style={{ "--index": 1 } as React.CSSProperties}
-            >
-              Assistant Professor @ Tsinghua University
-              <br />
-              <br />
+          {/* 职位行 + Logo */}
+          <div
+            className="flex items-center gap-3 text-secondary"
+            style={{ "--index": 1 } as React.CSSProperties}
+          >
+            <span>Assistant Professor @ Tsinghua University</span>
+
+            <Image
+              src={airLogo}
+              alt="Institute for AI Industry Research, Tsinghua University"
+              height={32}      // ← 稍微放大
+              priority
+              className="opacity-90"
+            />
+          </div>
 
               <p>
                 Dr. Kun Li is a Senior Research Scientist at Microsoft Research and
