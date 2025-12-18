@@ -70,14 +70,14 @@ const education = [
     imageSrc: casLogo,
   },
   {
-    title: "Research Intern, System Group",
+    title: "Research Intern",
     description: "Microsoft Research",
     time: "2021.09 - 2022.03",
     advisor: "Prof. Ting Cao",
     imageSrc: msftLogo,
   },
   {
-    title: "Research Intern, Parallel Theory Lab",
+    title: "Research Intern",
     description: "Peking University",
     time: "2017.07 – 2018.06",
     advisor: "Prof. Yifeng Chen",
