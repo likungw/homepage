@@ -22,6 +22,7 @@ export const talks: Talk[] = [
     location: "Beijing",
     date: "2025-11-08",
     invited: "ACM SIGHPC China",
+    link:"https://m.zhiding.cn/article/3173647.htm",
     keynote: true
   },
   { 
