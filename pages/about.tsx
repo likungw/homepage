@@ -246,9 +246,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="About me" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                Dr. Kun Li is a Senior Research Scientist at Microsoft Research and incoming Assistant Professor at the Institute for AI Industry Research (AIR), Tsinghua University. 
-                He received his Ph.D. degree in Computer Architecture from the State Key Laboratory of Computer Architecture, 
-                Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS).
+                Dr. Kun Li is an Assistant Professor at the Institute for AI Industry Research (AIR), Tsinghua University. He was previously a Senior Research Scientist at Microsoft Research. He received his Ph.D. degree from the Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS), and conducted research internships at Microsoft Research and Peking University.
               </p>
 
               <p>
