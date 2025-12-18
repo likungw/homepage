@@ -7,7 +7,7 @@ export const talks: Talk[] = [
     location: "Harbin",
     date: "2025-12-26",
     invited: "HIT(Harbin Institute of Technology)",
-    keynote: true
+    keynote: false
   },
   {  
     title:"Exploration of Scalable High-Performance Computing Systems on New Processor Architectures",
@@ -15,7 +15,7 @@ export const talks: Talk[] = [
     location: "Beijing",
     date: "2025-12-22",
     invited: "ICT, CAS",
-    keynote: true
+    keynote: false
   },
   {  
     conference: "The 7th China Supercomputing Conference (ChinaSC 2025)",
