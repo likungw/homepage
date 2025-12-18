@@ -2,6 +2,22 @@ import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
   {  
+    title: "Annual Forum on Embodied Intelligence and Computing Power",
+    conference: "Future Industry Conference",
+    location: "Harbin",
+    date: "2025-12-26",
+    invited: "HIT(Harbin Institute of Technology)",
+    keynote: true
+  },
+  {  
+    title:"Exploration of Scalable High-Performance Computing Systems on New Processor Architectures",
+    conference: "Xia Peisu Young Scholars Forum",
+    location: "Beijing",
+    date: "2025-12-22",
+    invited: "ICT, CAS",
+    keynote: true
+  },
+  {  
     conference: "The 7th China Supercomputing Conference (ChinaSC 2025)",
     location: "Beijing",
     date: "2025-11-08",
