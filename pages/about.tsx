@@ -40,7 +40,7 @@ export const connectLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/thu-kunli" },
   { label: "Twitter", href: "https://x.com/KunLi90358191" },
   { label: "Bilibili", href: "https://space.bilibili.com/484878899" },
-  { label: "RedNote (Xiaohongshu)", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
+  { label: "Xiaohongshu", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
   { label: "Google Scholar", href: "https://scholar.google.com.hk/citations?user=2J-7nxUAAAAJ&hl=en" }
 ];
 
@@ -273,6 +273,15 @@ export default function About({ projects, activities }: { projects: Project[]; a
 
               </ul>
 
+            </div>
+          </Section>
+          <Section heading="Recruitment" headingAlignment="right">
+            <div className="flex flex-col gap-6">
+              <p>
+                I am <strong>continuously recruiting interns, Ph.D. students, and postdoctoral researchers</strong> to join our AIoT group at Tsinghua AIR.
+                <strong>Ph.D. positions are primarily offered to outstanding interns</strong>.
+                If you are interested in joining the group, please feel free to contact me with your CV and a brief description of your research interests.
+                </p>
             </div>
           </Section>
           <Section heading="Connect" headingAlignment="right">
