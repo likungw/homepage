@@ -40,7 +40,7 @@ export const connectLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/thu-kunli" },
   { label: "Twitter", href: "https://x.com/KunLi90358191" },
   { label: "Bilibili", href: "https://space.bilibili.com/484878899" },
-  { label: "RedNote", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
+  { label: "RedNote (Xiaohongshu)", href: "https://www.likun.tech/ventures/xiaohongshu.jpg" },
   { label: "Google Scholar", href: "https://scholar.google.com.hk/citations?user=2J-7nxUAAAAJ&hl=en" }
 ];
 
@@ -265,9 +265,12 @@ export default function About({ projects, activities }: { projects: Project[]; a
                 My research focuses on <strong>highly scalable computing systems</strong> at the intersection of <strong>high-performance computing (HPC)</strong> and <strong>artificial intelligence (AI)</strong>. I aim to advance this vision through three core research directions: 
               </p>
               <ul className="list-decimal ml-10">
-                <li><strong>Scalable foundation models</strong> – Enhancing the efficiency and scalability of large-scale model training and inference on cutting-edge HPC infrastructures.</li>
-                <li><strong>Matrix-centric scientific computing</strong> – Transforming scientific algorithms and applications into unified matrix-based representations to break traditional trade-offs in performance, accuracy, and scalability.</li>
-                <li><strong>Embodied scientific intelligence</strong> – Advancing reinforcement learning and AI4Science to create autonomous agents capable of multi-scale scientific reasoning and discovery.</li>
+                <li><strong>Physical AI</strong> – studies embodied intelligence, developing learning agents that perceive, act, and reason in the physical world through long-horizon, physically grounded interaction and decision-making.</li>
+
+                <li><strong>AI for Science</strong> – investigates large-scale, supercomputing-driven scientific intelligence by tightly integrating AI with extreme-scale simulations, enabling previously intractable studies in nuclear materials irradiation, quantum chemistry, and free energy calculations (FEP).</li>
+
+                <li><strong>Efficient AI</strong> – advances hardware-aware algorithms, compilers, and system optimizations that bridge high-performance computing and large-scale AI models, enabling efficient execution on modern AI accelerators.</li>
+
               </ul>
 
             </div>
