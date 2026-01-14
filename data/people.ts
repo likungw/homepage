@@ -51,7 +51,7 @@ export const alumni: Person[] = [
   {
     name: "Yiwei Zhang",
     description: "ICT,CAS",
-    image: "/schools/cas.png",
+    image: "/schools/thu.png",
   },
   {
     name: "Tuowei Wang",
@@ -61,6 +61,6 @@ export const alumni: Person[] = [
   {
     name: "Yinnan Zhou",
     description: "THU",
-    image: "/schools/cas.png",
+    image: "/schools/thu.png",
   },
 ];
