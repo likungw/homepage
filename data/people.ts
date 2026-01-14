@@ -41,6 +41,26 @@ export const alumni: Person[] = [
   {
     name: "Zixuan Wang",
     description: "ICT,CAS",
-    image: "cas.jpg",
-  }
+    image: "/schools/cas.png",
+  },
+  {
+    name: "Yuetao Chen",
+    description: "CUHK",
+    image: "/schools/cas.png",
+  },
+  {
+    name: "Yiwei Zhang",
+    description: "ICT,CAS",
+    image: "/schools/cas.png",
+  },
+  {
+    name: "Tuowei Wang",
+    description: "THU",
+    image: "/schools/thu.png",
+  },
+  {
+    name: "Yinnan Zhou",
+    description: "THU",
+    image: "/schools/cas.png",
+  },
 ];
