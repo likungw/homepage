@@ -1,6 +1,6 @@
 import Section from "../components/Section";
 import PeopleGrid from "../components/PeopleGrid";
-import { faculty, phdStudents } from "../data/people";
+import { faculty, phdStudents, alumni } from "../data/people";
 
 export default function PeoplePage() {
   return (
