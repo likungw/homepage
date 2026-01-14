@@ -21,11 +21,6 @@ export const phdStudents: Person[] = [
     image: "/schools/thu.png",
   },
   {
-    name: "Qi Li",
-    description: "USTC",
-    image: "/schools/cas.png",
-  },
-  {
     name: "Haozhi Han",
     description: "PKU",
     image: "/members/haozhi.jpg",
@@ -37,7 +32,15 @@ export const phdStudents: Person[] = [
   },
   {
     name: "Ruge Zhang",
-    description: "UCAS",
+    description: "ICT,CAS",
     image: "/schools/cas.png",
   },
+];
+
+export const alumni: Person[] = [
+  {
+    name: "Zixuan Wang",
+    description: "ICT,CAS",
+    image: "cas.jpg",
+  }
 ];
