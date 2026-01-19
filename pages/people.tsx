@@ -1,6 +1,6 @@
 import Section from "../components/Section";
 import PeopleGrid from "../components/PeopleGrid";
-import { faculty, phdStudents, alumni } from "../data/people";
+import { faculty, phdStudents, undergraduate, alumni } from "../data/people";
 
 export default function PeoplePage() {
   return (
@@ -11,6 +11,10 @@ export default function PeoplePage() {
 
       <Section heading="Ph.D. Students" headingAlignment="left">
         <PeopleGrid people={phdStudents} />
+      </Section>
+
+      <Section heading="Ph.D. Students" headingAlignment="left">
+        <PeopleGrid people={undergraduate} />
       </Section>
 
       <Section heading="Alumni" headingAlignment="left">

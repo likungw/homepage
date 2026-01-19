@@ -11,6 +11,11 @@ export const faculty: Person[] = [
 
 export const phdStudents: Person[] = [
   {
+    name: "Junjie Xu",
+    description: "UCST",
+    image: "/schools/cas.png",
+  },
+  {
     name: "Jiaqi Zhai",
     description: "HUST",
     image: "/members/jiaqi.jpg",
@@ -33,6 +38,24 @@ export const phdStudents: Person[] = [
   {
     name: "Ruge Zhang",
     description: "ICT,CAS",
+    image: "/schools/cas.png",
+  },
+];
+
+export const undergraduate: Person[] = [
+  {
+    name: "Haoquan Chen",
+    description: "SYSU",
+    image: "/schools/cas.png",
+  },
+  {
+    name: "Yiyang Zhou",
+    description: "THU",
+    image: "/schools/thu.png",
+  },
+  {
+    name: "Shuo Yang",
+    description: "BUCT",
     image: "/schools/cas.png",
   },
 ];
