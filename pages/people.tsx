@@ -13,7 +13,7 @@ export default function PeoplePage() {
         <PeopleGrid people={phdStudents} />
       </Section>
 
-      <Section heading="Ph.D. Students" headingAlignment="left">
+      <Section heading="Undergraduates" headingAlignment="left">
         <PeopleGrid people={undergraduate} />
       </Section>
 
