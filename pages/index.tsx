@@ -62,6 +62,13 @@ export default function Home({ posts, projects, publications }: HomeProps) {
  
           </div>
 
+          <div className="text-secondary mt-6 space-y-4">
+            <p>
+              Highly self-motivated undergraduate and PhD students are welcome to apply early for internships. f you are interested in Physical AI, AI for Science, and HPC, please feel free to contact me.
+            </p>
+ 
+          </div>
+
           <div className="mt-6">
             <Link href="/about">CV</Link>
           </div>
