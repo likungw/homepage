@@ -2,7 +2,7 @@ import { Publication } from "../types/publication";
 
 export const publications: Publication[] = [
   {
-    title: "MatXtract: Sparsity-Aware Matrix Transformation via CascadedCompute Density EXtraction for SpMV",
+    title: "MatXtract: Sparsity-Aware Matrix Transformation via Cascaded Compute Density EXtraction for SpMV",
     authors: "Luhan Wang, Kun Li*, Yifeng Chen, Haipeng Jia, Yunquan Zhang, Ting Cao, Yunxin Liu",
     journal: "ACM Transactions on Architecture and Code Optimization",
     date: "2026",
