@@ -47,6 +47,7 @@ export const undergraduate: Person[] = [
     name: "Haoquan Chen",
     description: "SYSU",
     image: "/schools/cas.png",
+    link: "https://chen-hq.site/aboutme/",
   },
   {
     name: "Yiyang Zhou",
