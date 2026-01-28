@@ -2,6 +2,14 @@ import { Publication } from "../types/publication";
 
 export const publications: Publication[] = [
   {
+    title: "MatXtract: Sparsity-Aware Matrix Transformation via CascadedCompute Density EXtraction for SpMV",
+    authors: "Luhan Wang, Kun Li*, Yifeng Chen, Haipeng Jia, Yunquan Zhang, Ting Cao, Yunxin Liu",
+    journal: "ACM Transactions on Architecture and Code Optimization",
+    date: "2026",
+    link: "../pdf/3793864.pdf",
+    corresponding: true
+  },
+  {
     title: "SwarmThinkers: Learning Physically Consistent Atomic KMC Transitions at Scale",
     authors: "Qi Li, Kun Li*, Haozhi Han, Honghui Shang, Xinfu He, Yunquan Zhang, Hong An, Ting Cao, Mao Yang",
     journal: "arXiv",
