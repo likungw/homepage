@@ -38,7 +38,7 @@ export const phdStudents: Person[] = [
   {
     name: "Ruge Zhang",
     description: "ICT,CAS",
-    image: "/schools/cas.png",
+    image: "/members/ruge.jpg",
   },
 ];
 
@@ -46,7 +46,7 @@ export const undergraduate: Person[] = [
   {
     name: "Haoquan Chen",
     description: "SYSU",
-    image: "/schools/cas.png",
+    image: "/members/haoquan.jpg",
     link: "https://chen-hq.site/aboutme/",
   },
   {
@@ -57,7 +57,7 @@ export const undergraduate: Person[] = [
   {
     name: "Shuo Yang",
     description: "BUCT",
-    image: "/schools/cas.png",
+    image: "/members/shuo.jpg",
   },
 ];
 
