@@ -7,7 +7,8 @@ export const publications: Publication[] = [
     journal: "ACM Transactions on Architecture and Code Optimization",
     date: "2026",
     link: "../pdf/3793864.pdf",
-    corresponding: true
+    corresponding: true,
+    award: "Selected for ACM Showcase (2026)"
   },
   {
     title: "SwarmThinkers: Learning Physically Consistent Atomic KMC Transitions at Scale",
