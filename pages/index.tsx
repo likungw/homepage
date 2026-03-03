@@ -56,7 +56,7 @@ export default function Home({ posts, projects, publications }: HomeProps) {
           {/* 正文简介 */}
           <div className="text-secondary mt-6 space-y-4">
             <p>
-              Dr. Kun Li is an Assistant Professor at the <ExternalLink  href="https://air.tsinghua.edu.cn/index.htm" target="_blank">Institute for AI Industry Research (AIR), Tsinghua University</ExternalLink>. He was previously a Senior Research Scientist at <ExternalLink  href="https://www.microsoft.com/en-us/research/" target="_blank">Microsoft Research</ExternalLink>. He received his Ph.D. degree from the <ExternalLink href="https://www.ict.ac.cn/" target="_blank">Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS)</ExternalLink>, and conducted research internships at Microsoft Research and <ExternalLink href="https://www.pku.edu.cn/" target="_blank">Peking University</ExternalLink>. His research focuses
+              Dr. Kun Li is an Assistant Professor at the <ExternalLink  href="https://air.tsinghua.edu.cn/en/info/1046/1962.htm" target="_blank">Institute for AI Industry Research (AIR), Tsinghua University</ExternalLink>. He was previously a Senior Research Scientist at <ExternalLink  href="https://www.microsoft.com/en-us/research/" target="_blank">Microsoft Research</ExternalLink>. He received his Ph.D. degree from the <ExternalLink href="https://www.ict.ac.cn/" target="_blank">Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS)</ExternalLink>, and conducted research internships at Microsoft Research and <ExternalLink href="https://www.pku.edu.cn/" target="_blank">Peking University</ExternalLink>. His research focuses
               on HPC, Physical AI and AI for Science.
             </p>
  
