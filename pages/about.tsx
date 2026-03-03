@@ -254,7 +254,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
               </p>
 
               <p>
-                He serves as a keynote speaker at CCF HPC China 2024, ACM ChinaSC 2025, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture, and as <strong>Program Committee for PPoPP&apos;26 (Distinguished Reviewer & Best Paper selection committee), ISC&apos;26, ASPLOS&apos;27</strong>.
+                He serves as a keynote speaker at CCF HPC China 2024, ACM ChinaSC 2025, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture, and as <strong>Program Committee for PPoPP’26 (Distinguished Reviewer & Best Paper selection committee), ISC’26, ASPLOS’27</strong>.
               </p>
 
             </div>
