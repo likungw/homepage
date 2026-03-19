@@ -2,6 +2,15 @@ import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
   {  
+    title: "SwarmThinkers: Learning Physically Consistent Atomic KMC Transitions at Scale",
+    conference: "Ploutos",
+    location: "Online",
+    date: "2026-03-19",
+    invited: "Cecile Tamura@ploutosai",
+    link:"https://x.com/ceciletamura/status/2034214781293617551",
+    keynote: false
+  },
+  {  
     title: "Annual Forum on Embodied Intelligence and Computing Power",
     conference: "Future Industry Conference",
     location: "Harbin",
