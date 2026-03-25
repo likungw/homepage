@@ -284,8 +284,8 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="Recruitment" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                I am <strong>continuously recruiting interns,  Ph.D. and postdoctoral researchers</strong> to join our AIoT group at Tsinghua AIR. 
-                If you are interested in joining the group, please feel free to contact me with your CV and a brief description of your research interests.
+                I am <strong>continuously recruiting interns,  Ph.D. and postdoctoral researchers</strong> to join our group. 
+                If you are interested, please feel free to contact me with your CV and a brief description of your research interests.
                 </p>
             </div>
           </Section>
