@@ -262,16 +262,22 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="Research" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                My research focuses on <strong>highly scalable computing systems</strong> at the intersection of <strong>high-performance computing (HPC)</strong> and <strong>artificial intelligence (AI)</strong>. I aim to advance this vision through three core research directions: 
+                <strong>Research Vision</strong>: Scalable Physical World Models
               </p>
-              <ul className="list-decimal ml-10">
+              <p>
+                <strong>Core Question</strong>: How can we build world models that capture physical dynamics, support long-horizon evolution, and scale from microscopic scientific processes to macroscopic embodied systems?
+              </p>
+              <p>
+                <strong>Two Frontiers</strong>: (1) Macro World Models for embodied intelligence in real-world physical environments; (2) Micro World Models for AI for Science, spanning quantum chemistry, molecular dynamics, and kinetic simulation.
+              </p>
+              {/*<ul className="list-decimal ml-10">
                 <li><strong>Physical AI</strong> – studies embodied intelligence, developing learning agents that perceive, act, and reason in the physical world through long-horizon, physically grounded interaction and decision-making.</li>
 
                 <li><strong>AI for Science</strong> – investigates large-scale, supercomputing-driven scientific intelligence by tightly integrating AI with extreme-scale simulations, enabling previously intractable studies in nuclear materials irradiation, quantum chemistry, and free energy calculations (FEP).</li>
 
                 <li><strong>Efficient AI</strong> – advances hardware-aware algorithms, compilers, and system optimizations that bridge high-performance computing and large-scale AI models, enabling efficient execution on modern AI accelerators.</li>
 
-              </ul>
+              </ul>*/}
 
             </div>
           </Section>
