@@ -268,7 +268,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
                 <strong>Core Question</strong>: How can we build world models that capture physical dynamics, support long-horizon evolution, and scale from microscopic scientific processes to macroscopic embodied systems?
               </p>
               <p>
-                <strong>Two Frontiers</strong>: (1) Macro World Models for embodied intelligence in real-world physical environments; (2) Micro World Models for AI for Science, spanning quantum chemistry, molecular dynamics, and kinetic simulation.
+                <strong>Two Frontiers</strong>: <br />(1) Macro World Models for embodied intelligence in real-world physical environments; <br />(2) Micro World Models for AI for Science, spanning quantum chemistry, molecular dynamics, and kinetic simulation.
               </p>
               {/*<ul className="list-decimal ml-10">
                 <li><strong>Physical AI</strong> – studies embodied intelligence, developing learning agents that perceive, act, and reason in the physical world through long-horizon, physically grounded interaction and decision-making.</li>
