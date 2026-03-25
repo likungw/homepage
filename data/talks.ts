@@ -1,6 +1,15 @@
 import type { Talk } from "../components/TalkList";
 
 export const talks: Talk[] = [
+   { 
+    title: "Toward Integrated Supercomputing Scalability and AI Modeling for Nuclear Materials Simulation", 
+    conference: "Tsinghua Interdisciplinary Salon",
+    link: "https://mp.weixin.qq.com/s/wnm7MbQKOYPnPHg1g7RPiA",
+    location: "Tsinghua University, Beijing",
+    date: "2026-03-27",
+    invited: "Prof. Zhe Gao @ THU ",
+    keynote: false
+  },
   {  
     title: "SwarmThinkers: Learning Physically Consistent Atomic KMC Transitions at Scale",
     conference: "Ploutos",
