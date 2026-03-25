@@ -246,11 +246,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
           <Section heading="About me" headingAlignment="right">
             <div className="flex flex-col gap-6">
               <p>
-                Dr. Kun Li is an Assistant Professor at the Institute for AI Industry Research (AIR), Tsinghua University. He was previously a Senior Research Scientist at Microsoft Research. He received his Ph.D. degree from the Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS), and conducted research internships at Microsoft Research and Peking University.
-              </p>
-
-              <p>
-                He has been recognized with numerous honors, including the <strong>CCF Outstanding Doctoral Dissertation Award</strong>, <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,  <strong>CCF Youth Talent Award in HPC</strong>, and <strong>ACM SIGHPC China Rising Star Award</strong>. His work has been published in top-tier CCF-A conferences such as <strong>SC</strong>, <strong>PPoPP</strong>, <strong>ATC</strong>, <strong>ASPLOS</strong>, and <strong>ICS</strong>, earning the <strong>ACM Showcase (2026) selection</strong>, <strong>Best Paper Award at PPoPP’24</strong>, <strong>SC’25 Best Student Paper Award Finalist</strong>, and <strong>SC’25 Reproducibility Challenge Finalist</strong>. 
+                Dr. Kun Li works at the intersection of high-performance computing (HPC) and artificial intelligence (AI). His research  has been published in leading international venues, including  SC, PPoPP, ATC, ASPLOS, PLDI, ICS, ISC, TACO, and TPDS. His work has been recognized by distinctions such as <strong>ACM Showcase (2026) selection</strong>, <strong>Best Paper Award at PPoPP’24</strong>, <strong>SC’25 Best Student Paper Award Finalist</strong>, and <strong>SC’25 Reproducibility Challenge Finalist</strong>. He has also received numerous honors, including the <strong>CCF Outstanding Doctoral Dissertation Award</strong>, <strong>ACM SIGHPC China Outstanding Doctoral Dissertation Award</strong>,  <strong>CCF Youth Talent Award in HPC</strong>, and <strong>ACM SIGHPC China Rising Star Award</strong>. 
               </p>
 
               <p>
