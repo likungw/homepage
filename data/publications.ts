@@ -2,6 +2,20 @@ import { Publication } from "../types/publication";
 
 export const publications: Publication[] = [
   {
+    title: "Redundant Array Computation Elimination",
+    authors: "Zixuan Wang, Liang Yuan, Xianmeng Jiang, Kun Li, Junmin Xiao, Yunquan Zhang",
+    journal: "47th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI 2026)",
+    date: "2026", 
+    corresponding: false, 
+  },
+  {
+    title: "Pushing a Single GPU to Its Limits and Scaling to Tens of Thousands: RL-Guided, Physically Consistent KMC for Nuclear Materials Simulation",
+    authors: "Haozhi Han, Qi Li, Ruge Zhang, Haipeng Jia, Yunquan Zhang, Yifeng Chen, Ting Cao, Yunxin Liu, Kun Li*",
+    journal: "ISC High Performance 2026",
+    date: "2026", 
+    corresponding: true, 
+  },
+  {
     title: "MatXtract: Sparsity-Aware Matrix Transformation via Cascaded Compute Density EXtraction for SpMV",
     authors: "Luhan Wang, Kun Li*, Yifeng Chen, Haipeng Jia, Yunquan Zhang, Ting Cao, Yunxin Liu",
     journal: "ACM Transactions on Architecture and Code Optimization",
