@@ -50,14 +50,14 @@ export const SiteURL = "https://www.likun.tech";
 const education = [
   {
     title: "Assistant Professor",
-    description: "Tsinghua University",
+    description: "Tsinghua University\n Host by Prof. Yunxin Liu",
     time: "2025.12 - Present",
     advisor: "Prof. Yunxin Liu & Prof. Ting Cao",
     imageSrc: thuLogo,
   },
   {
     title: "Senior Research Scientist",
-    description: "Microsoft Research",
+    description: "Microsoft Research \n Host by Prof. Ting Cao",
     time: "2022.07 - 2025.12",
     advisor: "Prof. Ting Cao",
     imageSrc: msftLogo,
