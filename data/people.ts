@@ -43,17 +43,7 @@ export const phdStudents: Person[] = [
 ];
 
 export const undergraduate: Person[] = [
-  {
-    name: "Haoquan Chen",
-    description: "SYSU",
-    image: "/members/haoquan.jpg",
-    link: "https://chen-hq.site/aboutme/",
-  },
-  {
-    name: "Yiyang Zhou",
-    description: "THU",
-    image: "/schools/thu.png",
-  },
+
   {
     name: "Shuo Yang",
     description: "BUCT",
@@ -62,6 +52,11 @@ export const undergraduate: Person[] = [
 ];
 
 export const alumni: Person[] = [
+  {
+    name: "Haoquan Chen",
+    description: "SYSU",
+    image: "/members/haoquan.jpg", 
+  },
   {
     name: "Zixuan Wang",
     description: "ICT,CAS",
