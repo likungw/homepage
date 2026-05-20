@@ -2,6 +2,13 @@ import { Publication } from "../types/publication";
 
 export const publications: Publication[] = [
   {
+    title: "PyramidFFT: Rearchitecting FFT with Matrix-Aligned Nested-Radix for Hierarchical Scratchpad Memory on AI Accelerators",
+    authors: "Xiang Zhao, Ruge Zhang, Haipeng Jia*, Kun Li*, Jianliang Xu, Ting Cao, Yunquan Zhang",
+    journal: "ACM Transactions on Architecture and Code Optimization",
+    date: "2026", 
+    corresponding: true, 
+  },
+  {
     title: "Redundant Array Computation Elimination",
     authors: "Zixuan Wang, Liang Yuan, Xianmeng Jiang, Kun Li, Junmin Xiao, Yunquan Zhang",
     journal: "47th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI 2026)",
