@@ -50,14 +50,14 @@ export const SiteURL = "https://www.likun.tech";
 const education = [
   {
     title: "Assistant Professor",
-    description: "Tsinghua University\n Host by Prof. Yunxin Liu",
+    description: "Tsinghua University",
     time: "2025.12 - Present",
     advisor: "Prof. Yunxin Liu & Prof. Ting Cao",
     imageSrc: thuLogo,
   },
   {
     title: "Senior Research Scientist",
-    description: "Microsoft Research \n Host by Prof. Ting Cao",
+    description: "Microsoft Research",
     time: "2022.07 - 2025.12",
     advisor: "Prof. Ting Cao",
     imageSrc: msftLogo,
@@ -250,7 +250,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
               </p>
 
               <p>
-                He serves as Program Committee for PPoPP 2026 (<strong>Distinguished Reviewer & Best Paper selection committee</strong>), ISC 2026, SC 2026, ASPLOS 2027, and a keynote speaker at CCF HPC China 2024, ACM ChinaSC 2025, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. 
+                He serves as Program Committee for PPoPP 2026 (<strong>Distinguished Reviewer & Best Paper selection committee</strong>), ISC 2026, SC 2026, ASPLOS 2027, PPoPP 2027, and a keynote speaker at CCF HPC China 2024, ACM ChinaSC 2025, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. 
               </p>
 
             </div>
