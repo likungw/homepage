@@ -20,6 +20,7 @@ export const publications: Publication[] = [
     authors: "Haozhi Han, Qi Li, Ruge Zhang, Haipeng Jia, Yunquan Zhang, Yifeng Chen, Ting Cao, Yunxin Liu, Kun Li*",
     journal: "ISC High Performance 2026",
     date: "2026", 
+    link: "../pdf/pap136s3.pdf",
     corresponding: true, 
   },
   {
