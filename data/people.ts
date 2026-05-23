@@ -12,38 +12,53 @@ export const faculty: Person[] = [
 export const phdStudents: Person[] = [
   {
     name: "Junjie Xu",
-    description: "USTC",
+    description: "University of Science and Technology of China",
     image: "/schools/cas.png",
   },
   {
     name: "Jiaqi Zhai",
-    description: "HUST",
+    description: "Huazhong University of Science and Technology",
     image: "/members/jiaqi.jpg",
   },
   {
     name: "Ethan Li",
-    description: "THU",
+    description: "Tsinghua University",
     image: "/schools/thu.png",
   },
   {
     name: "Haozhi Han",
-    description: "PKU",
+    description: "Peking University",
     image: "/members/haozhi.jpg",
   },
   {
     name: "Luhan Wang",
-    description: "PKU",
+    description: "Peking University",
     image: "/schools/pku.png",
   },
   {
     name: "Ruge Zhang",
-    description: "ICT,CAS",
+    description: "University of Chinese Academy of Sciences",
     image: "/members/ruge.jpg",
   },
 ];
 
 export const undergraduate: Person[] = [
 
+  {
+    name: "Wentao Ren",
+    description: "Nanyang Technological University",
+    image: "/members/thu.png",
+  },
+  {
+    name: "Bohan Sun",
+    description: "Sichuan University",
+    image: "/members/bohan.jpg",
+  },
+  {
+    name: "Jiaxiang Li",
+    description: "Sichuan University",
+    image: "/members/jiaxiang.jpg",
+  },
   {
     name: "Tian Luo",
     description: "Sichuan University",
@@ -53,6 +68,11 @@ export const undergraduate: Person[] = [
     name: "Ziming Pan",
     description: "Yonsei University",
     image: "/members/ziming.jpg",
+  },
+  {
+    name: "Kangping Jiang",
+    description: "Peking University",
+    image: "/members/pku.png",
   },
   {
     name: "Shuo Yang",
@@ -69,32 +89,32 @@ export const alumni: Person[] = [
   },
   {
     name: "Zixuan Wang",
-    description: "ICT,CAS",
+    description: "University of Chinese Academy of Sciences",
     image: "/schools/cas.png",
   },
   {
     name: "Xiang Zhao",
-    description: "ICT,CAS",
+    description: "University of Chinese Academy of Sciences",
     image: "/schools/cas.png",
   },
   {
     name: "Yuetao Chen",
-    description: "CUHK",
+    description: "University of Chinese Academy of Sciences",
     image: "/schools/cas.png",
   },
   {
     name: "Yiwei Zhang",
-    description: "ICT,CAS",
+    description: "Tsinghua University",
     image: "/schools/thu.png",
   },
   {
     name: "Tuowei Wang",
-    description: "THU",
+    description: "Tsinghua University",
     image: "/schools/thu.png",
   },
   {
     name: "Yinnan Zhou",
-    description: "THU",
+    description: "Tsinghua University",
     image: "/schools/thu.png",
   },
 ];
