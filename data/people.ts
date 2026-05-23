@@ -47,7 +47,7 @@ export const undergraduate: Person[] = [
   {
     name: "Wentao Ren",
     description: "Nanyang Technological University",
-    image: "/members/thu.png",
+    image: "/members/wentao.jpg",
   },
   {
     name: "Bohan Sun",
@@ -72,7 +72,7 @@ export const undergraduate: Person[] = [
   {
     name: "Kangping Jiang",
     description: "Peking University",
-    image: "/members/pku.png",
+    image: "/schools/pku.png",
   },
   {
     name: "Shuo Yang",
