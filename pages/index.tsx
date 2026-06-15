@@ -62,11 +62,11 @@ export default function Home({ posts, projects, publications }: HomeProps) {
  
           </div>
 
-          <div className="text-secondary mt-6 space-y-4">
+          <div className="mt-6 rounded-xl bg-blue-50 dark:bg-blue-950/30 px-5 py-4 text-secondary border border-blue-100 dark:border-blue-900">
             <p>
-              Highly self-motivated undergraduate and PhD students are welcome to apply early for long-term internships. If you are interested in Physical AI, AI for Science, and HPC, please feel free to contact me.
+              I recruit 2–3 PhD students each year and welcome early applications for long-term internships. 
+              Students interested in Physical AI, AI for Science, and HPC are encouraged to contact me.
             </p>
- 
           </div>
 
           <div className="mt-6">
