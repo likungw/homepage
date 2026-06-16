@@ -11,11 +11,7 @@ export const faculty: Person[] = [
 
 export const phdStudents: Person[] = [
  
-  {
-    name: "Ethan Li",
-    description: "Tsinghua University",
-    image: "/schools/thu.png",
-  },
+
   {
     name: "Haozhi Han",
     description: "Peking University",
@@ -61,14 +57,14 @@ export const undergraduate: Person[] = [
     image: "/members/ziming.jpg",
   },
   {
-    name: "Kangping Jiang",
-    description: "Peking University",
-    image: "/schools/pku.png",
-  },
-  {
     name: "Shuo Yang",
     description: "Beijing University of Chemical Technology",
     image: "/members/shuo.jpg",
+  },
+  {
+    name: "Ethan Li",
+    description: "Tsinghua University",
+    image: "/schools/thu.png",
   },
 ];
 
