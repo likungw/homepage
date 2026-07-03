@@ -27,6 +27,11 @@ export const phdStudents: Person[] = [
     description: "University of Chinese Academy of Sciences",
     image: "/members/ruge.jpg",
   },
+  {
+    name: "Tingru Jiang",
+    description: "Wuhan University",
+    image: "/members/tingru.jpg",
+  },
 ];
 
 export const undergraduate: Person[] = [
