@@ -250,7 +250,7 @@ export default function About({ projects, activities }: { projects: Project[]; a
               </p>
 
               <p>
-                He serves as Program Committee for PPoPP 2026 (<strong>Distinguished Reviewer & Best Paper selection committee</strong>), ISC 2026, SC 2026, ASPLOS 2027, PPoPP 2027, HPCA 2027, and a keynote speaker at CCF HPC China 2024, ACM ChinaSC 2025, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. 
+                He serves as Program Committee for PPoPP 2026 (<strong>Distinguished Reviewer & Best Paper selection committee</strong>), ISC 2026, SC 2026, ASPLOS 2027, PPoPP 2027, FAISys 2026, HPCA 2027, and a keynote speaker at CCF HPC China 2024, ACM ChinaSC 2025, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. 
               </p>
 
             </div>
