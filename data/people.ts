@@ -18,11 +18,6 @@ export const phdStudents: Person[] = [
     image: "/members/haozhi.jpg",
   },
   {
-    name: "Luhan Wang",
-    description: "Peking University",
-    image: "/schools/pku.png",
-  },
-  {
     name: "Ruge Zhang",
     description: "University of Chinese Academy of Sciences",
     image: "/members/ruge.jpg",
@@ -47,6 +42,16 @@ export const phdStudents: Person[] = [
     description: "University of Science and Technology of China",
     image: "/schools/cas.png",
   },
+  {
+    name: "Chang Liu",
+    description: "Sichuan University",
+    image: "/schools/cas.png",
+  },
+  {
+    name: "Jiaxiang Li",
+    description: "Sichuan University",
+    image: "/members/jiaxiang.jpg",
+  },
 ];
 
 export const undergraduate: Person[] = [
@@ -62,11 +67,6 @@ export const undergraduate: Person[] = [
     image: "/members/bohan.jpg",
   },
   {
-    name: "Jiaxiang Li",
-    description: "Sichuan University",
-    image: "/members/jiaxiang.jpg",
-  },
-  {
     name: "Tian Luo",
     description: "Sichuan University",
     image: "/members/luotian.jpg",
@@ -77,19 +77,23 @@ export const undergraduate: Person[] = [
     image: "/members/ziming.jpg",
   },
   {
-    name: "Shuo Yang",
-    description: "Beijing University of Chemical Technology",
-    image: "/members/shuo.jpg",
+    name: "Dongcan Guo",
+    description: "Tsinghua University",
+    image: "/schools/thu.png",
   },
   {
-    name: "Ethan Li",
+    name: "Yuchen Wang",
     description: "Tsinghua University",
     image: "/schools/thu.png",
   },
 ];
 
 export const alumni: Person[] = [
-   
+  {
+    name: "Luhan Wang",
+    description: "Peking University",
+    image: "/schools/pku.png",
+  },   
   {
     name: "Jiaqi Zhai",
     description: "Huazhong University of Science and Technology",
