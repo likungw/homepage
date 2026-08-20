@@ -45,7 +45,7 @@ export const phdStudents: Person[] = [
   {
     name: "Chang Liu",
     description: "Sichuan University",
-    image: "/schools/cas.png",
+    image: "/members/liuchang.jpg",
   },
   {
     name: "Jiaxiang Li",
