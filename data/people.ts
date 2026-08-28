@@ -81,11 +81,6 @@ export const undergraduate: Person[] = [
     description: "Tsinghua University",
     image: "/schools/thu.png",
   },
-  {
-    name: "Yuchen Wang",
-    description: "Tsinghua University",
-    image: "/schools/thu.png",
-  },
 ];
 
 export const alumni: Person[] = [
