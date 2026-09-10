@@ -2,6 +2,14 @@ import { Publication } from "../types/publication";
 
 export const publications: Publication[] = [
   {
+    title: "MakoXC: Rearchitecting DFT Exchange-Correlation with Matrix-Aligned and Knowledge-Organized Sparsity",
+    authors: "Haozhi Han, Fusong Ju, Jing Bai, Ruge Zhang, Xiang Zhao, Liang Yuan, Yunquan Zhang, Ting Cao, Yunxin Liu, Yifeng Chen, and Kun Li*",
+    journal: "SC 2026",
+    link: "../pdf/SC26_MakoXC__arxiv_.pdf", 
+    date: "2026", 
+    corresponding: true, 
+  },
+  {
     title: "PyramidFFT: Rearchitecting FFT with Matrix-Aligned Nested-Radix for Hierarchical Scratchpad Memory on AI Accelerators",
     authors: "Xiang Zhao, Ruge Zhang, Haipeng Jia*, Kun Li*, Jianliang Xu, Ting Cao, Yunquan Zhang",
     journal: "ACM Transactions on Architecture and Code Optimization",
