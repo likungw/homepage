@@ -28,20 +28,11 @@ export const phdStudents: Person[] = [
     image: "/members/tingru.jpg",
   },
   {
-    name: "Wentao Ren",
-    description: "Nanyang Technological University",
-    image: "/members/wentao.jpg",
-  },
-  {
     name: "Zihe Huang",
     description: "University of Chinese Academy of Sciences",
     image: "/members/zihe.jpg",
   },
-  {
-    name: "Junjie Xu",
-    description: "University of Science and Technology of China",
-    image: "/schools/cas.png",
-  },
+ 
   {
     name: "Chang Liu",
     description: "Sichuan University",
@@ -99,6 +90,16 @@ export const undergraduate: Person[] = [
 ];
 
 export const alumni: Person[] = [
+   {
+    name: "Wentao Ren",
+    description: "Nanyang Technological University",
+    image: "/members/wentao.jpg",
+  },
+  {
+    name: "Junjie Xu",
+    description: "University of Science and Technology of China",
+    image: "/schools/cas.png",
+  },
   {
     name: "Luhan Wang",
     description: "Peking University",
