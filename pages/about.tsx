@@ -32,21 +32,21 @@ export const SiteURL = "https://www.likun.tech";
 const education = [
   {
     title: "Assistant Professor",
-    description: "Tsinghua University",
+    description: "Tsinghua University, reporting to Prof. Yunxin Liu",
     time: "2025.12 - Present",
     advisor: "Prof. Yunxin Liu & Prof. Ting Cao",
     imageSrc: thuLogo,
   },
   {
     title: "Senior Research Scientist",
-    description: "Microsoft Research",
+    description: "Microsoft Research, reporting to Prof. Ting Cao",
     time: "2022.07 - 2025.12",
     advisor: "Prof. Ting Cao",
     imageSrc: msftLogo,
   },
   {
     title: "Ph.D. in Computer Architecture",
-    description: "Institute of Computing Technology, Chinese Academy of Sciences\n University of Chinese Academy of Sciences",
+    description: "Institute of Computing Technology, CAS, advised by Prof. Yunquan Zhang",
     time: "2016.09 – 2022.06",
     advisor: "Prof. Yunquan Zhang",
     imageSrc: casLogo,
@@ -60,7 +60,7 @@ const education = [
   },
   {
     title: "Research Intern",
-    description: "Peking University",
+    description: "Peking University, advised by Prof. Yifeng Chen",
     time: "2017.07 – 2018.06",
     advisor: "Prof. Yifeng Chen",
     imageSrc: pkuLogo,
@@ -262,7 +262,7 @@ export default function About() {
             <div className="about-copy space-y-4 text-secondary">
               <p>
                 My work spans high-performance computing and artificial intelligence,
-                with publications at <strong className="text-primary">SC, PPoPP, ATC,
+                with publications at <strong className="text-primary">NeurIPS, SC, PPoPP, ATC,
                 ASPLOS, PLDI, ICS, ISC, TACO, and TPDS</strong>. It has been recognized
                 by distinctions including a PPoPP Best Paper Award, the SC&apos;25
                 Best Student Paper Award Finalist, and the SC&apos;24 Reproducibility

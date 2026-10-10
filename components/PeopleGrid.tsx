@@ -18,8 +18,8 @@ export default function PeopleGrid({ people, featured = false }: { people: Perso
               <p className="home-section-kicker"><span className="home-kicker-line" /> GROUP LEAD</p>
               <h3>{person.name}<span className="home-accent">.</span></h3>
               <p className="people-feature-role">Assistant Professor · {person.description}</p>
-              <p className="people-feature-overview">Exploring the intersection of high-performance computing, Physical AI, and AI for Science — from intelligent physical world models to accelerator-native scientific systems.</p>
-              <Link href="/about" className="people-profile-link">Meet the PI <span aria-hidden="true">↗</span></Link>
+              <p className="people-feature-overview">Exploring the intersection of high-performance computing, AI for Science, and Physical AI.</p>
+              <Link href="https://air.tsinghua.edu.cn/en/info/1046/1962.htm" className="people-profile-link">Meet the PI <span aria-hidden="true">↗</span></Link>
             </div>
           </article>
         ))}

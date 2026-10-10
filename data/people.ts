@@ -33,20 +33,20 @@ export const phdStudents: Person[] = [
   },
   {
     name: "Zihe Huang",
-    description: "University of Chinese Academy of Sciences",
+    description: "University of Chinese Academy of Sciences->Peking University",
     image: "/members/zihe.jpg",
     avatar: "/avatars-anime/zihe-huang.webp",
   },
  
   {
     name: "Chang Liu",
-    description: "Sichuan University",
+    description: "Sichuan University->University of Chinese Academy of Sciences",
     image: "/members/liuchang.jpg",
     avatar: "/avatars-anime/chang-liu.webp",
   },
   {
     name: "Jiaxiang Li",
-    description: "Sichuan University",
+    description: "Sichuan University->University of Chinese Academy of Sciences",
     image: "/members/jiaxiang.jpg",
     avatar: "/avatars-anime/jiaxiang-li.webp",
   },
@@ -61,16 +61,16 @@ export const undergraduate: Person[] = [
     avatar: "/avatars-anime/zhinan-liu.webp",
   },
   {
-    name: "Bohan Sun",
-    description: "Sichuan University",
-    image: "/members/bohan.jpg",
-    avatar: "/avatars-anime/bohan-sun.webp",
-  },
-  {
     name: "Tian Luo",
     description: "Sichuan University",
     image: "/members/luotian.jpg",
     avatar: "/avatars-anime/tian-luo.webp",
+  },
+  {
+    name: "Bohan Sun",
+    description: "Sichuan University",
+    image: "/members/bohan.jpg",
+    avatar: "/avatars-anime/bohan-sun.webp",
   },
   {
     name: "Ziming Pan",
