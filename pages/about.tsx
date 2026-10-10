@@ -1,38 +1,20 @@
 import Image from "next/image";
 import { NextSeo } from "next-seo";
-
 import Link from "components/Link";
 import Section from "components/Section";
 import Workplaces from "components/Workplaces";
-import Gallery from "components/Gallery";
-import { ActivityType } from "components/Activity";
+import Gallery, { Photo } from "components/Gallery";
+import TalkList from "components/TalkList";
+import ScrollReveal from "components/ScrollReveal";
 
-import cuhkLogo from "public/schools/CUHK.png";
-import umnLogo from "public/schools/UMN.png";
+import headshot from "public/headshot.jpg";
+import airLogo from "public/schools/airlogo.png";
 import msftLogo from "public/schools/msft.png";
 import pkuLogo from "public/schools/pku.png";
 import sduLogo from "public/schools/sdu.png";
 import casLogo from "public/schools/cas.png";
 import thuLogo from "public/schools/thu.png";
-
-import githubLogo from "public/Github.png";
-import jupyterLogo from "public/projects/jupyter.png";
-import qianjianLogo from "public/ventures/qianjian.png";
-import stayLogo from "public/ventures/stay.jpeg";
-import openaiLogo from "public/projects/openai-logo.png";
-import nosediveLogo from "public/projects/nosedive.png";
-import canvasLogo from "public/projects/canvas.png";
-import isjobsLogo from "public/ventures/davis001.jpg";
-import surgeLogo from "public/ventures/surge.svg";
-import misqLogo from "public/ventures/misq.png";
-
-import avatar from "public/avatar.png";
-
-import { GetStaticProps } from "next";
-import { Project, allProjects } from "../.contentlayer/generated";
-import { pick } from "lib/pick";
-import MDXComponents from "../components/MDXComponents";
-import { getActivities, getActivity } from "../lib/strava";
+import { talks } from "../data/talks";
 
 export const connectLinks = [
   { label: "Email", href: "mailto:likungw@gmail.com" },
@@ -91,75 +73,6 @@ const education = [
   },
 ];
 
-const sideProjects = [
-  {
-    title: "ChatGPT Quick Actions for Raycast",
-    time: "2023",
-    description: "Invoke ChatGPT anywhere on your Mac",
-    imageSrc: openaiLogo,
-    link: "https://github.com/alanzchen/chatgpt-quick-actions",
-  },
-  {
-    title: "Canvas Tools",
-    time: "2022",
-    description: "A set of CLI tools for Canvas LMS",
-    imageSrc: canvasLogo,
-    link: "https://github.com/alanzchen/Canvas-Tools"
-  },
-  {
-    title: "Jupyter Desktop",
-    time: "2020",
-    description: "macOS App for Jupyter Lab",
-    imageSrc: jupyterLogo,
-    link: "https://github.com/alanzchen/jupyter-desktop",
-  },
-  {
-    title: "Nosedive",
-    time: "2017",
-    description: "Parody website of Black Mirror's Nosedive",
-    imageSrc: nosediveLogo,
-    link: "https://github.com/alanzchen/nosedive/",
-  }
-];
-
-const ventures = [
-  {
-    title: "IS Jobs",
-    time: "2022 -",
-    description: "Crowdsourced database for IS job posts",
-    imageSrc: isjobsLogo,
-    link: "https://isjobs.xyz",
-  },
-  {
-    title: "MISQ Insider (as founding coordinator)",
-    time: "2021 -",
-    description: "MISQ-affiliated student blog for interviews",
-    imageSrc: misqLogo,
-    link: "https://www.linkedin.com/company/misqinsider/",
-  },
-  {
-    title: "Surge.fm",
-    time: "2020 -",
-    description: "Crowdsourced self-organizing news aggregator",
-    imageSrc: surgeLogo,
-    link: "https://surge.fm",
-  },
-  {
-    title: "浅见 (Qianjian)",
-    time: "2014 - 18",
-    description: "Online campus media for CUHK(SZ)",
-    imageSrc: qianjianLogo,
-    link: "https://qianjian.space",
-  },
-  {
-    title: "月台 (Stay)",
-    time: "2015 - 17",
-    description: "Campus magazine for CUHK(SZ)",
-    imageSrc: stayLogo,
-    link: "https://archive.qianjian.space/stay/",
-  }
-];
-
 const awards = [
   {
     title: "CCF Youth Talent Award in High Performance Computing",
@@ -209,9 +122,11 @@ const awards = [
 
 const seoTitle = `About | ${FullName}`;
 export const seoDesc =
-  "Assistant Professor in Information Systems. For a more humane & productive future.";
+  "Kun Li is an Assistant Professor at Tsinghua University working on high-performance computing, physical AI, and AI for Science.";
 
-export default function About({ projects, activities }: { projects: Project[]; activities: ActivityType[] }) {
+const futureTalks = talks.filter((talk) => new Date(talk.date).getTime() > Date.now());
+
+export default function About() {
   return (
     <>
       <NextSeo
@@ -220,158 +135,201 @@ export default function About({ projects, activities }: { projects: Project[]; a
         openGraph={{
           title: seoTitle,
           description: seoDesc,
-          url: `/about/`,
-          site_name: `${FullName}`,
+          url: "/about/",
+          site_name: FullName,
         }}
-        twitter={{
-          cardType: "summary_large_image",
-        }}
+        twitter={{ cardType: "summary_large_image" }}
       />
-      <div className="flex flex-col gap-16 md:gap-24">
-        <div className="hidden sm:block">
-          <Gallery activities={activities}/>
-        </div>
-        <div className="-mb-8 sm:hidden animate-in">
-          <Image
-            src={avatar}
-            width={48}
-            height={48}
-            alt={`avatar of ${FullName}`}
-          />
-        </div>
-        <div
-          className="flex flex-col gap-16 animate-in sm:animate-none md:gap-16"
-          style={{ "--index": 2 } as React.CSSProperties}
-        >
+      <div className="about-page mx-auto flex flex-col gap-14 pb-6 md:gap-20">
+        <section aria-labelledby="about-heading" className="about-hero grid items-start gap-9 sm:grid-cols-[minmax(0,1fr)_260px] md:gap-12 animate-in">
+          <div className="min-w-0">
+            <p className="about-kicker mb-4 text-xs font-semibold uppercase tracking-[0.18em]">
+              About the PI
+            </p>
+            <h1 id="about-heading" className="about-name text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">
+              Kun Li <span className="text-2xl font-normal tracking-normal text-secondary sm:text-3xl">李琨</span>
+            </h1>
+            <p className="mt-2 text-base text-secondary">
+              Assistant Professor · Tsinghua University
+            </p>
+            <Image
+              src={airLogo}
+              alt="Institute for AI Industry Research (AIR), Tsinghua University"
+              className="mt-3 h-11 w-auto object-contain object-left"
+              priority
+            />
+            <div className="about-copy mt-7 space-y-4 text-secondary">
+              <p>
+                I am an Assistant Professor at the{" "}
+                <Link href="https://air.tsinghua.edu.cn/en/info/1046/1962.htm" underline>
+                  Institute for AI Industry Research (AIR), Tsinghua University
+                </Link>
+                . Previously, I was a Senior Research Scientist at{" "}
+                <Link href="https://www.microsoft.com/en-us/research/" underline>
+                  Microsoft Research
+                </Link>
+                . I received my Ph.D. from the{" "}
+                <Link href="https://www.ict.ac.cn/" underline>
+                  Institute of Computing Technology, Chinese Academy of Sciences
+                </Link>
+                .
+              </p>
+              <p>
+                My research lies at the intersection of high-performance computing,
+                physical AI, and AI for Science. I work on scalable algorithms
+                and systems that help us understand the physical world.
+              </p>
+            </div>
+            {/* One consistent row of pill links; wraps gracefully on smaller screens. */}
+            <div className="about-connect" aria-label="Contact and social profiles">
+              <div className="about-connect-primary">
+                {connectLinks.map((link) => (
+                  <Link href={link.href} className="about-main-link" key={link.label}>
+                    {link.label} <span aria-hidden="true">↗</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* Restore the original draggable, spring-loaded, hover-to-flip portrait. */}
+          <div className="relative mx-auto flex w-[260px] flex-col items-center sm:mx-0 sm:items-start">
+            <div className="relative h-[337px] w-[260px]">
+              <Photo
+                src={headshot}
+                alt="Portrait of Kun Li"
+                width={226}
+                height={300}
+                rotate={6.3}
+                index={1}
+                flipDirection="left"
+                meta={
+                  <span className="flex flex-col gap-3">
+                    <span>Kun Li<br />Tsinghua AIR</span>
+                    <span>Researching HPC × AI × Science</span>
+                  </span>
+                }
+              />
+            </div>
+            <p className="text-xs text-secondary">Drag · Hover to flip</p>
+          </div>
+        </section>
+
+        {/* The original About gallery: four candid photographs, with the same
+            spring entrance, gentle rotations, drag behavior and flip animation. */}
+        <section aria-label="Moments beyond research" className="about-gallery-wrap min-w-0">
+          <p className="about-kicker mb-2 text-xs font-semibold uppercase tracking-[0.17em]">
+            Beyond the research
+          </p>
+          <Gallery activities={[]} />
+        </section>
+
+        <aside className="about-recruitment relative overflow-hidden rounded-2xl p-5 sm:p-6 animate-in" style={{ animationDelay: "110ms" }}>
+          <span className="about-recruitment-line absolute bottom-0 left-0 top-0 w-1" aria-hidden="true" />
+          <div className="about-recruitment-layout">
+            <div className="min-w-0">
+              <p className="about-recruitment-kicker text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
+                Join our group
+              </p>
+              <h2 className="mt-2 text-xl font-semibold tracking-tight sm:text-2xl">
+                Curious minds are welcome.
+              </h2>
+              <p className="about-copy mt-3 text-secondary">
+                I recruit 2–3 Ph.D. students each year and welcome applications
+                from prospective postdoctoral researchers and long-term interns.
+                If you are interested in Physical AI, AI for Science, or HPC,
+                please send your CV and a short description of your research interests.
+              </p>
+            </div>
+            <div className="about-recruitment-aside">
+              <p className="about-recruitment-kicker text-xs font-semibold uppercase tracking-[0.13em]">
+                Opportunities
+              </p>
+              <div className="about-recruitment-roles" aria-label="Open positions">
+                <span>Ph.D. students</span>
+                <span>Postdoctoral researchers</span>
+                <span>Research interns</span>
+              </div>
+              <Link href="mailto:likungw@gmail.com" className="about-main-link about-recruitment-cta">
+                Get in touch <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+          </div>
+        </aside>
+
+        <div className="about-details flex flex-col gap-14 md:gap-16">
+          <ScrollReveal>
           <Section heading="About me" headingAlignment="right">
-            <div className="flex flex-col gap-6">
+            <div className="about-copy space-y-4 text-secondary">
               <p>
-                Dr. Kun Li works at the intersection of high-performance computing (HPC) and artificial intelligence (AI). His research  has been published in leading international venues, including <strong> SC, PPoPP, ATC, ASPLOS, PLDI, ICS, ISC, TACO, and TPDS</strong>. His work has been recognized by distinctions such as <strong>Best Paper Award at PPoPP’24</strong>, <strong>SC’25 Best Student Paper Award Finalist</strong>, <strong>SC’24 Reproducibility Challenge Finalist</strong>, and <strong>ACM Showcase (2026) selection</strong>. He has also received numerous honors, including the CCF Outstanding Doctoral Dissertation Award, ACM SIGHPC China Outstanding Doctoral Dissertation Award,  CCF HPC Youth Talent Award, and ACM SIGHPC China Rising Star Award. 
+                My work spans high-performance computing and artificial intelligence,
+                with publications at <strong className="text-primary">SC, PPoPP, ATC,
+                ASPLOS, PLDI, ICS, ISC, TACO, and TPDS</strong>. It has been recognized
+                by distinctions including a PPoPP Best Paper Award, the SC&apos;25
+                Best Student Paper Award Finalist, and the SC&apos;24 Reproducibility
+                Challenge Finalist.
               </p>
-
               <p>
-                He serves as Program Committee for <strong>PPoPP 2026 (Distinguished Reviewer & Best Paper selection committee), ISC 2026, SC 2026, ASPLOS 2027, PPoPP 2027, FAISys 2026, HPCA 2027, ICS 2027</strong>, and a keynote speaker at CCF HPC China 2024, ACM ChinaSC 2025, as an Executive Committee Member of the CCF Technical Committee on High-Performance Computing and Computer Architecture. 
+                I have received the CCF Outstanding Doctoral Dissertation Award,
+                the ACM SIGHPC China Outstanding Doctoral Dissertation Award,
+                the CCF HPC Youth Talent Award, and the ACM SIGHPC China Rising
+                Star Award.
               </p>
-
             </div>
           </Section>
-          <Section heading="Research" headingAlignment="right">
-            <div className="flex flex-col gap-6">
-              <p>
-                <strong>Research Vision</strong>: Scalable Physical World Models
-              </p>
-              <p>
-                <strong>Core Question</strong>: How can we build world models that capture physical dynamics, support long-horizon evolution, and scale from microscopic scientific processes to macroscopic embodied systems?
-              </p>
-              <p>
-                <strong>Two Frontiers</strong>: <br />(1) Macro World Models for embodied intelligence in real-world physical environments; <br />(2) Micro World Models for AI for Science, spanning quantum chemistry, molecular dynamics, and kinetic simulation.
-              </p>
-              {/*<ul className="list-decimal ml-10">
-                <li><strong>Physical AI</strong> – studies embodied intelligence, developing learning agents that perceive, act, and reason in the physical world through long-horizon, physically grounded interaction and decision-making.</li>
+          </ScrollReveal>
 
-                <li><strong>AI for Science</strong> – investigates large-scale, supercomputing-driven scientific intelligence by tightly integrating AI with extreme-scale simulations, enabling previously intractable studies in nuclear materials irradiation, quantum chemistry, and free energy calculations (FEP).</li>
-
-                <li><strong>Efficient AI</strong> – advances hardware-aware algorithms, compilers, and system optimizations that bridge high-performance computing and large-scale AI models, enabling efficient execution on modern AI accelerators.</li>
-
-              </ul>*/}
-
-            </div>
+          <ScrollReveal>
+          <Section heading="Service" headingAlignment="right">
+            <p className="about-copy text-secondary">
+              I serve on program committees including PPoPP 2026 (Distinguished
+              Reviewer and Best Paper selection), ISC 2026, SC 2026, ASPLOS 2027,
+              PPoPP 2027, FAISys 2026, HPCA 2027, and ICS 2027. I have also
+              given keynote and invited talks at CCF HPC China and ACM ChinaSC,
+              and serve on the executive committee of the CCF Technical Committee
+              on High-Performance Computing and Computer Architecture.
+            </p>
           </Section>
-          <Section heading="Recruitment" headingAlignment="right">
-            <div className="flex flex-col gap-6">
-              <p>
-                I am <strong>continuously recruiting interns,  Ph.D. and postdoctoral researchers</strong> to join our group. 
-                If you are interested, please feel free to contact me with your CV and a brief description of your research interests.
-                </p>
-            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+          <Section heading="Experience" headingAlignment="right">
+            <Workplaces items={education} />
           </Section>
-          <Section heading="Connect" headingAlignment="right">
-            <ul className="flex flex-wrap gap-4 sm:gap-6 animated-list">
-              {connectLinks.map((link) => (
-                <li className="transition-opacity" key={link.label}>
-                  <Link href={link.href}>{link.label}</Link>
+          </ScrollReveal>
+
+          <ScrollReveal>
+          <Section heading="Selected Awards" headingAlignment="right">
+            <ul className="space-y-4">
+              {awards.map((award) => (
+                <li key={`${award.title}-${award.time}`} className="grid grid-cols-[minmax(0,1fr)_76px] gap-3 sm:grid-cols-[minmax(0,1fr)_112px]">
+                  <div className="min-w-0">
+                    {award.link ? (
+                      <Link href={award.link} className="font-medium underline-offset-4 hover:underline">
+                        {award.title}
+                      </Link>
+                    ) : (
+                      <p className="font-medium">{award.title}</p>
+                    )}
+                    {award.description && <p className="mt-1 text-xs leading-5 text-secondary">{award.description}</p>}
+                  </div>
+                  <time className="pt-0.5 text-right text-xs text-secondary sm:text-sm">
+                    {award.time}
+                  </time>
                 </li>
               ))}
             </ul>
           </Section>
-          <Section heading="Experience" headingAlignment="right">
-            <div className="flex flex-col w-full gap-4">
-              <Workplaces items={education} />
-            </div>
-          </Section>
-          <Section heading="Selected Awards" headingAlignment="right">
-            <div className="flex flex-col w-full gap-8">
-              <ul className={`flex flex-col gap-1`}>
-                {awards.map((award, index) => (
-                  <li className="" key={index}>
-                    {/* 父容器：左右分布 + 垂直居中 */}
-                    <div className="flex justify-between items-center gap-2">{/* ✅ items-center */}
-                      
-                      {/* 左侧：奖项标题 + 描述 */}
-                      <div className="flex flex-col gap-px">
-                        {award.link ? (
-                          <Link href={award.link}>
-                            {award.title}
-                          </Link>
-                        ) : (
-                          <p>{award.title}</p>
-                        )}
-                        {award.description && (
-                          <p className="text-sm text-secondary">{award.description}</p>
-                        )}
-                      </div>
+          </ScrollReveal>
 
-                      {/* 右侧：时间列（固定宽度 + 右对齐，与 Workplaces 一致 w-32） */}
-                      <p className="text-secondary w-32 text-right">{/* ✅ 统一 w-32 */}
-                        {award.time}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Section>
-
-          {/* 
-          <Section heading="Initiatives" headingAlignment="right">
-            <div className="flex flex-col w-full gap-8">
-              <p>Initiatives I have founded, co-founded, or advised. </p>
-              <Workplaces items={ventures} isAnimated />
-            </div>
-          </Section>
-          <Section heading="Side Projects" headingAlignment="right">
-            <div className="flex flex-col w-full gap-8">
-              <p>I am also a self-taught full-stack developer. I build stuff for fun :) </p>
-              <Workplaces items={sideProjects} isAnimated />
-            </div>
-          </Section>
-          */}
+          {futureTalks.length > 0 && (
+            <ScrollReveal>
+            <Section heading="Upcoming Talks" headingAlignment="right">
+              <TalkList talks={[...futureTalks]} />
+            </Section>
+            </ScrollReveal>
+          )}
         </div>
       </div>
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-
-  const projects = allProjects
-    .sort((a, b) => parseInt(b.time.slice(0, 4)) - parseInt(a.time.slice(0, 4)))
-    .map((post) =>
-    pick(post, ["slug", "title", "description", "time"])
-  );
-
-  let activities: ActivityType[] = [];
-  try {
-    activities = await getActivities();
-  } catch (error) {
-    console.log(error);
-  }
-
-  return {
-    props: {
-      projects: projects,
-      activities: activities
-    },
-    revalidate: 3600,
-  };
-};

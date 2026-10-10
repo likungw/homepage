@@ -1,150 +1,75 @@
-import type React from "react";
-import { GetStaticProps } from "next";
-import Image from "next/image";
-
-import {
-  allPosts,
-  allProjects,
-  allPublications,
-  Post,
-  Project,
-  Publication,
-} from ".contentlayer/generated";
-import { pick } from "lib/pick";
-
+import type { ReactElement } from "react";
+import { NextSeo } from "next-seo";
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "components/Link";
-import TalkList from "../components/TalkList";
-import { Photo } from "components/Gallery";
+import ResearchShowcase from "components/ResearchShowcase";
+import TypewriterText from "components/TypewriterText";
+import { researchDemos } from "../data/research";
 
-import headshot from "../public/headshot.jpg";
-import airLogo from "../public/schools/airlogo.png";
+// Visual-only palette: keep data/research.ts (including custom video paths) untouched.
+const galleryPalette = [
+  { accent: "#B9A5FF", background: "#28204A" },
+  { accent: "#BCA8FF", background: "#26234E" },
+  { accent: "#DFB5FF", background: "#39234E" },
+  { accent: "#A4B2FF", background: "#242647" },
+];
 
-import { talks } from "../data/talks";
-import ExternalLink from "../components/ExternalLink";
-const futureTalks = talks.filter((talk) => new Date(talk.date) > new Date());
+export default function Home() {
+  const reduceMotion = useReducedMotion();
+  const fadeUp = (delay: number) => ({
+    initial: reduceMotion ? false as const : { opacity: 0, y: 25 },
+    animate: { opacity: 1, y: 0 },
+    transition: { type: "spring" as const, stiffness: 86, damping: 21, mass: 1, delay: reduceMotion ? 0 : delay },
+  });
 
-type HomeProps = {
-  posts: Post[];
-  projects: Project[];
-  publications: Publication[];
-};
-
-export default function Home({ posts, projects, publications }: HomeProps) {
   return (
-    <div className="flex flex-col gap-16 max-w-4xl mx-auto px-4">
-      {/* 个人简介 + 头像 */}
-      <div className="flex flex-col md:flex-row md:items-start gap-8 animate-in">
-        {/* 左侧：简介 */}
-        <div className="flex-1">
-          <h1>Kun Li（李琨）</h1>
+    <>
+      <NextSeo
+        title="Kun Li Research Group | Tsinghua AIR"
+        description="Research at the intersection of high-performance computing, Physical AI, and AI for Science: scalable intelligence for the physical world."
+        openGraph={{ url: "/", title: "Kun Li Research Group | Tsinghua AIR" }}
+      />
 
-          {/* 职位行 */}
-          <div className="text-secondary mt-1">
-            Assistant Professor @ Tsinghua University
-          </div>
-
-          {/* Logo 行（新的一行，放大并左对齐） */}
-          <div className="mt-2">
-            <Image
-              src={airLogo}
-              alt="Institute for AI Industry Research (AIR), Tsinghua University"
-              priority
-              className="h-12 w-auto" // ✅ 控制大小：改 h-10/h-12/h-14...
+      <div className="research-home flex flex-col gap-20 pb-5 sm:gap-24 lg:gap-28">
+        <section aria-label="Research group introduction" className="home-hero relative isolate pt-4 sm:pt-10">
+          <div className="home-ambient home-ambient-one" aria-hidden="true" />
+          <div className="home-ambient home-ambient-two" aria-hidden="true" />
+          <motion.div {...fadeUp(0.02)} className="home-eyebrow">
+            <span className="home-status-dot" aria-hidden="true" />
+            KUN LI RESEARCH GROUP <span className="home-eyebrow-separator">/</span> TSINGHUA AIR
+          </motion.div>
+          <motion.h1 {...fadeUp(0.13)} className="home-hero-title">
+            Building intelligence for the <span className="home-accent">physical world.</span>
+          </motion.h1>
+          <motion.div {...fadeUp(0.24)} className="home-hero-copy">
+            <TypewriterText
+              text="We connect high-performance computing, artificial intelligence, and scientific discovery to model, simulate, and understand complex physical systems across scales."
+              className="home-hero-typewriter"
+              speed={25}
             />
-          </div>
+          </motion.div>
+          <motion.div {...fadeUp(0.32)} className="mt-8 flex flex-wrap items-center gap-3">
+            <Link  href="/projects" className="home-cta-primary">
+              Explore research <span className="home-cta-arrow" aria-hidden="true">↗</span>
+            </Link>
+            <Link href="/people" className="home-cta-secondary">
+              Meet the team <span aria-hidden="true">↗</span>
+            </Link>
+          </motion.div>
+        </section>
 
-          {/* 正文简介 */}
-          <div className="text-secondary mt-6 space-y-4">
-            <p>
-              Dr. Kun Li is an Assistant Professor at the <ExternalLink  href="https://air.tsinghua.edu.cn/en/info/1046/1962.htm" target="_blank">Institute for AI Industry Research (AIR), Tsinghua University</ExternalLink>. He was previously a Senior Research Scientist at <ExternalLink  href="https://www.microsoft.com/en-us/research/" target="_blank">Microsoft Research</ExternalLink>. He received his Ph.D. degree from the <ExternalLink href="https://www.ict.ac.cn/" target="_blank">Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS)</ExternalLink>, and conducted research internships at Microsoft Research and <ExternalLink href="https://www.pku.edu.cn/" target="_blank">Peking University</ExternalLink>. His research focuses
-              on HPC, Physical AI and AI for Science.
-            </p>
- 
-          </div>
+        {/* Keep the freely arranged four-video gallery from v2. */}
+        <ResearchShowcase demos={researchDemos.map((demo, i) => ({ ...demo, ...galleryPalette[i % galleryPalette.length] }))} />
 
-          <div className="mt-6 rounded-xl bg-blue-50 dark:bg-blue-950/30 px-5 py-4 text-secondary border border-blue-100 dark:border-blue-900">
-            <p>
-              I recruit 2–3 PhD students each year and welcome early applications for long-term internships. 
-              Students interested in Physical AI, AI for Science, and HPC are encouraged to contact me.
-            </p>
-          </div>
 
-          <div className="mt-6">
-            <Link href="/about">CV</Link>
-          </div>
-        </div>
-
-        {/* 右侧：照片 */}
-        <div className="md:w-[200px] shrink-0 hidden md:block">
-          <Photo
-            src={headshot}
-            meta={
-              <span className="flex flex-col gap-3">
-                <span className="block">
-                  2024-03-01 <br />
-                  PHOTO AT Edinburgh
-                </span>
-                <Link href="/about">More photos ↗</Link>
-              </span>
-            }
-            alt="Headshot"
-            width={210}
-            height={280}
-            rotate={6.3}
-            index={1}
-            flipDirection="left"
-          />
-        </div>
       </div>
-
-      {/* Upcoming Talks */}
-      {futureTalks.length > 0 && (
-        <div
-          className="flex flex-col gap-8 animate-in"
-          style={{ "--index": 2 } as React.CSSProperties}
-        >
-          <h2>Upcoming Talks</h2>
-          <TalkList talks={futureTalks} />
-        </div>
-      )}
-    </div>
+    </>
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = allPosts
-    .sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    )
-    .filter((_, i) => i < 4)
-    .map((post) => pick(post, ["slug", "title", "publishedAt", "image"]));
-
-  const projects = allProjects
-    .sort((a, b) => parseInt(b.time.slice(0, 4)) - parseInt(a.time.slice(0, 4)))
-    .map((post) =>
-      pick(post, ["slug", "title", "description", "time", "awards"])
-    );
-
-  const publications = allPublications
-    .sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    )
-    .map((publication) =>
-      pick(publication, [
-        "slug",
-        "title",
-        "description",
-        "publishedAt",
-        "journal",
-        "awards",
-        "media_coverage",
-        "url",
-      ])
-    );
-
-  return {
-    props: { posts, projects, publications },
-  };
-};
+// Broad Home for research visuals; use the shared responsive site gutters.
+Home.getLayout = (page: ReactElement) => (
+  <main className="site-container site-container--home ring-offset-primary">
+    {page}
+  </main>
+);

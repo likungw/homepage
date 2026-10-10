@@ -1,60 +1,47 @@
-import Image from "next/image";
-import { Person } from "../types/people";
+import Link from "components/Link";
+import type { Person } from "../types/people";
+import PortraitFlip from "./PortraitFlip";
 
-interface PeopleGridProps {
-  people: Person[];
-}
+export { personImageSrc } from "./PortraitFlip";
 
-export default function PeopleGrid({ people }: PeopleGridProps) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-stretch">
-      {people.map((person) => {
-        const CardContent = (
-          <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-md transition-all duration-300 h-full">
-            {/* 头像 */}
-            <div className="relative w-24 h-24 mb-4 flex-shrink-0">
-              <Image
-                src={person.image}
-                alt={person.name}
-                className="w-full h-full object-cover rounded-full"
-                width={96}
-                height={96}
-              />
+export default function PeopleGrid({ people, featured = false }: { people: Person[]; featured?: boolean }) {
+  if (featured) {
+    return (
+      <div className="people-feature-list">
+        {people.map((person) => (
+          <article className="people-feature" key={person.name}>
+            <div className="people-feature-image">
+              <PortraitFlip person={person} featured />
+              <span className="people-image-corner" aria-hidden="true">01 / PI</span>
             </div>
+            <div className="people-feature-copy">
+              <p className="home-section-kicker"><span className="home-kicker-line" /> GROUP LEAD</p>
+              <h3>{person.name}<span className="home-accent">.</span></h3>
+              <p className="people-feature-role">Assistant Professor · {person.description}</p>
+              <p className="people-feature-overview">Exploring the intersection of high-performance computing, Physical AI, and AI for Science — from intelligent physical world models to accelerator-native scientific systems.</p>
+              <Link href="/about" className="people-profile-link">Meet the PI <span aria-hidden="true">↗</span></Link>
+            </div>
+          </article>
+        ))}
+      </div>
+    );
+  }
 
-            {/* 名字 */}
-            <h3 className="text-base font-medium">{person.name}</h3>
-
-            {/* 描述 */}
-            <p className="text-sm text-secondary mt-1">{person.description}</p>
+  return (
+    <div className="people-grid">
+      {people.map((person) => (
+        <article key={person.name} className="people-member-card">
+          <div className="people-member-image">
+            <PortraitFlip person={person} />
           </div>
-        );
-
-        return person.link ? (
-          <a
-            key={person.name}
-            href={person.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block h-full rounded-2xl transition-all duration-300 hover:shadow-lg 
-                       hover:ring-4 hover:ring-transparent hover:ring-offset-2 hover:ring-offset-white
-                       hover:bg-gradient-to-r hover:from-[#660099] hover:via-[#9933CC] hover:to-[#CC66FF]"
-            style={{ padding: "2px" }} // 外周高亮
-          >
-            {CardContent}
-          </a>
-        ) : (
-          <div
-            key={person.name}
-            className="block h-full rounded-2xl transition-all duration-300 
-                       hover:shadow-lg hover:ring-4 hover:ring-transparent hover:ring-offset-2 hover:ring-offset-white
-                       hover:bg-gradient-to-r hover:from-[#660099] hover:via-[#9933CC] hover:to-[#CC66FF]"
-            style={{ padding: "2px" }} // 外周高亮
-          >
-            {CardContent}
+          <div className="people-member-info">
+            <h3>{person.link ? (
+              <a href={person.link} target="_blank" rel="noopener noreferrer">{person.name} <span aria-hidden="true">↗</span></a>
+            ) : person.name}</h3>
+            <p>{person.description}</p>
           </div>
-        );
-      })}
+        </article>
+      ))}
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function PublicationLink({ href, icon, label }: PublicationLinkPr
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-gray-500 hover:underline hover:text-blue-800 transition-colors"
+      className="site-inline-link text-sm"
     >
       {icon && <span className="mr-1">{icon}</span>}
       {label}

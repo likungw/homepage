@@ -1,9 +1,9 @@
 import { DefaultSeo } from "next-seo";
-import { FullName, SiteURL, seoDesc } from "../pages/about";
+import { FullName, SiteURL, siteSeoDescription } from "../data/site";
 
 const config = {
   title: `${FullName}`,
-  description: `${seoDesc}`,
+  description: siteSeoDescription,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -17,8 +17,8 @@ const config = {
     ],
   },
   twitter: {
-    handle: "@chzenan",
-    site: "@chzenan",
+    handle: "@KunLi90358191",
+    site: "@KunLi90358191",
     cardType: "summary_large_image",
   },
 };

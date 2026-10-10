@@ -45,7 +45,7 @@ export default function ThemeSwitcher() {
             <div className="relative mt-1">
               <Listbox.Button
                 className={cn(
-                  "relative w-8 h-8 cursor-default rounded-full flex items-center justify-center focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300",
+                  "relative w-8 h-8 cursor-default rounded-full flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:ring-offset-primary",
                   open && "bg-secondaryA"
                 )}
               >

@@ -1,12 +1,16 @@
 export interface Publication {
-  title: string;         // 论文标题
+  title: string;
   authors: string;
-  journal: string;       // 期刊或会议名
-  date: string;          // 发表日期
-  link?: string;         // 论文链接
-  repo?: string;         // 代码仓库链接
-  slides?: string;   // 可选
-  project?: string;   // 可选
-  award?: string;        // 奖项（如果有）
-  corresponding?: boolean; // 是否为通信作者
+  journal: string;         // Full conference or journal citation, e.g. "SC 2026"
+  date: string;
+  link?: string;
+  repo?: string;
+  slides?: string;
+  project?: string;
+  award?: string;
+  corresponding?: boolean;
+  /** Optional short venue shown in the badge and venue filter (e.g. "SC", "ACM TACO"). */
+  venue?: string;
+  /** Optional research-direction override; for new papers, prefer setting this explicitly. */
+  researchArea?: string;
 }

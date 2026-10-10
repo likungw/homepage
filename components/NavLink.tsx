@@ -18,7 +18,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
     <Link
       className={cn(
         "relative px-4 py-2 rounded-full text-sm hover:text-primary transition-colors",
-        active ? "text-primary" : "text-secondary"
+        active ? "nav-link-active" : "text-secondary"
       )}
       href={href}
     >
@@ -26,8 +26,8 @@ export default function NavLink({ href, children }: NavLinkProps) {
       {active && (
         <motion.div
           layoutId="underline"
-          className="absolute left-0 top-0 bottom-0 right-0 -z-20 bg-secondaryA rounded-full"
-          transition={{ duration: 0.35 }}
+          className="nav-link-active-pill absolute left-0 top-0 bottom-0 right-0 -z-20 rounded-full"
+          transition={{ type: "spring", stiffness: 210, damping: 25 }}
         />
       )}
     </Link>

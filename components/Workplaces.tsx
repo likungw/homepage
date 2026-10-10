@@ -13,7 +13,7 @@ function Workplace({ title, description, imageSrc, time, link }: Workplace) {
   const content = (
     <>
       {/* 左侧：头像 + 文本 */}
-      <div className="flex items-center gap-4">
+      <div className="flex min-w-0 items-center gap-4">
         <Image
           src={imageSrc}
           alt={description}
@@ -21,7 +21,7 @@ function Workplace({ title, description, imageSrc, time, link }: Workplace) {
           height={48}
           className="rounded-full"
         />
-        <div className="flex flex-col gap-px">
+        <div className="flex min-w-0 flex-col gap-px">
           <p className={link ? "external-arrow" : ""}>{title}</p>
           <p className="text-secondary">{description}</p>
         </div>
@@ -29,7 +29,7 @@ function Workplace({ title, description, imageSrc, time, link }: Workplace) {
 
       {/* 右侧：时间列（固定宽度 + 右对齐 + 垂直居中） */}
       {time && (
-        <p className="text-secondary w-32 text-right">{/* ✅ 统一 w-32 */}
+        <p className="workplace-date shrink-0 text-secondary text-left sm:w-32 sm:text-right">
           {time}
         </p>
       )}
@@ -41,12 +41,12 @@ function Workplace({ title, description, imageSrc, time, link }: Workplace) {
       {link ? (
         <Link
           href={link}
-          className="flex justify-between items-center w-full no-underline" // ✅ items-center 保证右侧垂直居中
+          className="workplace-row flex w-full flex-col gap-1 sm:flex-row sm:items-center sm:justify-between no-underline"
         >
           {content}
         </Link>
       ) : (
-        <div className="flex justify-between items-center w-full">{content}</div> // ✅ 同样加 items-center
+        <div className="workplace-row flex w-full flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">{content}</div>
       )}
     </li>
   );

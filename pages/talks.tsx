@@ -56,10 +56,10 @@ export default function Talks() {
           cardType: "summary_large_image",
         }}
       />
-      <div className="flex flex-col gap-10 md:gap-10">
+      <div className="site-list-page flex flex-col gap-10 md:gap-10">
         <div>
-          <h1>Talks & Discussions</h1>
-          <p className="text-secondary">
+          <h1 className="site-page-title">Talks & Discussions</h1>
+          <p className="site-page-intro mt-3 text-secondary">
             {totalTalks} Talks • {invitedCount} Invited • {keynoteCount} Keynotes
           </p>
         </div>
@@ -67,10 +67,10 @@ export default function Talks() {
         <div style={{ zIndex: 5 } as React.CSSProperties}>
           <Listbox value={selectedFilter} onChange={setSelectedFilter}>
             <div className="relative">
-              <Listbox.Button className="p-2 w-full max-h-60 rounded-xl backdrop-blur-lg ring-1 ring-gray-400 ring-opacity-20 text-sm focus:outline-none hover:bg-secondaryA transition-all">
+              <Listbox.Button className="site-select-button w-full text-left">
                 <span className="block truncate">{selectedFilter}</span>
                 <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  <ChevronUpDownIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
+                  <ChevronUpDownIcon className="w-5 h-5 text-secondary" aria-hidden="true" />
                 </span>
               </Listbox.Button>
               <Transition
@@ -81,13 +81,13 @@ export default function Talks() {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Listbox.Options className="absolute mt-2 w-full p-2 overflow-auto text-base origin-top-right shadow-lg max-h-60 rounded-xl bg-blur backdrop-blur-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm scroll-smooth no-scrollbar">
+                <Listbox.Options className="site-select-options absolute mt-2 w-full p-2 overflow-auto text-base origin-top-right max-h-60 rounded-xl focus:outline-none sm:text-sm scroll-smooth no-scrollbar">
                   {filterOptions.map(option => (
                     <Listbox.Option
                       key={option}
                       value={option}
                       className={({ active }) =>
-                        `relative cursor-default select-none py-2 pl-10 pr-4 rounded-md ${active ? "bg-secondaryA" : "text-primary"}`
+                        `site-select-option relative cursor-pointer select-none py-2 pl-10 pr-4 ${active ? "is-active" : ""}`
                       }
                     >
                       {({ selected }) => (
@@ -96,7 +96,7 @@ export default function Talks() {
                             {option}
                           </span>
                           {selected && (
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary">
+                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-[var(--site-violet)]">
                               <CheckIcon className="w-5 h-5" aria-hidden="true" />
                             </span>
                           )}

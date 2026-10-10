@@ -17,13 +17,13 @@ export default function Section({
   return (
     <section
       className={cn(
-        "grid grid-cols-1 md:grid-cols-[120px_1fr] gap-4", // ✅ 去掉 p-4 / border / rounded
+        "info-section grid grid-cols-1 gap-x-7 gap-y-3 md:grid-cols-[136px_minmax(0,1fr)]",
         className
       )}
     >
       <h2
         className={cn(
-          "text-base font-normal text-secondary self-start",
+          "info-section-title text-sm font-medium text-secondary self-start",
           headingAlignment === "right" ? "md:text-right text-left" : "text-left"
         )}
       >

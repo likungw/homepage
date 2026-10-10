@@ -21,9 +21,7 @@ export default function TalkList({ talks }: { talks: Talk[] }) {
         .map((talk) => (
           <li
             key={`${talk.title ?? ""}${talk.conference ?? ""}${talk.date}`}
-            className={`rounded-xl p-4 border ${
-              talk.keynote ? "border-yellow-400 bg-yellow-50" : "border-muted"
-            }`}
+            className={`talk-card ${talk.keynote ? "talk-card--keynote" : ""}`}
           >
             <Section heading={formatDate(talk.date)} className="p-0 border-0">
               <div className="flex flex-col gap-5">
@@ -31,7 +29,7 @@ export default function TalkList({ talks }: { talks: Talk[] }) {
                   <h3>
                     {talk.discussant && <span className="text-secondary">Discussant for </span>}
                     {talk.keynote && (
-                      <span className="font-semibold text-highlight">Keynote: </span>
+                      <span className="font-semibold text-[var(--site-violet)]">Keynote: </span>
                     )}
                     {talk.title}
                   </h3>
