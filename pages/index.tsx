@@ -4,7 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import Link from "components/Link";
 import ResearchShowcase from "components/ResearchShowcase";
 import TypewriterText from "components/TypewriterText";
-import { researchDemos } from "../data/research";
+import { rsiResearchDemos } from "../data/rsiScience";
+import { researchVision } from "../data/researchVision";
 
 // Visual-only palette: keep data/research.ts (including custom video paths) untouched.
 const galleryPalette = [
@@ -26,7 +27,7 @@ export default function Home() {
     <>
       <NextSeo
         title="Kun Li Research Group | Tsinghua AIR"
-        description="Research at the intersection of high-performance computing, Physical AI, and AI for Science: scalable intelligence for the physical world."
+        description="Building self-improving scientific intelligence through scientific agents, world models, and high-performance computing."
         openGraph={{ url: "/", title: "Kun Li Research Group | Tsinghua AIR" }}
       />
 
@@ -36,14 +37,14 @@ export default function Home() {
           <div className="home-ambient home-ambient-two" aria-hidden="true" />
           <motion.div {...fadeUp(0.02)} className="home-eyebrow">
             <span className="home-status-dot" aria-hidden="true" />
-            KUN LI RESEARCH GROUP <span className="home-eyebrow-separator">/</span> TSINGHUA AIR
+            KUN LI RESEARCH GROUP <span className="home-eyebrow-separator">/</span> TSINGHUA AIR <span className="home-eyebrow-separator">/</span> RSI SCIENCE
           </motion.div>
           <motion.h1 {...fadeUp(0.13)} className="home-hero-title">
-            Building intelligence for the <span className="home-accent">physical world.</span>
+            Building <span className="home-accent">Self-Improving</span> Scientific Intelligence.
           </motion.h1>
           <motion.div {...fadeUp(0.24)} className="home-hero-copy">
             <TypewriterText
-              text="We connect high-performance computing, artificial intelligence, and scientific discovery to model, simulate, and understand complex physical systems across scales."
+              text={researchVision}
               className="home-hero-typewriter"
               speed={25}
             />
@@ -59,7 +60,7 @@ export default function Home() {
         </section>
 
         {/* Keep the freely arranged four-video gallery from v2. */}
-        <ResearchShowcase demos={researchDemos.map((demo, i) => ({ ...demo, ...galleryPalette[i % galleryPalette.length] }))} />
+        <ResearchShowcase demos={rsiResearchDemos.map((demo, i) => ({ ...demo, ...galleryPalette[i % galleryPalette.length] }))} />
 
 
       </div>

@@ -122,7 +122,7 @@ const awards = [
 
 const seoTitle = `About | ${FullName}`;
 export const seoDesc =
-  "Kun Li is an Assistant Professor at Tsinghua University working on high-performance computing, physical AI, and AI for Science.";
+  "Kun Li is an Assistant Professor at Tsinghua University studying scalable computing, scientific world models, and self-improving scientific intelligence.";
 
 const futureTalks = talks.filter((talk) => new Date(talk.date).getTime() > Date.now());
 
@@ -175,9 +175,10 @@ export default function About() {
                 .
               </p>
               <p>
-                My research lies at the intersection of high-performance computing,
-                physical AI, and AI for Science. I work on scalable algorithms
-                and systems that help us understand the physical world.
+                My research connects high-performance computing, scientific world models,
+                and AI for Science. Our long-term vision is to build verifiable,
+                self-improving scientific intelligence that advances models,
+                methods, and computational tools.
               </p>
             </div>
             {/* One consistent row of pill links; wraps gracefully on smaller screens. */}
@@ -236,7 +237,7 @@ export default function About() {
               <p className="about-copy mt-3 text-secondary">
                 I recruit 2–3 Ph.D. students each year and welcome applications
                 from prospective postdoctoral researchers and long-term interns.
-                If you are interested in Physical AI, AI for Science, or HPC,
+                If you are interested in scientific agents, scientific world models, or scalable computing,
                 please send your CV and a short description of your research interests.
               </p>
             </div>

@@ -1,3 +1,3 @@
-/** Shared vision statement for the Home and Projects typewriter intro. */
+/** Shared aspirational vision statement for Home and Projects. */
 export const researchVision =
-  "We connect Physical AI, AI for Science, and High-Performance Computing to build intelligent models of the physical world and the scalable systems that make scientific discovery possible.";
+  "We combine scientific agents, world models, and high-performance computing to enable verifiable scientific discovery and recursively improve the models, methods, and tools behind it.";

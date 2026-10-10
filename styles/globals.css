@@ -1424,3 +1424,32 @@ html { width: 100%; }
   .alumni-marquee-track { animation: none !important; will-change: auto; }
   .alumni-marquee-group[aria-hidden="true"] { display: none; }
 }
+
+
+/* RSI Science — selected research cards (responsive; motion respects preferences). */
+.rsi-featured-section { margin-top: clamp(50px, 7vw, 92px); }
+.rsi-featured-header { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:22px; }
+.rsi-featured-title { margin-top:9px; font-size:clamp(29px, 3.6vw, 39px); font-weight:750; letter-spacing:-.055em; line-height:1.15; }
+.rsi-featured-caption { max-width:300px; font-size:13px; line-height:1.7; color:var(--sand11); }
+.rsi-featured-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.rsi-featured-card { min-width:0; display:flex; flex-direction:column; height:100%; overflow:hidden; border:1px solid rgba(139,92,246,.22); border-radius:18px; background:var(--sand1); box-shadow:0 8px 26px rgba(92,58,153,.07); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1),border-color .35s; text-decoration:none!important; color:inherit; }
+.rsi-featured-card:focus-visible { outline:3px solid #9d71ef; outline-offset:4px; }
+.rsi-featured-card:hover { transform:translateY(-6px); box-shadow:0 22px 42px rgba(92,58,153,.16); border-color:rgba(139,92,246,.54); }
+.rsi-featured-topline { display:flex; justify-content:space-between; padding:17px 19px 0; font-size:10px; letter-spacing:.13em; font-weight:700; color:#8764c7; }
+.rsi-featured-topline span:last-child { font-size:18px; }
+.rsi-featured-art { height:132px; position:relative; display:grid; place-items:center; isolation:isolate; overflow:hidden; }
+.rsi-featured-art::before { position:absolute; content:""; width:146px; height:96px; border-radius:50%; background:radial-gradient(ellipse,rgba(174,135,255,.32),transparent 71%); transform:scale(1.7); }
+.rsi-featured-art--atomworld-mirror::before { background:radial-gradient(ellipse,rgba(160,175,255,.40),transparent 71%); }
+.rsi-featured-art--wamachine::before { background:radial-gradient(ellipse,rgba(211,151,247,.35),transparent 71%); }
+.rsi-featured-orbit { width:104px; height:104px; border-radius:50%; border:1px dashed rgba(139,92,246,.45); position:absolute; animation:rsi-orbit 22s linear infinite; }
+.rsi-featured-orbit::after { content:""; position:absolute; left:50%; top:-4px; height:8px; width:8px; border-radius:50%; background:#a581fa; }
+.rsi-featured-symbol { position:relative; z-index:1; font-size:62px; line-height:1; font-weight:300; color:#9172d9; text-shadow:0 12px 24px rgba(110,64,202,.12); }
+.rsi-featured-content { padding:5px 19px 21px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.rsi-featured-content p { color:#966de1; font-size:10px; letter-spacing:.12em; font-weight:700; }
+.rsi-featured-content h3 { font-size:21px; line-height:1.18; letter-spacing:-.035em; font-weight:720; }
+.rsi-featured-content > span { font-size:13px; line-height:1.6; color:var(--sand11); min-height:61px; }
+.rsi-featured-content strong { margin-top:auto; padding-top:9px; font-size:12px; color:#8056d0; font-weight:650; }
+@keyframes rsi-orbit { to { transform:rotate(360deg); } }
+@media(max-width:760px) { .rsi-featured-grid { grid-template-columns:1fr; gap:14px; } .rsi-featured-caption { display:none; } .rsi-featured-art{ height:110px; } .rsi-featured-content>span{ min-height:0; } }
+@media(min-width:761px) and (max-width:990px) { .rsi-featured-grid{ gap:12px; } .rsi-featured-content h3{ font-size:18px; } }
+@media(prefers-reduced-motion:reduce) { .rsi-featured-orbit{animation:none!important;} .rsi-featured-card{transition:none!important;} .rsi-featured-card:hover{transform:none;} }

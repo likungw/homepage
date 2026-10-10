@@ -2,12 +2,12 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import Link from "components/Link";
 import { researchProjects, ResearchProject } from "../../data/projects";
-import { researchDirections } from "../../data/research";
+import { rsiResearchDirections } from "../../data/rsiScience";
 
 type Props = { project: ResearchProject };
 
 export default function ResearchProjectPage({ project }: Props) {
-  const direction = researchDirections.find((entry) => entry.number === project.direction);
+  const direction = rsiResearchDirections.find((entry) => entry.number === project.direction);
   return (
     <>
       <NextSeo
@@ -24,7 +24,8 @@ export default function ResearchProjectPage({ project }: Props) {
           <h1>{project.title}<span className="home-accent">.</span></h1>
           <p className="project-detail-lead">{project.summary}</p>
           <div className="project-detail-actions">
-            {project.paperUrl && <Link href={project.paperUrl} className="home-cta-primary">Read the paper <span aria-hidden="true">↗</span></Link>}
+            {project.websiteUrl && <Link href={project.websiteUrl} className="home-cta-primary">Project website <span aria-hidden="true">↗</span></Link>}
+            {project.paperUrl && <Link href={project.paperUrl} className={project.websiteUrl ? "home-cta-secondary" : "home-cta-primary"}>Read the paper <span aria-hidden="true">↗</span></Link>}
             <Link href="/publications" className="home-cta-secondary">All publications <span aria-hidden="true">↗</span></Link>
           </div>
         </div>

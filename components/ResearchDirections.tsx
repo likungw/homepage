@@ -188,7 +188,7 @@ export default function ResearchDirections({
                 <div className="direction-visual-grid" />
                 <span className="direction-visual-caption">KUN LI RESEARCH GROUP <span>— {direction.number}</span></span>
                 <DirectionIllustration number={direction.number} />
-                <span className="direction-visual-footer">HPC <span>×</span> AI <span>×</span> SCIENCE</span>
+                <span className="direction-visual-footer">AGENTS <span>×</span> MODELS <span>×</span> COMPUTE</span>
               </div>
               <div className="direction-card-content">
                 <div className="direction-eyebrow"><span className="direction-index">{direction.number} / 03</span> RESEARCH DIRECTION</div>

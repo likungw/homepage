@@ -1,3 +1,5 @@
+import { featuredResearchProjects } from "./featuredProjects";
+
 /**
  * Editable project portfolio data.
  * All cards link to a working /projects/[slug] detail page.
@@ -16,7 +18,7 @@ export type ResearchProject = {
   websiteUrl?: string; // Optional external project homepage
 };
 
-export const researchProjects: ResearchProject[] = [
+const existingResearchProjects: ResearchProject[] = [
   {
     slug: "wamachine",
     direction: "01",
@@ -123,6 +125,43 @@ export const researchProjects: ResearchProject[] = [
     status: "Published work",
     paperUrl: "/pdf/3793864.pdf",
   },
+];
+
+/** Keep the local WAMachine project record and all student-owned website URLs. */
+const directionOverrides: Partial<Record<string, ResearchProject["direction"]>> = {
+  "physical-world-models": "02",
+  "long-horizon-physics": "02",
+  "swarmthinkers": "02",
+  "mako-xc": "03",
+  "mako": "03",
+  "flashfftstencil": "03",
+  "sparstencil": "03",
+  "matxtract": "03",
+};
+
+const localProjectBySlug = new Map(existingResearchProjects.map((project) => [project.slug, project]));
+const featuredSlugs = new Set(featuredResearchProjects.map((project) => project.slug));
+
+export const researchProjects: ResearchProject[] = [
+  // Feature the new AtomWorld pages; preserve any existing student-maintained project records.
+  ...featuredResearchProjects.map((featured) => {
+    const local = localProjectBySlug.get(featured.slug);
+    return local
+      ? { ...featured, ...local, direction: featured.direction, eyebrow: featured.eyebrow }
+      : featured;
+  }),
+  ...existingResearchProjects
+    .filter((project) => !featuredSlugs.has(project.slug))
+    .map((project) => ({
+      ...project,
+      direction: directionOverrides[project.slug] ?? project.direction,
+      ...(project.slug === "physical-world-models"
+        ? {
+            eyebrow: "SCIENTIFIC WORLD MODELS · CONCEPT DEMO",
+            overview: "An editable scientific-world-modeling showcase. Replace with validated results when this concept becomes a concrete project.",
+          }
+        : {}),
+    })),
 ];
 
 export function getProjectsForDirection(number: "01" | "02" | "03") {

@@ -4,14 +4,6 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import type { ResearchDemo } from "../data/research";
 
-/**
- * Loosely based on the original About-page Gallery:
- * tilted, slightly overlapping photographic prints, spring entrances,
- * drag-to-arrange on desktop, and a front/back reveal on hover or tap.
- *
- * Keep artwork independent of the layout so each lab animation can be replaced
- * just by editing data/research.ts.
- */
 const photoPositions = [
   { left: "0%", top: "52px", width: "30%", angle: -7.5 },
   { left: "23%", top: "6px", width: "28%", angle: 4.0 },
@@ -19,7 +11,6 @@ const photoPositions = [
   { left: "70%", top: "12px", width: "30%", angle: 6.5 },
 ];
 
-/** Distinct schematic placeholders; these are NOT research visualizations. */
 function FallbackArtwork({ demo }: { demo: ResearchDemo }) {
   const common = { fill: "none", stroke: demo.accent, strokeWidth: 1.3 };
 
@@ -28,7 +19,7 @@ function FallbackArtwork({ demo }: { demo: ResearchDemo }) {
       aria-hidden="true"
       className="absolute inset-0 flex items-center justify-center overflow-hidden"
       style={{
-        background: `radial-gradient(ellipse at 50% 44%, ${demo.accent}37 0%, transparent 59%), ${demo.background}`,
+        background: `radial-gradient(ellipse at 50% 44%, ${demo.accent}16 0%, transparent 59%), #FEFEFF`,
       }}
     >
       <svg
@@ -37,32 +28,31 @@ function FallbackArtwork({ demo }: { demo: ResearchDemo }) {
         role="presentation"
         focusable="false"
       >
-        {demo.id === "world-models" && (
+        {demo.id === "atomworld-mirror" && (
           <g {...common}>
-            {[0, 1, 2, 3, 4, 5, 6].map((row) => (
-              <path
-                key={row}
-                d={`M -15 ${86 + row * 14} C 65 ${20 + row * 12}, 119 ${158 + row * 9}, 191 ${85 + row * 12} S 287 ${48 + row * 12}, 325 ${93 + row * 12}`}
-                opacity={0.38 + row * 0.075}
-              />
+            <path d="M 22 150 C 68 122, 84 125, 130 150 S 198 175, 276 128" opacity="0.78" />
+            {[0, 1, 2, 3, 4].map((i) => (
+              <g key={i} opacity={0.42 + i * 0.08}>
+                <circle cx={48 + i * 46} cy={146 - (i % 2) * 15} r={11} fill={demo.accent} fillOpacity="0.22" />
+                <circle cx={64 + i * 46} cy={126 + (i % 2) * 12} r={7} fill={demo.accent} fillOpacity="0.46" />
+              </g>
             ))}
-            <circle cx="152" cy="106" r="35" strokeDasharray="2 7" opacity=".65" />
-            <circle cx="152" cy="106" r="6" fill={demo.accent} stroke="none" />
+            <path d="M 38 88 C 82 42, 126 132, 184 82 S 236 44, 274 72" opacity="0.38" strokeDasharray="3 5" />
           </g>
         )}
-        {demo.id === "atomistic-dynamics" && (
+        {demo.id === "swarmthinkers" && (
           <g>
-            <g stroke={demo.accent} strokeWidth="2" opacity=".7">
-              {[[53, 116, 98, 75], [98, 75, 153, 94], [153, 94, 204, 59], [153, 94, 194, 150], [194, 150, 255, 133], [98, 75, 88, 152], [88, 152, 147, 179], [147, 179, 194, 150]].map((v, i) => (
-                <line key={i} x1={v[0]} y1={v[1]} x2={v[2]} y2={v[3]} />
+            <g stroke={demo.accent} strokeWidth="1.8" opacity="0.72">
+              {[[46, 152, 88, 108], [88, 108, 132, 144], [132, 144, 182, 101], [182, 101, 238, 126], [88, 108, 88, 58], [182, 101, 206, 58]].map((v, i) => (
+                <path key={i} d={`M ${v[0]} ${v[1]} Q ${(v[0] + v[2]) / 2} ${(v[1] + v[3]) / 2 - 12} ${v[2]} ${v[3]}`} />
               ))}
             </g>
-            {[[53, 116, 8], [98, 75, 13], [153, 94, 17], [204, 59, 10], [194, 150, 16], [255, 133, 8], [88, 152, 12], [147, 179, 9]].map((v, i) => (
-              <circle key={i} cx={v[0]} cy={v[1]} r={v[2]} fill={demo.accent} fillOpacity={i % 2 ? ".83" : ".52"} stroke="white" strokeOpacity=".35" />
+            {[[46, 152, 11], [88, 108, 15], [132, 144, 10], [182, 101, 16], [238, 126, 10], [88, 58, 8], [206, 58, 8]].map((v, i) => (
+              <circle key={i} cx={v[0]} cy={v[1]} r={v[2]} fill={demo.accent} fillOpacity={i % 2 ? ".82" : ".48"} />
             ))}
           </g>
         )}
-        {demo.id === "quantum-chemistry" && (
+        {demo.id === "makoxc" && (
           <g {...common}>
             {[0, 45, 90, 135].map((angle) => (
               <ellipse key={angle} cx="150" cy="110" rx="98" ry="38" transform={`rotate(${angle} 150 110)`} opacity=".76" />
@@ -71,7 +61,7 @@ function FallbackArtwork({ demo }: { demo: ResearchDemo }) {
             <circle cx="150" cy="110" r="5" fill="#fff" stroke="none" />
           </g>
         )}
-        {demo.id === "hpc-systems" && (
+        {demo.id === "flashfftstencil" && (
           <g>
             {Array.from({ length: 8 }, (_, row) =>
               Array.from({ length: 10 }, (_, col) => (
@@ -92,9 +82,6 @@ function FallbackArtwork({ demo }: { demo: ResearchDemo }) {
           </g>
         )}
       </svg>
-      <span className="absolute bottom-3 left-3 rounded bg-black/30 px-2 py-1 text-[9px] uppercase tracking-[0.13em] text-white/70 backdrop-blur-sm">
-        Add your lab animation
-      </span>
     </div>
   );
 }
@@ -136,11 +123,11 @@ function ResearchMedia({ demo }: { demo: ResearchDemo }) {
         <Image
           src={demo.mediaSrc}
           alt=""
-          width={720}
-          height={540}
+          width={960}
+          height={720}
           unoptimized
           loading="lazy"
-          className={`absolute inset-0 h-full w-full bg-black/10 object-contain transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 h-full w-full bg-[#FEFEFF] object-contain transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
           onLoad={() => setLoaded(true)}
           onError={() => setLoaded(false)}
         />
@@ -154,7 +141,7 @@ function ResearchMedia({ demo }: { demo: ResearchDemo }) {
           preload="metadata"
           poster={demo.poster}
           aria-hidden="true"
-          className={`absolute inset-0 h-full w-full bg-black/10 object-contain transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 h-full w-full bg-[#FEFEFF] object-contain transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
           onLoadedData={() => setLoaded(true)}
           onError={() => setLoaded(false)}
         >
@@ -162,12 +149,33 @@ function ResearchMedia({ demo }: { demo: ResearchDemo }) {
         </video>
       )}
       {reducedMotion && demo.poster && (
-        <Image src={demo.poster} alt="" width={720} height={540} className="absolute inset-0 h-full w-full object-contain" />
+        <Image src={demo.poster} alt="" width={960} height={720} className="absolute inset-0 h-full w-full object-cover" />
       )}
-      <span className="absolute right-3 top-3 rounded-full border border-white/30 bg-black/25 px-2 py-1 font-mono text-[10px] text-white/85 backdrop-blur-sm">
+            <span className="absolute right-3 top-3 rounded-full border border-[#E4E6F5] bg-white/85 px-2 py-1 font-mono text-[10px] text-[#6F78A2] backdrop-blur-sm">
         {demo.number} / 04
       </span>
     </div>
+  );
+}
+
+function ExternalButton({ href, children, compact = false }: { href: string; children: string; compact?: boolean }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={compact
+        ? "inline-flex items-center rounded-full border border-[#DDE4F5] bg-white/85 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#5468A2] backdrop-blur-sm transition hover:bg-white"
+        : "inline-flex items-center rounded-full border border-[#DACCF5] bg-white/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#4B3868] transition hover:bg-white"
+      }
+      onClick={(event) => event.stopPropagation()}
+      onPointerDown={(event) => event.stopPropagation()}
+    >
+      {children}
+      <span className="ml-1" aria-hidden="true">
+        ↗
+      </span>
+    </a>
   );
 }
 
@@ -188,7 +196,6 @@ function ResearchPrint({
   const position = photoPositions[index % photoPositions.length];
   const flipped = hovered || pinnedOpen;
 
-  // Don't intercept touch swipes on the horizontally scrolling mobile layout.
   useEffect(() => {
     const query = window.matchMedia("(min-width: 768px) and (hover: hover)");
     const update = () => setCanDrag(query.matches);
@@ -241,51 +248,57 @@ function ResearchPrint({
     >
       <div style={{ perspective: 1100 }}>
         <motion.div
-        className="relative w-full"
-        style={{ transformStyle: "preserve-3d" }}
-        animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ type: "spring", stiffness: 240, damping: 25, duration: reducedMotion ? 0 : undefined }}
-      >
-        {/* Front: photographic-print treatment, inspired by the original Gallery.Photo. */}
-        <div
-          className="relative overflow-hidden rounded-[13px] border border-[#E8DFF6] bg-[#FCFAFF] p-2.5 shadow-[0_20px_45px_rgba(80,46,134,0.17),0_2px_7px_rgba(52,23,91,0.10)]"
-          style={{ backfaceVisibility: "hidden" }}
-        >
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[7px] bg-[#17252F]">
-            <ResearchMedia demo={demo} />
-          </div>
-          <div className="flex min-h-[61px] items-center justify-between gap-3 px-1 pb-1 pt-3">
-            <div className="min-w-0">
-              <p className="truncate text-[9px] font-semibold uppercase tracking-[0.13em] text-[#80778F]">
-                {demo.category}
-              </p>
-              <h3 className="mt-0.5 text-[clamp(12px,1.5vw,15px)] font-semibold leading-tight tracking-[-0.02em] text-[#36294B]">
-                {demo.title}
-              </h3>
-            </div>
-            <span className="shrink-0 text-lg font-light text-[#8A77AE]" aria-hidden="true">↗</span>
-          </div>
-        </div>
-        {/* Reverse: paper texture and a compact research caption. */}
-        <div
-          className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[13px] border border-[#E8DFF6] bg-[#FCF8FF] px-5 py-5 text-[#36294B] shadow-[0_20px_45px_rgba(80,46,134,0.17)]"
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+          className="relative w-full"
+          style={{ transformStyle: "preserve-3d" }}
+          animate={{ rotateY: flipped ? 180 : 0 }}
+          transition={{ type: "spring", stiffness: 240, damping: 25, duration: reducedMotion ? 0 : undefined }}
         >
           <div
-            className="pointer-events-none absolute inset-0 opacity-20"
-            style={{ backgroundImage: "url('/photopaper.png')", backgroundSize: "220px" }}
-            aria-hidden="true"
-          />
-          <div className="relative">
-            <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#7B6F8C]">Research note / {demo.number}</p>
-            <div className="mt-5 h-1 w-9 rounded-full" style={{ background: demo.accent }} />
+            className="relative overflow-hidden rounded-[13px] border border-[#E8DFF6] bg-[#FCFAFF] p-2.5 shadow-[0_20px_45px_rgba(80,46,134,0.17),0_2px_7px_rgba(52,23,91,0.10)]"
+            style={{ backfaceVisibility: "hidden" }}
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[7px] bg-[#FEFEFF]">
+              <ResearchMedia demo={demo} />
+              <div className="absolute left-3 top-3">
+                <ExternalButton href={demo.href} compact>
+                  {demo.linkText}
+                </ExternalButton>
+              </div>
+            </div>
+            <div className="flex min-h-[70px] items-center justify-between gap-3 px-1 pb-1 pt-3">
+              <div className="min-w-0">
+                <p className="truncate text-[9px] font-semibold uppercase tracking-[0.13em] text-[#80778F]">
+                  {demo.category}
+                </p>
+                <h3 className="mt-0.5 text-[clamp(12px,1.5vw,15px)] font-semibold leading-tight tracking-[-0.02em] text-[#36294B]">
+                  {demo.title}
+                </h3>
+              </div>
+              <span className="shrink-0 text-lg font-light text-[#8A77AE]" aria-hidden="true">↗</span>
+            </div>
           </div>
-          <div className="relative">
-            <p className="text-lg font-semibold leading-tight tracking-[-0.04em] sm:text-xl">{demo.title}</p>
-            <p className="mt-3 text-[12px] leading-relaxed text-[#71677E] sm:text-[13px]">{demo.description}</p>
-            <p className="mt-5 text-[10px] uppercase tracking-[0.11em] text-[#80748E]">{demo.category}</p>
+          <div
+            className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[13px] border border-[#E8DFF6] bg-[#FCF8FF] px-5 py-5 text-[#36294B] shadow-[0_20px_45px_rgba(80,46,134,0.17)]"
+            style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+          >
+            <div
+              className="pointer-events-none absolute inset-0 opacity-20"
+              style={{ backgroundImage: "url('/photopaper.png')", backgroundSize: "220px" }}
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#7B6F8C]">Research highlight / {demo.number}</p>
+              <div className="mt-5 h-1 w-9 rounded-full" style={{ background: demo.accent }} />
+            </div>
+            <div className="relative">
+              <p className="text-lg font-semibold leading-tight tracking-[-0.04em] sm:text-xl">{demo.title}</p>
+              <p className="mt-3 text-[12px] leading-relaxed text-[#71677E] sm:text-[13px]">{demo.description}</p>
+              <p className="mt-5 text-[10px] uppercase tracking-[0.11em] text-[#80748E]">{demo.category}</p>
+            </div>
+            <div className="relative pt-2">
+              <ExternalButton href={demo.href}>{demo.linkText}</ExternalButton>
+            </div>
           </div>
-        </div>
         </motion.div>
       </div>
     </motion.article>
@@ -299,13 +312,16 @@ export default function ResearchShowcase({ demos }: { demos: ResearchDemo[] }) {
     <section aria-labelledby="research-showcase-heading" className="space-y-5 sm:space-y-7">
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
         <div>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.17em] text-secondary">Visual highlights</p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.17em] text-secondary">Research in Motion</p>
           <h2 id="research-showcase-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Research in Motion<span className="ml-1 home-purple-dot">.</span>
+            Research Highlights<span className="ml-1 home-purple-dot">.</span>
           </h2>
+          <p className="mt-2 max-w-2xl text-sm text-secondary">
+            Four representative projects, visualized through restrained scientific line art.
+          </p>
         </div>
         <p className="hidden font-mono text-[10px] uppercase tracking-wider text-secondary md:block">
-          Drag to rearrange · Hover to flip
+          Drag to rearrange · Hover to flip · Open paper ↗
         </p>
         <p className="text-xs text-secondary md:hidden">Swipe to explore · Tap for details</p>
       </div>
@@ -315,6 +331,7 @@ export default function ResearchShowcase({ demos }: { demos: ResearchDemo[] }) {
           <ResearchPrint key={demo.id} demo={demo} index={index} dragBoundary={deckRef} />
         ))}
       </div>
+      <p className="text-[11px] leading-relaxed text-secondary">Illustrative diagrams based on the research concepts; not original simulation trajectories.</p>
     </section>
   );
 }

@@ -13,7 +13,7 @@ export default function PeoplePage() {
         <header className="people-page-hero">
           <p className="home-section-kicker"><span className="home-kicker-line" /> THE PEOPLE BEHIND THE RESEARCH</p>
           <h1 className="site-page-title">Meet our <span className="home-accent">people</span>.</h1>
-          <p className="site-page-intro">A curious and collaborative team advancing HPC, AI, and scientific discovery.</p>
+          <p className="site-page-intro">A curious team exploring scientific agents, world models, and scalable computing for discovery.</p>
         </header>
         <ScrollReveal>
           <Section heading="Principal Investigator" headingAlignment="left">
