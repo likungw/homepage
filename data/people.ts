@@ -5,7 +5,8 @@ export const faculty: Person[] = [
   {
     name: "Kun Li",
     description: "Tsinghua University",
-    image: "/headshot.jpg",
+    //image: "/headshot.jpg",
+    image: "/kunli.png",
     avatar: "/avatars-anime/kun-li.webp",
   }
 ];
