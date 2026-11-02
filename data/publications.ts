@@ -1,6 +1,133 @@
 import { Publication } from "../types/publication";
 
 export const publications: Publication[] = [
+  
+  {
+  title: "EvoCG: Self-Evolving Precision Control for Faster Conjugate Gradient",
+  authors: "Jiaqi Zhai, Haozhi Han, Kaiyi Huang, Wenju Zhao, Yifeng Chen, Yunquan Zhang, Ting Cao, Yunxin Liu, Hai Jin, Xuanhua Shi*, Kun Li*",
+  journal: "PPoPP 2027",
+  date: "2027",
+  venue: "PPoPP",
+  researchArea: "High-Performance Computing",
+  },
+  {
+  title: "Tessellating Matrix-Power-Vector Kernel",
+  authors: "Zixuan Wang, Liang Yuan, Hang Cao, Xianmeng Jiang, Kun Li, Yunquan Zhang",
+  journal: "PPoPP 2027",
+  date: "2027",
+  venue: "PPoPP",
+  researchArea: "High-Performance Computing",
+  },
+  // SC 2026
+  {
+    title: "SPIKe: Generating Practical SpMV Kernels for Sparse Iterative Methods on GPUs",
+    authors: "Luhan Wang, Haipeng Jia, Kun Li, Zongyuan He, Shengguo Li, Ting Cao, Yunxin Liu, Yunquan Zhang, Yifeng Chen",
+    journal: "SC 2026",
+    date: "2026",
+    link: "https://sc26.conference-program.com/presentation/?id=pap380&sess=sess205",
+    venue: "SC",
+    researchArea: "High-Performance Computing",
+  },
+
+  // NeurIPS 2026
+  {
+    title: "AtomWorld-Mem: Memory-Restored World States for Long-Horizon Atomistic Evolution",
+    authors: "Tian Luo, Ruge Zhang, Haozhi Han, Yifeng Chen, Yunquan Zhang, Yunxin Liu, Ting Cao, Kun Li*",
+    journal: "NeurIPS 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2609.31133",
+    project: "https://www.likun.tech/projects/atomworld-mem",
+    venue: "NeurIPS",
+    researchArea: "AI for Science",
+  },
+
+  // Scientific World Models
+  {
+    title: "AtomWorld-Mirror: Macro-Step World Modeling of Critical Evolution Backbones for Materials Dynamics",
+    authors: "Ziming Pan, Ruge Zhang, Haozhi Han, Junkai Zhou, Xingyuan Chen, Yifeng Chen, Yunquan Zhang, Ting Cao, Yunxin Liu, Kun Li*",
+    journal: "arXiv preprint, 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2610.11527",
+    project: "https://atomworld-mirror.github.io/",
+    venue: "arXiv",
+    researchArea: "AI for Science",
+  },
+
+  // World Models and Efficient Inference
+  {
+    title: "Efficient World Action Model Inference with Adaptive Intermediate States",
+    authors: "Zhinnan Liu, Haozhi Han, Ruge Zhang, Teng Ma, Tao Ma, Zheng Liu, Yifeng Chen, Yunquan Zhang, Ting Cao, Yunxin Liu, Kun Li",
+    journal: "arXiv preprint, 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2609.34608",
+    project: "https://parrotkk.github.io/WAMachine_page/",
+    venue: "arXiv",
+    researchArea: "AI Systems",
+  },
+
+  // Physical AI and Self-Evolving Agents
+  {
+    title: "Zeva-Ego: Egocentric Mid-Training with In-Context Causal Learning for Robot Manipulation",
+    authors: "Bingjia Huang, Xin Ding, Fu Chen, Kun Li, Wei Sun, Hao Wu, Yunxin Liu, Ting Cao",
+    journal: "arXiv preprint, 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2609.24411",
+    venue: "arXiv",
+    researchArea: "AI Systems",
+  },
+  {
+    title: "Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation",
+    authors: "Fu Chen, Xin Ding, Bingjia Huang, Xiangyu Li, Mingju Wang, Jiawei He, Kun Li, Wei Sun, Yunxin Liu, Hao Wu, Ting Cao",
+    journal: "arXiv preprint, 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2608.30880",
+    repo: "https://github.com/air-embodied-brain/Zeva",
+    venue: "arXiv",
+    researchArea: "AI Systems",
+  },
+  {
+    title: "Zetta ζ: An Efficient Closed-Loop Embodied Harness for Self-Evolving Physical Intelligence",
+    authors: "Xin Ding, Liang Mi, Mingzhe Huang, Zixuan Wang, Chao Zhang, Zixu Hao, Fu Chen, Xiangyu Li, Yikai Zheng, Yaoyu Guo, Weijun Wang, Kun Li, Hao Wu, Yunxin Liu, Ting Cao",
+    journal: "arXiv preprint, 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2608.16590",
+    repo: "https://github.com/air-embodied-brain/Zetta-Embodiment",
+    project: "https://air-embodied-brain.github.io/zetta/",
+    venue: "arXiv",
+    researchArea: "AI Systems",
+  },
+  {
+    title: "ActProbe: Action-Space Probe for Early Failure Detection of Generative Robot Policies",
+    authors: "Bingjia Huang, Xiangyu Li, Xiang Wang, Liang Mi, Zixu Hao, Weijun Wang, Hao Wu, Kun Li, Yunxin Liu, Ting Cao",
+    journal: "arXiv preprint, 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2606.08508",
+    repo: "https://github.com/air-embodied-brain/actprobe",
+    project: "https://air-embodied-brain.github.io/actprobe/",
+    venue: "arXiv",
+    researchArea: "AI Systems",
+  },
+  {
+    title: "EmbodiSkill: Skill-Aware Reflection for Self-Evolving Embodied Agents",
+    authors: "Ruofei Ju, Xinrui Wang, Xin Ding, Yifan Yang, Hao Wu, Shiqi Jiang, Qianxi Zhang, Hao Wen, Xiangyu Li, Weijun Wang, Kun Li, Yunxin Liu, Haipeng Dai, Wei Wang, Ting Cao",
+    journal: "arXiv preprint, 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2605.10332",
+    repo: "https://github.com/air-embodied-brain/EmbodiSkill",
+    project: "https://air-embodied-brain.github.io/EmbodiSkill/",
+    venue: "arXiv",
+    researchArea: "AI Systems",
+  },
+  {
+    title: "MemCompiler: Compile, Don't Inject -- State-Conditioned Memory for Embodied Agents",
+    authors: "Xin Ding, Xinrui Wang, Yifan Yang, Hao Wu, Shiqi Jiang, Qianxi Zhang, Liang Mi, Hanxin Zhu, Kun Li, Yunxin Liu, Zhibo Chen, Ting Cao",
+    journal: "arXiv preprint, 2026",
+    date: "2026",
+    link: "https://arxiv.org/abs/2605.07594",
+    repo: "https://github.com/air-embodied-brain/MemCompiler",
+    venue: "arXiv",
+    researchArea: "AI Systems",
+  },
   {
     title: "MakoXC: Rearchitecting DFT Exchange-Correlation with Matrix-Aligned and Knowledge-Organized Sparsity",
     authors: "Haozhi Han, Fusong Ju, Jing Bai, Ruge Zhang, Xiang Zhao, Liang Yuan, Yunquan Zhang, Ting Cao, Yunxin Liu, Yifeng Chen, and Kun Li*",
@@ -11,7 +138,7 @@ export const publications: Publication[] = [
   },
   {
     title: "PyramidFFT: Rearchitecting FFT with Matrix-Aligned Nested-Radix for Hierarchical Scratchpad Memory on AI Accelerators",
-    authors: "Xiang Zhao, Ruge Zhang, Haipeng Jia*, Kun Li*, Jianliang Xu, Ting Cao, Yunquan Zhang",
+    authors: "Xiang Zhao, Ruge Zhang, Haipeng Jia*, Kun Li*, Jianliang Xu, Ting Cao, Yunxin Liu, Yunquan Zhang",
     journal: "ACM Transactions on Architecture and Code Optimization",
     date: "2026", 
     corresponding: true, 
