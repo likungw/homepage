@@ -86,12 +86,6 @@ export const undergraduate: Person[] = [
     avatar: "/avatars-anime/dongcan-guo.webp",
   },
   {
-    name: "Tianzhe Cheng",
-    description: "Tsinghua University",
-    image: "/members/tianzhe.jpg",
-    avatar: "/avatars-anime/tianzhe-cheng.webp",
-  },
-  {
     name: "Yiming Zang",
     description: "Tsinghua University",
     image: "/schools/thu.png",
