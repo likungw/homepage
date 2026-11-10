@@ -26,8 +26,8 @@ export default function PeoplePage() {
             <div className="people-joint-note">
               <span className="people-joint-dot" aria-hidden="true" />
               <span>
-                All graduate researchers are jointly supervised by{" "}
-                <strong>Tsinghua University</strong> and their home institutions.
+                All graduate researchers are based at {" "}
+                <strong>Tsinghua University</strong> for on-site research and training.
               </span>
             </div>
             <PeopleGrid people={phdStudents} />
