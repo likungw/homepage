@@ -62,10 +62,10 @@ export const undergraduate: Person[] = [
     avatar: "/avatars-anime/zhinan-liu.webp",
   },
   {
-    name: "Tian Luo",
-    description: "Sichuan University",
-    image: "/members/luotian.jpg",
-    avatar: "/avatars-anime/tian-luo.webp",
+    name: "Ziming Pan",
+    description: "Yonsei University",
+    image: "/members/ziming.jpg",
+    avatar: "/avatars-anime/ziming-pan.webp",
   },
   {
     name: "Bohan Sun",
@@ -73,12 +73,7 @@ export const undergraduate: Person[] = [
     image: "/members/bohan.jpg",
     avatar: "/avatars-anime/bohan-sun.webp",
   },
-  {
-    name: "Ziming Pan",
-    description: "Yonsei University",
-    image: "/members/ziming.jpg",
-    avatar: "/avatars-anime/ziming-pan.webp",
-  },
+  
   {
     name: "Dongcan Guo",
     description: "Tsinghua University",
@@ -100,7 +95,13 @@ export const undergraduate: Person[] = [
 ];
 
 export const alumni: Person[] = [
-   {
+  {
+    name: "Tian Luo",
+    description: "Sichuan University",
+    image: "/members/luotian.jpg",
+    avatar: "/avatars-anime/tian-luo.webp",
+  },
+  {
     name: "Wentao Ren",
     description: "Nanyang Technological University",
     image: "/members/wentao.jpg",
