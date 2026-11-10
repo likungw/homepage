@@ -22,7 +22,7 @@ export const phdStudents: Person[] = [
   },
   {
     name: "Ruge Zhang",
-    description: "University of Chinese Academy of Sciences",
+    description: "University of Chinese Academy of Sciences (ICT, CAS)",
     image: "/members/ruge.jpg",
     avatar: "/avatars-anime/ruge-zhang.webp",
   },
@@ -34,20 +34,20 @@ export const phdStudents: Person[] = [
   },
   {
     name: "Zihe Huang",
-    description: "University of Chinese Academy of Sciences->Peking University",
+    description: "University of Chinese Academy of Sciences (ICT, CAS)->Peking University",
     image: "/members/zihe.jpg",
     avatar: "/avatars-anime/zihe-huang.webp",
   },
  
   {
     name: "Chang Liu",
-    description: "Sichuan University->University of Chinese Academy of Sciences",
+    description: "Sichuan University->University of Chinese Academy of Sciences (ICT, CAS)",
     image: "/members/liuchang.jpg",
     avatar: "/avatars-anime/chang-liu.webp",
   },
   {
     name: "Jiaxiang Li",
-    description: "Sichuan University->University of Chinese Academy of Sciences",
+    description: "Sichuan University->University of Chinese Academy of Sciences (ICT, CAS)",
     image: "/members/jiaxiang.jpg",
     avatar: "/avatars-anime/jiaxiang-li.webp",
   },
