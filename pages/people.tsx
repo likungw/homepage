@@ -20,8 +20,16 @@ export default function PeoplePage() {
             <PeopleGrid people={faculty} featured />
           </Section>
         </ScrollReveal>
+        
         <ScrollReveal>
           <Section heading="Graduate Researchers" headingAlignment="left">
+            <div className="people-joint-note">
+              <span className="people-joint-dot" aria-hidden="true" />
+              <span>
+                All graduate researchers are jointly supervised by{" "}
+                <strong>Tsinghua University</strong> and their home institutions.
+              </span>
+            </div>
             <PeopleGrid people={phdStudents} />
           </Section>
         </ScrollReveal>
